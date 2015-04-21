@@ -1,10 +1,9 @@
 function FontSizeSetting_func()
-	map <F1>  <ESC>:set foldlevel=6<CR>
 	map <F2>  <ESC>:set foldlevel=2<CR>
 	map <F3>  <ESC>:set foldlevel=3<CR>
 	map <F4>  <ESC>:set foldlevel=4<CR>
-	map <F5>  <ESC>:colors morning <CR>
-	map <F6>  <ESC>:colors molokai<CR>
+	map <F5>  <ESC>:set foldlevel=5<CR>
+	map <F6>  <ESC>:set foldlevel=6<CR>
 	map <F8>  <ESC>:set guifont=Monaco:h8<ESC>:set gfw=Microsoft_Yahei_Mono:h8:cGB2312 <CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
 	map <F9>  <ESC>:set guifont=Monaco:h10<ESC>:set gfw=Microsoft_Yahei_Mono:h10:cGB2312 <CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
 	map <F10> <ESC>:set guifont=Monaco:h12<ESC>:set gfw=Microsoft_Yahei_Mono:h12:cGB2312 <CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
@@ -32,7 +31,6 @@ function SourceFunc()
 endfunction
 	let $open_path = $VIM . '\script\open.vim'
 	let $test_path = $VIM . '\script\test.vim'
-	let $dropbox_path = 'C:\Users\Pei-Kuan\Dropbox\'
 	nmap ,so :so $open_path
 function SyntasticFunc()
 	let g:syntastic_check_on_open=1
@@ -181,10 +179,10 @@ function Map_func()
 	map ,w             : wa!<ESC>
 	map <C-W><C-W>     : wqa<CR>
 	imap <C-S> <ESC>   : wa<CR> " Save all files
-	"imap <C-W> <ESC>  : wqa<CR> " Save all files and leave
 	map <leader>n      : cn<CR>
 	map <leader>p      : cp<CR>
 	map <leader>c      : copen<Cve all filesR>
+	"imap <C-W> <ESC>  : wqa<CR> " Save all files and leave
 	" vmap ,==            : Tab/=
 endfunction
 function Fold_func()
