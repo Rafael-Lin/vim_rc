@@ -1,0 +1,453 @@
+function FontSizeSetting_func()
+	if has("win32")
+	map <F4>  <ESC>:set fileencoding=big5<CR>
+	map <F5>  <ESC>:colors morning <CR>
+	map <F6>  <ESC>:colors molokai<CR>
+	map <F8>  <ESC>:set guifont=Monaco:h8<ESC>:set gfw=Microsoft_Yahei_Mono:h8:cGB2312 <CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+	map <F9>  <ESC>:set guifont=Monaco:h10<ESC>:set gfw=Microsoft_Yahei_Mono:h10:cGB2312 <CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+	map <F10> <ESC>:set guifont=Monaco:h12<ESC>:set gfw=Microsoft_Yahei_Mono:h12:cGB2312 <CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+	map <F11> <ESC>:set guifont=Monaco:h16<ESC>:set gfw=Microsoft_Yahei_Mono:h16:cGB2312 <CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+	map <F12> <ESC>:set guifont=Monaco:h24<ESC>:set gfw=Microsoft_Yahei_Mono:h24:cGB2312 <CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+	endif
+endfunction
+function YouCompleteMe_func()
+	if has('unix')
+		let g:ycm_autoclose_preview_window_after_completion=1
+		nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+	endif
+endfunction
+function Pathogen_func()
+	if has('win32')
+		let g:pathogen_disabled = []
+		if !has('gui_running')
+			call add(g:pathogen_disabled, 'powerline')
+		endif
+		call pathogen#runtime_append_all_bundles()
+		call pathogen#helptags()
+	endif
+endfunctio
+function Win_short_cut_func()
+	if has('win32')
+		nmap ,cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+		nmap ,cl :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+		nmap ,ci :silent !explorer %:p:h:gs?\/?\\\\\\?<CR>
+		map  ,ci :!start explorer %:p:h:gs?\/?\\\\\\?<CR>
+		set lines=999 columns=999
+	endif
+endfunction
+function SyntasticFunc()
+	let g:syntastic_check_on_open=1
+endfunction
+function AddIndentFunc()
+	vnoremap < <gv
+	vnoremap > >gv
+endfunction
+function Snippet_func()
+	set runtimepath+=$VIM\snippets\after
+	set runtimepath+=$VIM\snippets
+	let g:snip_start_tag = "«"
+	let g:snip_end_tag = "»"
+	let g:snipMateAllowMatchingDot = 0
+endfunction
+function! Tab_Or_Complete()
+	if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+		return "\<C-N>"
+	else
+		return "\<Tab>"
+	endif
+endfunction
+function CommantT_func()
+	let g:CommandTMaxHeight = 15
+endfunction
+function EasyMotion_func()
+	let g:EasyMotion_leader_key = '<Leader>m' " default is <Leader>w
+	hi link EasyMotionTarget ErrorMsg
+	hi link EasyMotionShade  Comment
+endfunction
+function Layout_func()
+	set nowrap
+	set number
+	set showcmd 
+	set shiftwidth=4
+	set tabstop=4
+	" set	softtabstop=4
+	" set expandtab
+	" change tab into space
+	" set modeline
+	"set	tabstop=4
+	set	noeb ruler
+	set	backspace=indent,eol,start
+	set	history=60
+	set wildmenu
+	"colors peaksea
+	colors molokai
+	"colors darkblue
+	" let g:molokai_original = 1
+	" let g:rehash256 = 1
+	set t_Co=256          " 256 color mode
+	set cursorline        " highlight current line
+	set wrap              " 不自动换行
+	set ruler             " show the cursor position all the time
+	syntax on             " syntax highlight
+	set hlsearch          " search highlighting
+	set clipboard=unnamed " yank to the system register (*) by default
+	set showmatch         " Cursor shows matching ) and }
+	set showmode          " Show current mode
+	set wildchar=<TAB>    " start wild expansion in the command line using <TAB>
+	set incsearch         " incremental search . Show result before finished typing
+	set nobackup          " no *~ backup files
+	set noswapfile
+	set ignorecase        " ignore case when searching
+	set nowritebackup
+	set smartcase         " ignore case if search pattern is all lowercase,case-sensitive otherwise
+	set smarttab          " insert tabs on the start of a line according to context
+	" ignore these files while expanding wild chars
+	"language mes en
+	set wildignore=*.o,*.class,*.pyc
+	" set ai          " auto indent
+	set cindent
+	set noerrorbells
+	set visualbell
+	set t_vb=
+	set tm=500
+	set laststatus=2
+	filetype plugin on
+	" These are files we are not likely to want to edit or read.
+	set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
+	syntax on
+	filetype plugin indent on
+	set nocompatible
+	set go= "guioptions
+	set go+=m
+	" set guioptions-=m  "remove menu bar
+	" set guioptions-=T  "remove toolbar
+	" set guioptions-=r  "remove right-hand scroll bar
+	" set guioptions-=L  "remove left-hand scroll bar
+endfunction
+" fun! ViewUTF8()
+" 	set encoding         =utf-8
+" 	set termencoding     =big5
+" endfun
+" fun! UTF8()
+" 	set encoding         =utf-8
+" 	set termencoding     =big5
+" 	set fileencoding     =utf-8
+" 	set fileencodings    =ucs-bom,big5,utf-8,latin1
+" endfun
+" fun! Big5()
+" 	set encoding         =big5
+" 	set fileencoding     =big5
+" endfun
+function Encoding_func()
+	set encoding=big5
+	set termencoding=big5
+	set fileencoding=big5
+	set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1,euc-jp,utf-bom,iso8859-1
+endfunction
+function! Browser ()
+	let $PATH = $PATH . ';C:\Program Files (x86)\Google\Chrome\Application\'
+	let line0 = getline (".")
+	let line = matchstr (line0, "http[^ ]*")
+	:if line==""
+	let line = matchstr (line0, "ftp[^ ]*")
+	:endif
+	:if line==""
+	let line = matchstr (line0, "file[^ ]*")
+	:endif
+	let line = escape (line, "#?&;|%")
+	echo line
+	exec ':silent !chrome.exe '. "\"" . line . "\""
+endfunction
+function Autocmd_func()
+	set autoread		" auto read when file is changed from outside
+	autocmd! bufwritepost .vimrc source ~/.vimrc " auto reload vimrc when editing it
+	autocmd BufEnter * silent! lcd %:p:h
+	" autocmd BufEnter * set nowrap
+	"lcd : local cd
+	"% : the name of the current file
+	"%p : give its full path
+	"%:p:h : its dir
+endfunction
+function Map_func()
+	cmap cd. lcd %:p:h " :cd. change working directory to that of the current file
+	map ,,w :call Browser ()<CR>
+	nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
+	map <silent> <C-E> : browse confirm e<CR> " Open (ctrl+e)
+	" map <silent> <C-T> : browse tabnew<CR> " Open in new tab (ctrl+t)
+	map <silent> ,,t   : browse tabnew<CR> " Open in new tab (ctrl+t)
+	map <silent> <C-S> : wa<CR> " Save all files
+	map ,qn            : q!<CR>
+	nmap zz            : wq!<CR>
+	map ,qa            : qa!<CR>
+	map ,w             : wa!<ESC>
+	map <C-W><C-W>     : wqa<CR>
+	imap <C-S> <ESC>   : wa<CR> " Save all files
+	"imap <C-W> <ESC>  : wqa<CR> " Save all files and leave
+	map <leader>n      : cn<CR>
+	map <leader>p      : cp<CR>
+	map <leader>c      : copen<Cve all filesR>
+	" vmap ,==            : Tab/=
+endfunction
+function Fold_func()
+	"map <F7> <ESC>:set foldmethod=manual<CR>
+	"map <C-Q><C-S> <ESC>:set foldmethod=syntax<CR>
+	"map <C-Q><C-Q> va}zf<CR> " create one fold
+	set foldlevel=3 " Don't autofold anything (but I can still
+	set foldcolumn=4
+	map ,z  <ESC>:set foldmethod=syntax <CR> :set foldlevel=1<CR>
+endfunction
+function Path_assign_func()
+	set backupdir=$VIM\\BackUp
+	set dir=$VIM\\BackUp
+	" set backupdir=E:\\Temp
+	" set dir=E:\\Temp
+endfunction
+function Tab_func()
+	map <S-H> gT
+	map <S-L> gt
+	map ,<C-t> :tabnew<CR> " new tab
+	" map <C-t><C-w> :tabclose<CR> " close tab
+endfunction
+function Supertab_func()
+	let g:SuperTabMappingForward="<s-tab>"
+	let g:SuperTabMappingBackward="<tab>"
+	let g:SuperTabDefaultCompletionType = "context"
+	"let g:SuperTabContextDefaultCompletionType = "<c-x><c-p>"
+	"let g:SuperTabDefaultCompletionType = ‘<C-X><C-U>
+endfunction
+function Complete_func()
+	set completeopt=longest,menuone
+	set thesaurus+=$VIM\word\test.txt
+	set dictionary+=$VIM\word\wordsEn.txt
+	set complete +=w,s,k,.,b,t
+	" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+	" inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+	" inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+	" inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') . '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
+	" open user completion menu closing previous if open and opening new menu without changing the text
+endfunction 
+function Nerdtree_func ()
+	nmap	<leader>e	:NERDTreeToggle<CR>
+	let g:NERDTreeWinPos    = "right"
+	let NERDTreeHijackNetrw = 0
+	let g:NERDTreeDirArrows=0 "prevent bug in linux environment
+endfunction 
+function Ctrlp_func()
+	noremap  <C-W><C-U> : CtrlPMRU <CR>
+	" nnoremap  <C-W> u   : CtrlPMRU <CR>
+	let g:ctrlp_custom_ignore         = '\.git$\|\.hg$\|\.svn$ \|.rvm$'
+	let g:ctrlp_working_path_mode     = 0
+	let g:ctrlp_match_window_bottom   = 1
+	let g:ctrlp_max_height            = 15
+	let g:ctrlp_match_window_reversed = 0
+	let g:ctrlp_mruf_max              = 500
+	let g:ctrlp_follow_symlinks       = 1
+endfunction
+function View_init()
+	autocmd BufWinLeave *.* mkview
+	autocmd BufWinEnter *.* silent loadview 
+endfunction
+function DragCurrentLineFunc()
+	noremap  <A-j> :m+<CR>
+	noremap  <A-k> :m-2<CR>
+	inoremap <A-j> <Esc>:m+<CR>
+	inoremap <A-k> <Esc>:m-2<CR>
+	vnoremap <A-j> :m'>+<CR>gv
+endfunction
+function View_init_second()
+	set viewoptions-=options
+	augroup vimrc
+		autocmd BufWritePost *
+					\   if expand('%') != '' && &buftype !~ 'nofile'
+					\|      mkview
+					\|  endif
+		autocmd BufRead *
+					\   if expand('%') != '' && &buftype !~ 'nofile'
+					\|      silent loadview
+					\|  endif
+	augroup END
+endfunction
+function DiffFunc()
+	set diffexpr=
+	map <silent> <C-V><C-F> :browse vert diffsplit<CR> " find one file to compare
+endfunction
+let mapleader=','
+if exists(":Tabularize")
+	nmap <Leader>a= :Tabularize /=<CR>
+	vmap <Leader>a= :Tabularize /=<CR>
+	nmap <Leader>a: :Tabularize /:\zs<CR>
+	vmap <Leader>a: :Tabularize /:\zs<CR>
+	":Tab/:
+	":Tab/=
+endif
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+	let p = '^\s*|\s.*\s|\s*$'
+	if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+		let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+		let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+		Tabularize/|/l1
+		normal! 0
+		call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+	endif
+endfunction
+function CommandLineFunc()
+" cnoremap <C-j> <t_kd>
+" cnoremap <C-k> <t_ku>
+" cnoremap <C-a> <Home>
+" cnoremap <C-e> <End>
+cmap <C-a> <Home>
+cmap <C-e> <End>
+endfunction
+function AckFunc()
+	"map <C-G>viwy:vimgrep /\<"\>/ **/*.cs
+	nmap	<leader>g:noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
+	nnoremap <C-H>  :noautocmd vimgrep /<C-R>=expand("<cword>")<CR>/ *.*<CR>
+	nnoremap <C-G>  :Ack <C-R>=expand("<cword>")<CR>
+endfunction
+function! NumberToggle()
+	if(&relativenumber == 1)
+		set number
+	else
+		set relativenumber
+	endif
+endfunc
+function ShowLineFunc()
+	" nnoremap <C-n> :call NumberToggle()<cr>
+	au FocusLost * :set number
+	au FocusGained * :set relativenumber
+endfunction
+function TagbarFunc()
+	nmap <F7> <Esc>:!ctags -R *<CR>
+	let g:tagbar_left      = 1
+	let Tlist_Ctags_Cmd    = $VIM . '\vim74\ctags.exe'
+	let g:tagbar_autofocus = 1
+	nmap	,t	:Tlist<CR>
+endfunction
+function LayoutFunc()
+	set guifont=Monaco:h10 
+	"set guifontwide=MingLiU
+	set gfw=Microsoft_Yahei_Mono:h10:cGB2312
+	"set guifontwide=Yahei_Mono:h10
+	"set guifont = Bitstream_Vera_Sans_Mono : h9 : cANSI 
+	"set gfw =Yahei_Mono:h10:cGB2312
+	"set guifontwide=YaHei_UI
+	"set guifontwide=YaHei\ Mono
+	"set guifontwide=新細明體
+	"set guifontwide=Microsoft\ Yahei\ UI\ 
+	:winpos 0 0
+	set lines=999 columns=999
+endfunction
+"=====================================================
+"字數計算 Civa 版：計算 CJKV 文字 + CJKV 標點 + 英文字 字數
+"   作者：Civa Lin 林雪凡 - Version: 1.0
+"
+"   目標是和 word 類軟體算得一樣準！歡迎提交 patch！
+"
+"   CJKV 文字與標點，每個字符單獨算一個字。其他字符則每個 word 算一個字。
+"   以下內容沒有計算在內：
+"       - 英文半形標點不算在字數之內。
+"       - 空白不算字數，注意全形空白「　」\u3000 也不算。
+"       - 少數特殊標點符號：如「…」\u2026 與「—」\u2014 等極少數符號，
+"         因為和英文標點放在同區中，故也未算在中文標點之內，有需要可自行添加。
+"       - 「中日韓統一表意文字擴充區」中的罕用字沒有算在內，因為搜尋字串會
+"         太長 Vim 不執行 (至少 7.3 是如此)……囧rz
+"
+"   參考資料見：
+"       - 基本說明:  http://chukaml.tripod.com/linguistics/han/index.html
+"       - 碼表:      http://chukaml.tripod.com/linguistics/unicode/index.html
+"       - 字符說明:
+"         http://chukaml.tripod.com/linguistics/unicode/codeChart/index.html
+"
+"   其他銘謝：
+"       - 早期框架來源：  http://kenshin54.iteye.com/blog/876203
+function! CalWordCount()
+    "以下模式中各段落……
+    "\<\w*\> 為英文字
+    let l:cmd = []
+    "頭部
+    let l:cmd = add(l:cmd, '%s/')
+    let l:cmd = add(l:cmd, '\(')
+    "單純字元比對
+    let l:cmd = add(l:cmd, '[')
+    "3000 ~ 303f = 「中日韓符號和標點」
+    let l:cmd = add(l:cmd, '\u3001-\u303f') "\u3000為全形空白
+    "3040 ~ 309f = 「日文假名」
+    let l:cmd = add(l:cmd, '\u3040-\u309f') "平假名
+    let l:cmd = add(l:cmd, '\u30a0-\u30ff') "片假名
+    "3100 ~ 312f = 「注音符號」，31A0 ~ 31BF = 「注音符號擴充」
+    let l:cmd = add(l:cmd, '\u3100-\u312f')
+    let l:cmd = add(l:cmd, '\u31a0-\u31bf')
+    "4e00 ~ 9fff = 「中日韓統一表意文字」
+    let l:cmd = add(l:cmd, '\u4e00-\u4eff\u4f00-\u4fff\u5000-\u50ff\u5100-\u51ff\u5200-\u52ff\u5300-\u53ff\u5400-\u54ff\u5500-\u55ff\u5600-\u56ff\u5700-\u57ff\u5800-\u58ff\u5900-\u59ff\u5a00-\u5aff\u5b00-\u5bff\u5c00-\u5cff\u5d00-\u5dff\u5e00-\u5eff\u5f00-\u5fff\u6000-\u60ff\u6100-\u61ff\u6200-\u62ff\u6300-\u63ff\u6400-\u64ff\u6500-\u65ff\u6600-\u66ff\u6700-\u67ff\u6800-\u68ff\u6900-\u69ff\u6a00-\u6aff\u6b00-\u6bff\u6c00-\u6cff\u6d00-\u6dff\u6e00-\u6eff\u6f00-\u6fff\u7000-\u70ff\u7100-\u71ff\u7200-\u72ff\u7300-\u73ff\u7400-\u74ff\u7500-\u75ff\u7600-\u76ff\u7700-\u77ff\u7800-\u78ff\u7900-\u79ff\u7a00-\u7aff\u7b00-\u7bff\u7c00-\u7cff\u7d00-\u7dff\u7e00-\u7eff\u7f00-\u7fff\u8000-\u80ff\u8100-\u81ff\u8200-\u82ff\u8300-\u83ff\u8400-\u84ff\u8500-\u85ff\u8600-\u86ff\u8700-\u87ff\u8800-\u88ff\u8900-\u89ff\u8a00-\u8aff\u8b00-\u8bff\u8c00-\u8cff\u8d00-\u8dff\u8e00-\u8eff\u8f00-\u8fff\u9000-\u90ff\u9100-\u91ff\u9200-\u92ff\u9300-\u93ff\u9400-\u94ff\u9500-\u95ff\u9600-\u96ff\u9700-\u97ff\u9800-\u98ff\u9900-\u99ff\u9a00-\u9aff\u9b00-\u9bff\u9c00-\u9cff\u9d00-\u9dff\u9e00-\u9eff\u9f00-\u9fff')
+    "fe10 ~ fe1f = 「豎式標點」
+    let l:cmd = add(l:cmd, '\ufe10-\ufe1f')
+    "FF00 ~ FFEF = 「全形與半形字符」
+    let l:cmd = add(l:cmd, '\uff00-\uffef')
+    let l:cmd = add(l:cmd, ']')
+    "單純字元比對結束
+    " 英文字 (word) 匹配
+    let l:cmd = add(l:cmd, '\|')
+    let l:cmd = add(l:cmd, '\<\w*\>')
+    "尾部
+    let l:cmd = add(l:cmd, '\)')
+    let l:cmd = add(l:cmd, '/&/gn')
+
+    exe join(l:cmd, '')
+
+"命令模式下 c 調用，因為速度很慢，要選個不容易誤觸的
+map c :call CalWordCount()
+endfunction
+function Complete_test_func()
+	let g:neocomplcache_enable_at_startup = 1
+endfunction
+function BinaryViewFunc()
+	nmap ,b  :%! xxd
+	nmap ,br :%! xxd -r
+endfunction
+function! DeleteEmptyLines(type)
+	if a:type == 'line'
+		silent execute ".,'\"g/^$/d"
+	endif
+endfunction
+call BinaryViewFunc()
+call TagbarFunc()
+call DiffFunc()
+call FontSizeSetting_func()
+"call Pathogen_func()
+call Autocmd_func()
+call Fold_func()
+call Path_assign_func()
+call Tab_func()
+" call Supertab_func()
+call Complete_func()
+call Nerdtree_func()
+call View_init_second()
+call Complete_test_func()
+" call Bundle_func()
+" call Vimwiki_func()
+" call CommantT_func()
+" call Snippet_func()
+" call CompleteFunc()
+" call ShowLineFunc()
+call Encoding_func()
+call CommandLineFunc()
+call Layout_func()
+call EasyMotion_func()
+call Win_short_cut_func()
+call Map_func()
+call Ctrlp_func()
+call AckFunc()
+call LayoutFunc()
+call DragCurrentLineFunc()
+call AddIndentFunc()
+set textwidth=300 
+nnoremap <silent> ,d :set operatorfunc=DeleteEmptyLines<CR>m"g@
+map <leader>c :call CalWordCount()<cr>
+nmap <Leader>db :g/^$/d<CR>
+imap ]] <ESC>:w<CR>
+nmap ]] <ESC>:w<CR>
+" imap <tab> <c-n>
+imap ,, <c-n>
+autocmd BufEnter *.* set nowrap
+set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
