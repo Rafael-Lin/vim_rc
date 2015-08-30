@@ -96,7 +96,7 @@ function! NeoCompleteFunction()
     " https://github.com/c9s/perlomni.vim
     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
     let g:neocomplete#enable_at_startup = 1 
-    let g:neocomplcache_tags_caching_limit_file_size = 5 
+    let g:neocomplcache_tags_caching_limit_file_size = 50000 
 endfunction
 function! ToggleVerbose()
     if !&verbose
@@ -134,18 +134,15 @@ function! Vundle_func()
     call vundle#begin('D:\\Vim74\\complete-x64\\vimfiles\\bundle\')
 
     " let Vundle manage Vundle, required
-    "Plugin 'file:///D:/Vim74/complete-x64/vimfiles/bundle/nerdtree'
-    "Plugin 'file:///D:/Vim74/complete-x64/vimfiles/bundle/vimcommander'
     "Plugin 'Valloric/YouCompleteMe'
     "Plugin 'Tagbar'
-    "Plugin 'Powerline'
-    "Plugin 'molokai'
-    " plugin from http://vim-scripts.org/vim/scripts.html
-    "Plugin 'L9'
-    "Plugin 'VisIncr'
     "Plugin 'SirVer/ultisnips'
     "Plugin 'honza/vim-snippets'
-    Plugin 'ack.vim'
+    "Plugin 'mattn/emmet-vim'
+    "Plugin 'pangloss/vim-javascript'
+    "Plugin 'othree/html5.vim'
+    "
+    " Plugin 'ack.vim'
     Plugin 'commentary.vim'
     Plugin 'kien/ctrlp.vim'
     Plugin 'matchit.zip'
@@ -153,7 +150,7 @@ function! Vundle_func()
     Plugin 'Shougo/neocomplete.vim'
     Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/molokai'
     Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/nerdtree'
-    Plugin 'SuperTab'
+    " Plugin 'SuperTab'
     Plugin 'surround.vim'
     Plugin 'Tabular'
     Plugin 'EasyMotion'
@@ -161,22 +158,8 @@ function! Vundle_func()
     Plugin 'taglist.vim'
     Plugin 'bling/vim-airline'
     Plugin 'altercation/solarized'
-    " The following are examples of different formats supported.
-    " Keep Plugin commands between vundle#begin/end.
-    " plugin on GitHub repo
     Plugin 'tpope/vim-fugitive'
-    Plugin 'mattn/emmet-vim'
-    Plugin 'pangloss/vim-javascript'
-    Plugin 'othree/html5.vim'
-    " Git plugin not hosted on GitHub
-    "Plugin 'git://git.wincent.com/command-t.git'
-    " git repos on your local machine (i.e. when working on your own plugin)
-    "Plugin 'file:///home/gmarik/path/to/plugin'
-    " The sparkup vim script is in a subdirectory of this repo called vim.
-    " Pass the path to set the runtimepath properly.
-    "Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-    " Avoid a name conflict with L9
-    "Plugin 'user/L9', {'name': 'newL9'}
+    Plugin 'majutsushi/tagbar'
 
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -217,12 +200,15 @@ function! Tab_Or_Complete()
 endfunction
 function! Layout_func()
     "set nowrap
+    " set	softtabstop=4
+    " set modeline
+    " let g:molokai_original = 1
+    " let g:rehash256 = 1
+    "set wrap             "
     set number
     set	showcmd 
     set	shiftwidth=4
-    " set	softtabstop=4
     set expandtab " change tab into space
-    " set modeline
     set	tabstop=4
     set	noeb ruler
     set	backspace=indent,eol,start
@@ -234,11 +220,8 @@ function! Layout_func()
         colorscheme desert
     endif
 
-    " let g:molokai_original = 1
-    " let g:rehash256 = 1
     set t_Co=256          " 256 color mode
     set cursorline        " highlight current line
-    "set wrap              " 不自动换行
     set ruler             " show the cursor position all the time
     syntax on             " syntax highlight
     set hlsearch          " search highlighting
@@ -256,8 +239,8 @@ function! Layout_func()
     " ignore these files while expanding wild chars
     language mes en
     set wildignore=*.o,*.class
-    " set ai          " auto indent
     set cindent
+    " set ai          " auto indent
     "set smartindent
     " disable sound on errors
     set noerrorbells
@@ -298,8 +281,8 @@ function! Autocmd_func()
     autocmd BufEnter * silent! lcd %:p:h
     " autocmd BufEnter * set nowrap
     "lcd : local cd
-    "% : the name of the current file
-    "%p : give its full path
+    "%   : the name of the current file
+    "%p  : give its full path
     "%:p:h : its dir
 endfunction
 function! s:align()
@@ -314,24 +297,25 @@ function! s:align()
 endfunction
 function! Map_func()
     cmap cd. lcd %:p:h " :cd. change working directory to that of the current file
-    map ,,w :call Browser ()<CR>
+    map qqw :call Browser ()<CR>
     nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
     "Open in new tab (ctrl+t)
     map <silent> <C-E>  : browse tabnew<CR> 
     "map <silent> <C-E>  : browse edit<CR> 
+
     "Open one new empty tab
-    "map <C-t> :tabnew<CR>
     map qq<c-t> : tabnew<CR>
     map qq<c-w> : tabclose<CR>
     map qqG gg=G<CR>
+
     " Save all files
     map <silent> <C-S> : wa<CR> 
     imap <C-S> <ESC>   : wa<CR>
+
     "Close one tab
     map <C-q> :q!<CR>
-    "Close one tab and save
-    nmap zz            : wq!<CR>
+
     "Close all tabs
     map ,qa            : qa!<CR>
     "quick fix moving
@@ -340,6 +324,7 @@ function! Map_func()
     "move back and forward around tabs
     map <S-H> gT
     map <S-L> gt
+
     nnoremap <silent> ,d :set operatorfunc=DeleteEmptyLines<CR>m"g@
     map <leader>c :call CalWordCount()<cr>
     nmap <Leader>db :g/^$/d<CR>
@@ -378,14 +363,9 @@ function! Complete_func()
     set thesaurus+=$VIM\word\test.txt
     set dictionary+=$VIM\word\wordsEn.txt
     set complete +=w,s,k,.,b,t
-    " inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-    " inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-    " inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-    " inoremap <expr> <S-Space> (pumvisible() ? (col('.') > 1 ? '<Esc>i<Right>' : '<Esc>i') : '') . '<C-x><C-u><C-r>=pumvisible() ? "\<lt>C-n>\<lt>C-p>\<lt>Down>" : ""<CR>'
-    " open user completion menu closing previous if open and opening new menu without changing the text
 endfunction! 
 function! Nerdtree_func ()
-    nmap	<leader>e	:NERDTreeToggle<CR>
+    nmap <leader>e	:NERDTreeToggle<CR>
     let g:NERDTreeWinPos    = "right"
     let NERDTreeHijackNetrw = 0
 endfunction! 
@@ -429,14 +409,20 @@ function! DiffFunc()
     map <silent> <C-V><C-F> :browse vert diffsplit<CR> " find one file to compare
 endfunction
 function! TabularFunc()
-    if exists(":Tabularize")
-        nmap <Leader>a= :Tabularize /=<CR>
-        vmap <Leader>a= :Tabularize /=<CR>
-        nmap <Leader>a: :Tabularize /:\zs<CR>
-        vmap <Leader>a: :Tabularize /:\zs<CR>
-        ":Tab/:
-        ":Tab/=
-    endif
+     nmap <Leader>a& :Tabularize /&<CR>
+     vmap <Leader>a& :Tabularize /&<CR>
+     nmap <Leader>a= :Tabularize /=<CR>
+     vmap <Leader>a= :Tabularize /=<CR>
+     nmap <Leader>a: :Tabularize /:<CR>
+     vmap <Leader>a: :Tabularize /:<CR>
+     nmap <Leader>a:: :Tabularize /:\zs<CR>
+     vmap <Leader>a:: :Tabularize /:\zs<CR>
+     nmap <Leader>a, :Tabularize /,<CR>
+     vmap <Leader>a, :Tabularize /,<CR>
+     nmap <Leader>a,, :Tabularize /,\zs<CR>
+     vmap <Leader>a,, :Tabularize /,\zs<CR>
+     nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
+     vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 endfunction
 function! CommandLineFunc()
     " cnoremap <C-j> <t_kd>
@@ -447,7 +433,6 @@ function! CommandLineFunc()
     cmap <C-e> <End>
 endfunction
 function! AckFunc()
-    let $solution_source_path = 'D:\Code\DesignStudioNG\Source\**\*.cs'
     nmap	<leader>g:noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
     nnoremap <C-H>  :noautocmd vimgrep /<C-R>=expand("<cword>")<CR>/ $solution_source_path<CR>:copen
     " nnoremap <C-G>  :Ack <C-R>=expand("<cword>")<CR> 'D:\Code\DesignStudioNG\Source\' --type=csharp --type=cc --type=sql --type=vb
@@ -464,7 +449,6 @@ function! TagbarFunc()
     nmap <F8> :TagbarToggle<CR>
     let g:tagbar_left      = 1
     "set tags=..\..\tags,..\..\..\tags,.\tags
-    set tags=D:\Code\DesignStudioNG\Source\tags
     let Tlist_Ctags_Cmd    = $VIM . '\vim74\ctags.exe'
     let g:tagbar_autofocus = 1
     nmap	,t	:Tlist<CR>
@@ -533,21 +517,12 @@ function! AccentDemo()
     " for k in keys
     "   call airline#parts#define_text(k, k)
     " endfor
-    " call airline#parts#define_accent('a', 'red')
-    " call airline#parts#define_accent('b', 'green')
-    " call airline#parts#define_accent('c', 'blue')
-    " call airline#parts#define_accent('d', 'yellow')
-    " call airline#parts#define_accent('e', 'orange')
-    " call airline#parts#define_accent('f', 'purple')
-    " call airline#parts#define_accent('g', 'bold')
-    " call airline#parts#define_accent('h', 'italic')
-    "let g:airline_section_a = 'GreatPeiKuan'
     let g:airline_section_a = 'Be the Man'
 endfunction
 function! NetrwFunc()
     let g:netrw_liststyle=3
     let g:netrw_preview = 1 " use p to preview the file content
-    nmap	<leader>e	:Explore .<CR>
+    nmap	qqe :Explore .<CR>
     " <cr>       Netrw will enter the directory or read the file 
     " <del>      Netrw will attempt to remove the file/directory                                                                
     " D        Attempt to remove the file(s)/directory(ies)                            
@@ -574,11 +549,12 @@ function! UltisnipsFunc()
     " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
 endfunction
+
 " execute functions
-call Vundle_func()
 " call UltisnipsFunc()
-call NeoCompleteFunction() 
 " call ToggleVerbose()
+call Vundle_func()
+call NeoCompleteFunction() 
 call Airline_func()
 call BinaryViewFunc()
 call TagbarFunc()
@@ -587,7 +563,7 @@ call FontSizeSetting_func()
 call Autocmd_func()
 call Fold_func()
 call Path_assign_func()
-"call Supertab_func()
+" call Supertab_func()
 call Complete_func()
 call Nerdtree_func()
 call View_init_second()
@@ -603,19 +579,9 @@ call LayoutFunc()
 call GundoFunc()
 call DragCurrentLineFunc()
 "call AddIndentFunc()
-" call NetrwFunc()
+call NetrwFunc()
 set textwidth=300 
 autocmd BufEnter *.* set nowrap
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
-
-"tabo : close all tabs except the current one
-"
 autocmd VimEnter * call AccentDemo()
-" noremap <silent> <F11> :cal VimCommanderToggle()<CR>
-set viminfo+=%
-" Try:
-" :vert sb N
-" which will open a left vertical split (by default, unless you have modified some options).
-" To open a split to the right, on the other hand:
-" :vert belowright sb N
