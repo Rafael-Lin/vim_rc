@@ -1,6 +1,6 @@
 " Variable
 let mapleader=','
-function! NeoCompleteFunction()
+function! NeoCompleteFunction() "{
     "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
     " Disable AutoComplPop.
     let g:acp_enableAtStartup = 0
@@ -43,11 +43,11 @@ function! NeoCompleteFunction()
     " Recommended key-mappings.
     " <CR>: close popup and save indent.
     inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    function! s:my_cr_function()
+    function! s:my_cr_function() "{
         return neocomplete#close_popup() . "\<CR>"
         " For no inserting <CR> key.
         "return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-    endfunction
+    endfunction "}
     " <TAB>: completion.
     inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
     " <C-h>, <BS>: close popup and delete backword char.
@@ -97,8 +97,9 @@ function! NeoCompleteFunction()
     let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
     let g:neocomplete#enable_at_startup = 1 
     let g:neocomplcache_tags_caching_limit_file_size = 50000 
-endfunction
-function! ToggleVerbose()
+endfunction "}
+
+function! ToggleVerbose() "{
     if !&verbose
         set verbosefile=d:\verbose.log
         set verbose=15
@@ -106,24 +107,35 @@ function! ToggleVerbose()
         set verbose=0
         set verbosefile=
     endif
-endfunction
-function! FontSizeSetting_func()
-    map <F2>  :call SetFMDIndent() <ESC>:set foldlevel=0<CR>
-    map <F3>  :call SetFMDIndent() <ESC>:set foldlevel=1<CR>
-    map <F4>  :call SetFMDIndent() <ESC>:set foldlevel=2<CR>
-    map <F5>  :call SetFMDIndent() <ESC>:set foldlevel=3<CR>
-    map <F6>  :call SetFMDIndent() <ESC>:set foldlevel=4<CR>
+endfunction "}
+function! FontSizeSetting_func() "{
+    " map <F2>  :call SetFMDIndent() <ESC>:set foldlevel=0<CR>
+    " map <F3>  :call SetFMDIndent() <ESC>:set foldlevel=1<CR>
+    " map <F4>  :call SetFMDIndent() <ESC>:set foldlevel=2<CR>
+    " map <F5>  :call SetFMDIndent() <ESC>:set foldlevel=3<CR>
+    " map <F6>  :call SetFMDIndent() <ESC>:set foldlevel=4<CR>
+
+    nmap <leader>f0 :set foldlevel=0<CR>
+    nmap <leader>f1 :set foldlevel=1<CR>
+    nmap <leader>f2 :set foldlevel=2<CR>
+    nmap <leader>f3 :set foldlevel=3<CR>
+    nmap <leader>f4 :set foldlevel=4<CR>
+    nmap <leader>f5 :set foldlevel=5<CR>
+    nmap <leader>f6 :set foldlevel=6<CR>
+    nmap <leader>f7 :set foldlevel=7<CR>
+    nmap <leader>f8 :set foldlevel=8<CR>
+    nmap <leader>f9 :set foldlevel=9<CR>
 
     map <F9>  <ESC>:set guifont=Monaco:h10<ESC>:winpos 0 0<CR>:set lines=100 columns=100<CR>:set nowrap<CR>
     map <F10> <ESC>:set guifont=Monaco:h12<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
     map <F11> <ESC>:set guifont=Monaco:h16<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
     map <F12> <ESC>:set guifont=Monaco:h24<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
-endfunction
-function! SetChineseFont_func()
+endfunction "}
+function! SetChineseFont_func() "{
     return 
     set gfw=Microsoft_Yahei_Mono:h24:cGB2312<CR>
-endfunction
-function! Vundle_func()
+endfunction "}
+function! Vundle_func() "{
     set nocompatible              " be iMproved, required
     filetype off                  " required
 
@@ -135,7 +147,6 @@ function! Vundle_func()
 
     " let Vundle manage Vundle, required
     "Plugin 'Valloric/YouCompleteMe'
-    "Plugin 'Tagbar'
     "Plugin 'SirVer/ultisnips'
     "Plugin 'honza/vim-snippets'
     "Plugin 'mattn/emmet-vim'
@@ -143,6 +154,7 @@ function! Vundle_func()
     "Plugin 'othree/html5.vim'
     "
     " Plugin 'ack.vim'
+    Plugin 'vim-scripts/TaskList.vim'
     Plugin 'commentary.vim'
     Plugin 'kien/ctrlp.vim'
     Plugin 'matchit.zip'
@@ -159,7 +171,8 @@ function! Vundle_func()
     Plugin 'bling/vim-airline'
     Plugin 'altercation/solarized'
     Plugin 'tpope/vim-fugitive'
-    Plugin 'majutsushi/tagbar'
+    "Plugin 'majutsushi/tagbar'
+    Plugin 'Solarized'
 
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -175,8 +188,8 @@ function! Vundle_func()
     "
     " see :h vundle for more details or wiki for FAQ
     " Put your non-Plugin stuff after this line
-endfunction
-function! Win_short_cut_func()
+endfunction "}
+function! Win_short_cut_func() "{
     if has('win32')
         nmap ,cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR> 
         "filename
@@ -186,19 +199,19 @@ function! Win_short_cut_func()
         "open file folder
         map  ,ci :!start explorer %:p:h:gs?\/?\\\\\\?<CR>
     endif
-endfunction
-function! AddIndentFunc()
-    vnoremap << gv
-    vnoremap >> gv
-endfunction
-function! Tab_Or_Complete()
+endfunction "}
+function! AddIndentFunc() "{
+    vnoremap < <gv
+    vnoremap > >gv
+endfunction "}
+function! Tab_Or_Complete() "{
     if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
         return "\<C-N>"
     else
         return "\<Tab>"
     endif
-endfunction
-function! Layout_func()
+endfunction "}
+function! Layout_func() "{
     "set nowrap
     " set	softtabstop=4
     " set modeline
@@ -215,7 +228,7 @@ function! Layout_func()
     set	history=60
     set wildmenu
     if has('gui_running')
-        colors molokai
+        colors solarized 
     else
         colorscheme desert
     endif
@@ -226,7 +239,7 @@ function! Layout_func()
     syntax on             " syntax highlight
     set hlsearch          " search highlighting
     set clipboard=unnamed " yank to the system register (*) by default
-    set showmatch         " Cursor shows matching ) and }
+    set showmatch         " Cursor shows matching ) and 
     set showmode          " Show current mode
     set wildchar=<TAB>    " start wild expansion in the command line using <TAB>
     set incsearch         " incremental search . Show result before finished typing
@@ -260,8 +273,8 @@ function! Layout_func()
     " set guioptions-=T  "remove toolbar
     " set guioptions-=r  "remove right-hand scroll bar
     " set guioptions-=L  "remove left-hand scroll bar
-endfunction
-function! Browser ()
+endfunction "}
+function! Browser() "{
     let $PATH = $PATH . ';C:\Program Files (x86)\Google\Chrome\Application\'
     let line0 = getline (".")
     let line = matchstr (line0, "http[^ ]*")
@@ -274,30 +287,20 @@ function! Browser ()
     let line = escape (line, "#?&;|%")
     echo line
     exec ':silent !chrome.exe '. "\"" . line . "\""
-endfunction
-function! Autocmd_func()
+endfunction "}
+function! Autocmd_func() "{
     set autoread		" auto read when file is changed from outside
-    autocmd! bufwritepost .vimrc source ~/.vimrc " auto reload vimrc when editing it
+    " autocmd! bufwritepost .vimrc source ~/.vimrc " auto reload vimrc when editing it
     autocmd BufEnter * silent! lcd %:p:h
     " autocmd BufEnter * set nowrap
     "lcd : local cd
     "%   : the name of the current file
     "%p  : give its full path
     "%:p:h : its dir
-endfunction
-function! s:align()
-    let p = '^\s*|\s.*\s|\s*$'
-    if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-        let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-        let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-        Tabularize/|/l1
-        normal! 0
-        call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-    endif
-endfunction
-function! Map_func()
+endfunction "}
+function! Map_func() "{
     cmap cd. lcd %:p:h " :cd. change working directory to that of the current file
-    map qqw :call Browser ()<CR>
+    map <leader>w :call Browser ()<CR>
     nnoremap ,cd :cd %:p:h<CR>:pwd<CR>
 
     "Open in new tab (ctrl+t)
@@ -305,9 +308,9 @@ function! Map_func()
     "map <silent> <C-E>  : browse edit<CR> 
 
     "Open one new empty tab
-    map qq<c-t> : tabnew<CR>
-    map qq<c-w> : tabclose<CR>
-    map qqG gg=G<CR>
+    map <leader><c-t> : tabnew<CR>
+    map <leader><c-w> : tabclose<CR>
+    map <leader>G gg=G<CR>
 
     " Save all files
     map <silent> <C-S> : wa<CR> 
@@ -328,9 +331,12 @@ function! Map_func()
     nnoremap <silent> ,d :set operatorfunc=DeleteEmptyLines<CR>m"g@
     map <leader>c :call CalWordCount()<cr>
     nmap <Leader>db :g/^$/d<CR>
-    imap ]] <ESC>:w<CR>
-    nmap ]] <ESC>:w<CR>
-    inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+    imap ]] <ESC><CR>
+    nmap ]] <ESC><CR>
+    " inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+    map <leader>z V%zf
+    map <leader>d I(Done). <ESC>
+    map <leader>og I(On-going). <ESC>
 
     " CTRL-A is Select all
     " noremap qq<C-A> gggH<C-O>G
@@ -339,37 +345,40 @@ function! Map_func()
     " onoremap qq<C-A> <C-C>gggH<C-O>G
     " snoremap qq<C-A> <C-C>gggH<C-O>G
     " xnoremap qq<C-A> <C-C>ggVG
-endfunction
-function! SetFMDIndent()
-    :set foldmethod=indent
-endfunction
-function! Fold_func()
-    set foldlevel=3 "Default level number
+endfunction "}
+function! SetFMDIndent() "{
+    set foldmethod=marker
+    set foldmarker={,}
+endfunction "}
+function! Fold_func() "{
+    set foldmethod=marker
+    set foldmarker={,}
+    set foldlevel=0 "Default level number
     set foldcolumn=2 "Default column number
-endfunction
-function! Path_assign_func()
+endfunction "}
+function! Path_assign_func() "{
     set backupdir=$VIM\\BackUp
     set dir=$VIM\\BackUp
-endfunction
-function! Supertab_func()
+endfunction "}
+function! Supertab_func() "{
     let g:SuperTabMappingForward="<s-tab>"
     let g:SuperTabMappingBackward="<tab>"
     let g:SuperTabDefaultCompletionType = "context"
     "let g:SuperTabContextDefaultCompletionType = "<c-x><c-p>"
     "let g:SuperTabDefaultCompletionType = ‘<C-X><C-U>
-endfunction
-function! Complete_func()
+endfunction "}
+function! Complete_func() "{
     set completeopt=longest,menuone
     set thesaurus+=$VIM\word\test.txt
     set dictionary+=$VIM\word\wordsEn.txt
     set complete +=w,s,k,.,b,t
-endfunction! 
-function! Nerdtree_func ()
+endfunction   "}
+function! Nerdtree_func () "{
     nmap <leader>e	:NERDTreeToggle<CR>
     let g:NERDTreeWinPos    = "right"
     let NERDTreeHijackNetrw = 0
-endfunction! 
-function! Ctrlp_func()
+endfunction   "}
+function! Ctrlp_func() "{
     noremap  <C-W><C-U> : CtrlPMRU <CR>
     " nnoremap  <C-W> u   : CtrlPMRU <CR>
     let g:ctrlp_custom_ignore         = '\.git$\|\.hg$\|\.svn$ \|.rvm$'
@@ -379,19 +388,19 @@ function! Ctrlp_func()
     let g:ctrlp_match_window_reversed = 0
     let g:ctrlp_mruf_max              = 500
     let g:ctrlp_follow_symlinks       = 1
-endfunction
-function! View_init()
+endfunction "}
+function! View_init() "{
     autocmd BufWinLeave *.* mkview
     autocmd BufWinEnter *.* silent loadview 
-endfunction
-function! DragCurrentLineFunc()
+endfunction "}
+function! DragCurrentLineFunc() "{
     noremap  <A-j> :m+<CR>
     noremap  <A-k> :m-2<CR>
     inoremap <A-j> <Esc>:m+<CR>
     inoremap <A-k> <Esc>:m-2<CR>
     vnoremap <A-j> :m'>+<CR>gv
-endfunction
-function! View_init_second()
+endfunction "}
+function! View_init_second() "{
     set viewoptions-=options
     augroup vimrc
         autocmd BufWritePost *
@@ -403,12 +412,13 @@ function! View_init_second()
                     \|      silent loadview
                     \|  endif
     augroup END
-endfunction
-function! DiffFunc()
+endfunction "}
+function! DiffFunc() "{
     set diffexpr=
-    map <silent> <C-V><C-F> :browse vert diffsplit<CR> " find one file to compare
-endfunction
-function! TabularFunc()
+    map <silent> <C-V><C-F> :browse vert diffsplit<CR> 
+    " find one file to compare
+endfunction "}
+function! TabularFunc() "{
      nmap <Leader>a& :Tabularize /&<CR>
      vmap <Leader>a& :Tabularize /&<CR>
      nmap <Leader>a= :Tabularize /=<CR>
@@ -423,42 +433,44 @@ function! TabularFunc()
      vmap <Leader>a,, :Tabularize /,\zs<CR>
      nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
      vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-endfunction
-function! CommandLineFunc()
+endfunction "}
+function! CommandLineFunc() "{
     " cnoremap <C-j> <t_kd>
     " cnoremap <C-k> <t_ku>
     " cnoremap <C-a> <Home>
     " cnoremap <C-e> <End>
     cmap <C-a> <Home>
     cmap <C-e> <End>
-endfunction
-function! AckFunc()
+endfunction "}
+function! AckFunc() "{
     nmap	<leader>g:noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
     nnoremap <C-H>  :noautocmd vimgrep /<C-R>=expand("<cword>")<CR>/ $solution_source_path<CR>:copen
     " nnoremap <C-G>  :Ack <C-R>=expand("<cword>")<CR> 'D:\Code\DesignStudioNG\Source\' --type=csharp --type=cc --type=sql --type=vb
-endfunction
-function! NumberToggle()
+endfunction "}
+function! NumberToggle()  "{
     if(&relativenumber == 1)
         set number
     else
         set relativenumber
     endif
-endfunc
-function! TagbarFunc()
+endfunc "}
+function! TagbarFunc() "{
     nmap <F7> <Esc>:!ctags -R *<CR>
     nmap <F8> :TagbarToggle<CR>
     let g:tagbar_left      = 1
     "set tags=..\..\tags,..\..\..\tags,.\tags
     let Tlist_Ctags_Cmd    = $VIM . '\vim74\ctags.exe'
     let g:tagbar_autofocus = 1
-    nmap	,t	:Tlist<CR>
-endfunction
-function! LayoutFunc()
+    nmap	,ti :Tlist<CR>
+endfunction "}
+function! LayoutFunc() "{
     set guifont=Monaco:h10 
+    set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
+    set splitright                  " Puts new vsplit windows to the right of the current
     :winpos 0 0
     set lines=999 columns=999
-endfunction
-function! CalWordCount()
+endfunction "}
+function! CalWordCount() "{
     let l:cmd = []
     let l:cmd = add(l:cmd, '%s/')
     let l:cmd = add(l:cmd, '\(')
@@ -478,20 +490,20 @@ function! CalWordCount()
     let l:cmd = add(l:cmd, '/&/gn')
     exe join(l:cmd, '')
     map c :call CalWordCount()
-endfunction
-function! Complete_test_func()
+endfunction "}
+function! Complete_test_func() "{
     let g:neocomplcache_enable_at_startup = 1
-endfunction
-function! BinaryViewFunc()
+endfunction "}
+function! BinaryViewFunc() "{
     nmap ,b  :%! xxd
     nmap ,br :%! xxd -r
-endfunction
-function! DeleteEmptyLines(type)
+endfunction "}
+function! DeleteEmptyLines(type) "{
     if a:type == 'line'
         silent execute ".,'\"g/^$/d"
     endif
-endfunction
-function! Airline_func()
+endfunction "}
+function! Airline_func() "{
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#left_sep = ' '
     let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -511,18 +523,21 @@ function! Airline_func()
 
     "let g:airline#extensions#tagbar#enabled = 1
     " let g:airline#extensions#tagbar#flags = ''
-endfunction
-function! AccentDemo()
+endfunction "}
+function! AccentDemo() "{
     " let keys = ['a','b','c','d','e','f','g','h']
     " for k in keys
     "   call airline#parts#define_text(k, k)
     " endfor
     let g:airline_section_a = 'Be the Man'
-endfunction
-function! NetrwFunc()
+endfunction "}
+function! TaskList() "{
+    map <leader>tl <Plug>TaskList
+endfunction "}
+function! NetrwFunc() "{
     let g:netrw_liststyle=3
     let g:netrw_preview = 1 " use p to preview the file content
-    nmap	qqe :Explore .<CR>
+    nmap	<leader>ex :Explore .<CR>
     " <cr>       Netrw will enter the directory or read the file 
     " <del>      Netrw will attempt to remove the file/directory                                                                
     " D        Attempt to remove the file(s)/directory(ies)                            
@@ -536,11 +551,11 @@ function! NetrwFunc()
     " v        Enter the file/directory under the cursor in a new browser window.  A vertical split is used.
     " x        View file with an associated program                 
     " %        Open a new file in netrw's current directory     
-endfunction
-function! GundoFunc()
+endfunction "}
+function! GundoFunc() "{
     nnoremap <Leader>u :GundoToggle<CR>
-endfunction
-function! UltisnipsFunc()
+endfunction "}
+function! UltisnipsFunc() "{
     " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<c-b>"
@@ -548,11 +563,11 @@ function! UltisnipsFunc()
 
     " If you want :UltiSnipsEdit to split your window.
     let g:UltiSnipsEditSplit="vertical"
-endfunction
+endfunction "}
 
 " execute functions
 " call UltisnipsFunc()
-" call ToggleVerbose()
+call ToggleVerbose()
 call Vundle_func()
 call NeoCompleteFunction() 
 call Airline_func()
@@ -578,10 +593,29 @@ call AckFunc()
 call LayoutFunc()
 call GundoFunc()
 call DragCurrentLineFunc()
-"call AddIndentFunc()
+call AddIndentFunc()
 call NetrwFunc()
+call TaskList()
 set textwidth=300 
 autocmd BufEnter *.* set nowrap
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 autocmd VimEnter * call AccentDemo()
+"known key word
+" try to know <SID>
+"
+"
+"
+    " set background=dark         " Assume a dark background
+    " " Allow to trigger background
+    " function! ToggleBG()
+    "     let s:tbg = &background
+    "     " Inversion
+    "     if s:tbg == "dark"
+    "         set background=light
+    "     else
+    "         set background=dark
+    "     endif
+    " endfunction
+    " noremap <leader>bg :call ToggleBG()<CR>
+    "
