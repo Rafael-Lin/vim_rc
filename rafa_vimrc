@@ -155,14 +155,14 @@ function! Vundle_func() "{
     "
     " Plugin 'ack.vim'
     "Plugin 'vim-scripts/TaskList.vim'
-    Plugin 'scrooloose/nerdtree'
+    "Plugin 'scrooloose/nerdtree'
     Plugin 'commentary.vim'
     Plugin 'kien/ctrlp.vim'
     Plugin 'matchit.zip'
     Plugin 'gmarik/Vundle.vim'
     Plugin 'Shougo/neocomplete.vim'
-    " Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/molokai'
-    " Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/nerdtree'
+    Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/molokai'
+    Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/nerdtree'
     " Plugin 'SuperTab'
     Plugin 'surround.vim'
     Plugin 'Tabular'
@@ -173,7 +173,7 @@ function! Vundle_func() "{
     Plugin 'altercation/solarized'
     Plugin 'tpope/vim-fugitive'
     "Plugin 'majutsushi/tagbar'
-    " Plugin 'Solarized'
+
 
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -309,9 +309,9 @@ function! Map_func() "{
     "map <silent> <C-E>  : browse edit<CR> 
 
     "Open one new empty tab
-    "map \<c-t> : tabnew<CR>
+    map \<c-t> : tabnew<CR>
     map <leader><c-w> : tabclose<CR>
-    map <leader>G gg=G<CR>
+    map qqG gg=G<CR>
 
     " Save all files
     map <silent> <C-S> : wa<CR> 
@@ -532,9 +532,6 @@ function! AccentDemo() "{
     " endfor
     let g:airline_section_a = 'Be the Man'
 endfunction "}
-function! TaskList() "{
-    map <leader>tl <Plug>TaskList
-endfunction "}
 function! NetrwFunc() "{
     let g:netrw_liststyle=3
     let g:netrw_preview = 1 " use p to preview the file content
@@ -568,7 +565,7 @@ endfunction "}
 
 " execute functions
 " call UltisnipsFunc()
-call ToggleVerbose()
+" call ToggleVerbose()
 call Vundle_func()
 call NeoCompleteFunction() 
 call Airline_func()
@@ -596,7 +593,6 @@ call GundoFunc()
 call DragCurrentLineFunc()
 call AddIndentFunc()
 call NetrwFunc()
-"call TaskList()
 set textwidth=300 
 autocmd BufEnter *.* set nowrap
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
