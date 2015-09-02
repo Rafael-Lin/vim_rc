@@ -154,14 +154,15 @@ function! Vundle_func() "{
     "Plugin 'othree/html5.vim'
     "
     " Plugin 'ack.vim'
-    Plugin 'vim-scripts/TaskList.vim'
+    "Plugin 'vim-scripts/TaskList.vim'
+    Plugin 'scrooloose/nerdtree'
     Plugin 'commentary.vim'
     Plugin 'kien/ctrlp.vim'
     Plugin 'matchit.zip'
     Plugin 'gmarik/Vundle.vim'
     Plugin 'Shougo/neocomplete.vim'
-    Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/molokai'
-    Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/nerdtree'
+    " Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/molokai'
+    " Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/nerdtree'
     " Plugin 'SuperTab'
     Plugin 'surround.vim'
     Plugin 'Tabular'
@@ -172,7 +173,7 @@ function! Vundle_func() "{
     Plugin 'altercation/solarized'
     Plugin 'tpope/vim-fugitive'
     "Plugin 'majutsushi/tagbar'
-    Plugin 'Solarized'
+    " Plugin 'Solarized'
 
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
@@ -308,7 +309,7 @@ function! Map_func() "{
     "map <silent> <C-E>  : browse edit<CR> 
 
     "Open one new empty tab
-    map <leader><c-t> : tabnew<CR>
+    "map \<c-t> : tabnew<CR>
     map <leader><c-w> : tabclose<CR>
     map <leader>G gg=G<CR>
 
@@ -335,8 +336,8 @@ function! Map_func() "{
     nmap ]] <ESC><CR>
     " inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
     map <leader>z V%zf
-    map <leader>d I(Done). <ESC>
-    map <leader>og I(On-going). <ESC>
+    "map <leader>d I(Done). <ESC>
+    "map <leader>og I(On-going). <ESC>
 
     " CTRL-A is Select all
     " noremap qq<C-A> gggH<C-O>G
@@ -537,7 +538,7 @@ endfunction "}
 function! NetrwFunc() "{
     let g:netrw_liststyle=3
     let g:netrw_preview = 1 " use p to preview the file content
-    nmap	<leader>ex :Explore .<CR>
+    nmap	qqe :Explore .<CR>
     " <cr>       Netrw will enter the directory or read the file 
     " <del>      Netrw will attempt to remove the file/directory                                                                
     " D        Attempt to remove the file(s)/directory(ies)                            
@@ -572,7 +573,7 @@ call Vundle_func()
 call NeoCompleteFunction() 
 call Airline_func()
 call BinaryViewFunc()
-call TagbarFunc()
+"call TagbarFunc()
 call DiffFunc()
 call FontSizeSetting_func()
 call Autocmd_func()
@@ -595,7 +596,7 @@ call GundoFunc()
 call DragCurrentLineFunc()
 call AddIndentFunc()
 call NetrwFunc()
-call TaskList()
+"call TaskList()
 set textwidth=300 
 autocmd BufEnter *.* set nowrap
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
