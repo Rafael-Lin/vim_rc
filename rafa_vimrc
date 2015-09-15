@@ -127,11 +127,6 @@ function! ToggleVerbose() "{
     endif
 endfunction "}
 function! FontSizeSetting_func() "{
-    " map <F2>  :call SetFMDIndent() <ESC>:set foldlevel=0<CR>
-    " map <F3>  :call SetFMDIndent() <ESC>:set foldlevel=1<CR>
-    " map <F4>  :call SetFMDIndent() <ESC>:set foldlevel=2<CR>
-    " map <F5>  :call SetFMDIndent() <ESC>:set foldlevel=3<CR>
-    " map <F6>  :call SetFMDIndent() <ESC>:set foldlevel=4<CR>
 
     nmap <leader>f0 :set foldlevel=0<CR>
     nmap <leader>f1 :set foldlevel=1<CR>
@@ -172,7 +167,6 @@ function! Vundle_func() "{
     "Plugin 'othree/html5.vim'
     "
     "Plugin 'vim-scripts/TaskList.vim'
-    "Plugin 'scrooloose/nerdtree'
     Plugin 'Shougo/neosnippet'
     Plugin 'Shougo/neosnippet-snippets'
     Plugin 'ack.vim'
@@ -182,9 +176,11 @@ function! Vundle_func() "{
     Plugin 'gmarik/Vundle.vim'
     Plugin 'Shougo/neocomplete.vim'
     Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/molokai'
-    Plugin 'file:///D:/Vim74/Vim/vimfiles/bundle/nerdtree'
-    " Plugin 'nathanaelkane/vim-indent-guides'
+    Plugin 'jistr/vim-nerdtree-tabs'
+    Plugin 'scrooloose/nerdtree'
     " Plugin 'SuperTab'
+    Plugin 'vimwiki/vimwiki'
+    Plugin 'mattn/calendar-vim'
     Plugin 'surround.vim'
     Plugin 'Tabular'
     Plugin 'EasyMotion'
@@ -201,8 +197,6 @@ function! Vundle_func() "{
     " All of your Plugins must be added before the following line
     call vundle#end()            " required
     filetype plugin indent on    " required
-    " To ignore plugin indent changes, instead use:
-    "filetype plugin on
     "
     " Brief help
     " :PluginList       - lists configured plugins
@@ -237,25 +231,30 @@ function! Tab_Or_Complete() "{
 endfunction "}
 function! Layout_func() "{
     "set nowrap
-    " set	softtabstop=4
     " set modeline
     " let g:molokai_original = 1
     " let g:rehash256 = 1
     "set wrap             "
+    set mouse=a                 " Automatically enable mouse usage
+    set mousehide               " Hide the mouse cursor while typing
     set number
     set	showcmd 
     set	shiftwidth=4
+    set softtabstop=4               " Let backspace delete indent
     set expandtab " change tab into space
     set	tabstop=4
     set	noeb ruler
     set	backspace=indent,eol,start
-    set	history=60
-    set wildmenu
+    set wildmenu                    " Show list instead of just completing
+    set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
     if has('gui_running')
-        colors solarized 
+        "colors solarized 
+        colors molokai 
     else
         colorscheme desert
     endif
+      " let s:base03 = "NONE"     
+      " let s:base02 = "NONE"     
 
     set t_Co=256          " 256 color mode
     set cursorline        " highlight current line
@@ -268,6 +267,7 @@ function! Layout_func() "{
     set wildchar=<TAB>    " start wild expansion in the command line using <TAB>
     set incsearch         " incremental search . Show result before finished typing
     set nobackup          " no *~ backup files
+    "set backup
     set noswapfile
     set ignorecase        " ignore case when searching
     set nowritebackup
@@ -276,20 +276,22 @@ function! Layout_func() "{
     " ignore these files while expanding wild chars
     language mes en
     set wildignore=*.o,*.class
-    set cindent
-    " set ai          " auto indent
-    "set smartindent
+    set autoindent " auto indent
     " disable sound on errors
     set noerrorbells
     set visualbell
     set t_vb=
     set tm=500
     set laststatus=2
-    filetype plugin on
+
+        if has('persistent_undo')
+            set undofile                " So is persistent undo ...
+            set undolevels=1000         " Maximum number of changes that can be undone
+            set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
+        endif
     " These are files we are not likely to want to edit or read.
     set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
     syntax on
-    filetype plugin indent on
     set nocompatible
     set go= "guioptions
     "set go+=m
@@ -315,12 +317,10 @@ endfunction "}
 function! Autocmd_func() "{
     set autoread		" auto read when file is changed from outside
     " autocmd! bufwritepost .vimrc source ~/.vimrc " auto reload vimrc when editing it
-    autocmd BufEnter * silent! lcd %:p:h
+    " autocmd BufEnter * silent! lcd %:p:h
+    cmap cwd lcd %:p:h
+    cmap cd. lcd %:p:h
     " autocmd BufEnter * set nowrap
-    "lcd : local cd
-    "%   : the name of the current file
-    "%p  : give its full path
-    "%:p:h : its dir
 endfunction "}
 function! Map_func() "{
     cmap cd. lcd %:p:h " :cd. change working directory to that of the current file
@@ -332,7 +332,8 @@ function! Map_func() "{
     "map <silent> <C-E>  : browse edit<CR> 
 
     "Open one new empty tab
-    map <leader><c-t> : tabnew<CR>
+    "map <leader><c-t> : tabnew<CR>
+    map \t : tabnew<CR>
     map <leader><c-w> : tabclose<CR>
     map qqG gg=G<CR>
 
@@ -353,12 +354,11 @@ function! Map_func() "{
     map <S-L> gt
 
     " nnoremap <silent> ,d :set operatorfunc=DeleteEmptyLines<CR>m"g@
-    map <leader>c :call CalWordCount()<cr>
+    " map <leader>c :call CalWordCount()<cr>
     " nmap <Leader>db :g/^$/d<CR>
-    imap ]] <ESC><CR>
-    nmap ]] <ESC><CR>
+    imap ]] <ESC>:w<CR>
+    nmap ]] <ESC>:w<CR>
     " inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-    map <leader>z V%zf
     map <leader>d I(Done). <ESC>0
     map <leader>og I(On-going). <ESC>0
     "inoremap <c-x><C-k> <c-k>
@@ -374,14 +374,10 @@ function! Map_func() "{
     " snoremap qq<C-A> <C-C>gggH<C-O>G
     " xnoremap qq<C-A> <C-C>ggVG
 endfunction "}
-function! SetFMDIndent() "{
-    set foldmethod=marker
-    set foldmarker={,}
-endfunction "}
 function! Fold_func() "{
     set foldmethod=marker
     set foldmarker={,}
-    set foldlevel=0 "Default level number
+    set foldlevel=5 "Default level number
     set foldcolumn=2 "Default column number
 endfunction "}
 function! Path_assign_func() "{
@@ -401,11 +397,34 @@ function! Complete_func() "{
     set dictionary+=$VIM\word\wordsEn.txt
     set complete=w,s,k,.,b,t,]
 endfunction   "}
-function! Nerdtree_func () "{
-    nmap <leader>e	:NERDTreeToggle<CR>
+"function! Nerdtree_func () "{
+    map <leader>nt :NERDTreeFind<CR>
+    map <leader>e :NERDTreeTabsToggle<CR>
     let g:NERDTreeWinPos    = "right"
     let NERDTreeHijackNetrw = 0
-endfunction   "}
+    let NERDTreeShowBookmarks=1
+    let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
+    let NERDTreeChDirMode=0
+    let NERDTreeQuitOnOpen=1
+    let NERDTreeMouseMode=2
+    let NERDTreeShowHidden=1
+    let NERDTreeKeepTreeInNewTab=1
+    let g:nerdtree_tabs_open_on_gui_startup=0
+    let g:NERDShutUp=1
+"endfunction   "}
+" Initialize NERDTree as needed {
+function! NERDTreeInitAsNeeded()
+    redir => bufoutput
+    buffers!
+    redir END
+    let idx = stridx(bufoutput, "NERD_tree")
+    if idx > -1
+        NERDTreeMirror
+        NERDTreeFind
+        wincmd l
+    endif
+endfunction
+" }
 function! Ctrlp_func() "{
     noremap  <C-W><C-U> : CtrlPMRU <CR>
     " nnoremap  <C-W> u   : CtrlPMRU <CR>
@@ -638,7 +657,7 @@ call Fold_func()
 call Path_assign_func()
 " call Supertab_func()
 call Complete_func()
-call Nerdtree_func()
+" call Nerdtree_func()
 call View_init_second()
 call Complete_test_func()
 call TabularFunc()
@@ -659,22 +678,89 @@ autocmd BufEnter *.* set nowrap
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 autocmd VimEnter * call AccentDemo()
+
+    " Allow using the repeat operator with a visual selection (!)
+    " http://stackoverflow.com/a/8064607/127816
 "known key word
 " try to know <SID>
 " silent function : keep external commands from triggering the "Hit ENTER" prompt:
 " if filereadable(expand("~/.vimrc.before.fork")) : if this file exist
 "
-"
-    " set background=dark         " Assume a dark background
-    " " Allow to trigger background
-    " function! ToggleBG()
-    "     let s:tbg = &background
-    "     " Inversion
-    "     if s:tbg == "dark"
-    "         set background=light
-    "     else
-    "         set background=dark
-    "     endif
-    " endfunction
-    " noremap <leader>bg :call ToggleBG()<CR>
-    "
+" if isdirectory(expand("~/.vim/bundle/tabular")) : if thie dir exist
+
+     set background=dark         " Assume a dark background
+     " Allow to trigger background
+     function! ToggleBG()
+         let s:tbg = &background
+         " Inversion
+         if s:tbg == "dark"
+             set background=light
+         else
+             set background=dark
+         endif
+     endfunction
+     noremap <leader>bg :call ToggleBG()<CR>
+    
+
+    "lcd : local cd
+    "%   : the name of the current file
+    "%p  : give its full path
+    "%:p:h : its dir
+
+
+    " Some helpers to edit mode
+    " http://vimcasts.org/e/14
+    cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+    map <leader>ew :e %%
+    map <leader>es :sp %%
+    map <leader>ev :vsp %%
+    map <leader>et :tabe %%
+
+    "set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
+
+     let g:spf13_no_autochdir = 1
+    if !exists('g:spf13_no_autochdir')
+        autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+        " Always switch to the current file directory
+    endif
+    set spell
+    set history=1000                    " Store a ton of history (default is 20)
+    "{ Vimwiki
+let g:vimwiki_list = [
+                        \{'path': '~/Documents/VimWiki/personal.wiki'},
+                        \{'path': '~/Documents/VimWiki/tech.wiki'}
+                \]
+
+nmap <leader>tt <Plug>VimwikiToggleListItem
+au BufRead,BufNewFile *.wiki set filetype=vimwiki
+" :autocmd FileType vimwiki map d :VimwikiMakeDiaryNote
+"}
+function! ToggleCalendar() "{
+  execute ":Calendar"
+  if exists("g:calendar_open")
+    if g:calendar_open == 1
+      execute "q"
+      unlet g:calendar_open
+    else
+      g:calendar_open = 1
+    end
+  else
+    let g:calendar_open = 1
+  end
+endfunction
+:autocmd FileType vimwiki map c :call ToggleCalendar()<CR>
+"}
+"solarized {
+ let g:solarized_termtrans=0
+ let g:solarized_degrade=0
+ let g:solarized_bold=1
+ let g:solarized_underline=1
+ let g:solarized_italic=1
+ let g:solarized_termcolors=256
+ let g:solarized_contrast="normal"
+ let g:solarized_visibility="normal"
+ let g:solarized_diffmode="normal"
+ let g:solarized_hitrail=0
+ let g:solarized_menu=1
+
+"}
