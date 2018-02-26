@@ -1,0 +1,5 @@
+map \t :tabnew<CR>
+map \w :tabclose<CR>
+map \d :bd!<CR>
+map <S-H> gT
+map <S-L> gt

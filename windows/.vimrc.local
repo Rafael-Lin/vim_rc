@@ -1,0 +1,143 @@
+"Use Win short cute func() {
+    if WINDOWS()
+        nmap <leader>cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+        "filename
+        nmap <leader>cl :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+        "filepath
+        nmap <leader>ci :silent !explorer %:p:h:gs?\/?\\\\\\?<CR>
+        "open file folder
+        map  ,ci :!start explorer %:p:h:gs?\/?\\\\\\?<CR>
+    endif
+"}
+"
+
+"Set foldcolumn {
+    " set foldcolumn=2 "Default column number
+    set foldmarker={,}
+    "set foldmethod=marker
+    set foldmethod=syntax
+"}
+
+" disable sound on errors {
+    set noerrorbells
+    set visualbell
+"}
+" ack function {
+    nmap <leader>g :noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
+    nnoremap <C-G>  :exec 'Ack '. '<C-R>=expand("<cword>")<CR> ' . g:projPath
+    nnoremap <C-H>  :exec 'ag '. '<C-R>=expand("<cword>")<CR> ' ". g:projPath . "
+" }
+
+"colorscheme{
+    colorscheme ir_black
+"}
+"binaryView{
+    nmap <leader>b  :%! xxd
+    nmap <leader>br :%! xxd -r
+"}
+"fast open tab and close tab{
+    map \t :tabnew<CR>
+    map \w :tabclose<CR>
+    map \d :bd!<CR>
+    imap ]] <ESC>:w<CR>
+    nmap ]] <ESC>:w<CR>
+    " map \d :tabclose<CR>
+
+    nmap fd <ESC>
+    imap fd <ESC>
+"}
+
+
+set nospell
+set noswapfile
+set relativenumber
+" leader+i+g : toggle vim indent guide
+" leader+tt : toggle tagbar
+" ,ff : search the word in the cursor
+", u : undo tree
+
+:set iskeyword-=.
+:set fencs=ucs-bom,utf-8,default,latin1
+map <leader>fm gg=G'.
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
+
+" :%s/^\(\s*\).*\zs{\s*$/\r\1{/ -> reformat the brace style
+
+" Ctrl+] - go to definition
+" Ctrl+T - Jump back from the definition.
+" Ctrl+W Ctrl+] - Open the definition in a horizontal split
+
+" Add these lines in vimrc
+" map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" Ctrl+\ - Open the definition in a new tab
+" Alt+] - Open the definition in a vertical split
+" g], g ctrl+] : select the proper candidate
+
+" After the tags are generated. You can use the following keys to tag into and tag out of functions:
+
+" Ctrl+Left MouseClick - Go to definition
+" Ctrl+Right MouseClick - Jump back from definition
+
+" ctrl-q -> equal to ctrl-v
+
+"capatilize each first lettter :
+" %s/\v<(.)(\w*)/\u\1\L\2/g
+" vertical diffsplit filename<Plug>(neosnippet_expand)
+
+" :set spell spelllang=en_us
+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+" userful : windo diffsplit
+" useful : ctrl + ^ -> change buffer
+
+" For a split window: You can use Ctrl-w + and Ctrl-w - to resize the height of
+" the current window by a single row. For a vsplit window: You can use Ctrl-w >
+" and Ctrl-w < to resize the width of the current window by a single column.
+" Additionally, these key combinations accept a count prefix so that you can
+" change the window size in larger steps. [e.g. Ctrl-w 10 + increases the window
+" size by 10 lines]
+"
+" To resize all windows to equal dimensions based on their splits, you can use
+" Ctrl-w =.
+"
+" To increase a window to its maximum height, use Ctrl-w _.
+"
+" To increase a window to its maximum width, use Ctrl-w |.
+"
+" To resize in different steps, you can create maps that will adjust th
+
+:set fileencoding=gb18030
+
+:set fileencodings=ucs-bom,gb18030,utf-8,default
+
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
+
+
+map <Space>jj <Plug>(easymotion-bd-w)
+nmap <Space>jw <Plug>(easymotion-overwin-w)
+
+map <Space>jl <Plug>(easymotion-bd-jk)
+nmap <Space>jl <Plug>(easymotion-overwin-line)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+
+" colorscheme molokai
+:set nospell
