@@ -11,30 +11,67 @@
 "}
 "
 
+function! Fold_func() "{
+    set foldmethod=marker
+    set foldmarker={,}
+    set foldlevel=5 "Default level number
+    set foldcolumn=2 "Default column number
+endfunction "}
+
 "Set foldcolumn {
+function! Fold_Syntax_func()
     " set foldcolumn=2 "Default column number
     set foldmarker={,}
     "set foldmethod=marker
     set foldmethod=syntax
+endfunction 
 "}
+
+" move single line up and down {
+
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+" }
 
 " disable sound on errors {
     set noerrorbells
     set visualbell
+    set nospell
+    set noswapfile
+    set relativenumber
 "}
+
+" set easymotion {
+    map <Space>jj <Plug>(easymotion-bd-w)
+    nmap <Space>jw <Plug>(easymotion-overwin-w)
+
+    map <Space>jl <Plug>(easymotion-bd-jk)
+    nmap <Space>jl <Plug>(easymotion-overwin-line)
+
+    " s{char}{char} to move to {char}{char}
+    nmap s <Plug>(easymotion-overwin-f2)
+"}
+
 " ack function {
     nmap <leader>g :noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
-    nnoremap <C-G>  :exec 'Ack '. '<C-R>=expand("<cword>")<CR> ' . g:projPath
-    nnoremap <C-H>  :exec 'ag '. '<C-R>=expand("<cword>")<CR> ' ". g:projPath . "
+    " nnoremap <C-G>  :exec 'Ack '. '<C-R>=expand("<cword>")<CR> ' . g:projPath
+    nnoremap <C-G>  :exec 'ag '. '<C-R>=expand("<cword>")<CR> ' ". g:projPath . "
 " }
 
 "colorscheme{
+    " colorscheme molokai 
     colorscheme ir_black
 "}
+
 "binaryView{
     nmap <leader>b  :%! xxd
     nmap <leader>br :%! xxd -r
 "}
+
 "fast open tab and close tab{
     map \t :tabnew<CR>
     map \w :tabclose<CR>
@@ -47,10 +84,11 @@
     imap fd <ESC>
 "}
 
+" tab related {
+    "Open in new tab (ctrl+t)
+    map <silent> <C-T>  : browse tabnew<CR>
+"}
 
-set nospell
-set noswapfile
-set relativenumber
 " leader+i+g : toggle vim indent guide
 " leader+tt : toggle tagbar
 " ,ff : search the word in the cursor
@@ -58,7 +96,6 @@ set relativenumber
 
 :set iskeyword-=.
 :set fencs=ucs-bom,utf-8,default,latin1
-map <leader>fm gg=G'.
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 
 " :%s/^\(\s*\).*\zs{\s*$/\r\1{/ -> reformat the brace style
@@ -88,13 +125,6 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 
 " :set spell spelllang=en_us
 
-nnoremap <A-j> :m .+1<CR>==
-nnoremap <A-k> :m .-2<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
 " userful : windo diffsplit
 " useful : ctrl + ^ -> change buffer
 
@@ -114,7 +144,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "
 " To resize in different steps, you can create maps that will adjust th
 
-:set fileencoding=gb18030
+" :set fileencoding=gb18030
 
 :set fileencodings=ucs-bom,gb18030,utf-8,default
 
@@ -129,15 +159,81 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 " augroup END
 
 
-map <Space>jj <Plug>(easymotion-bd-w)
-nmap <Space>jw <Plug>(easymotion-overwin-w)
+" fold level { 
+function! FontSizeSetting_func() "{
 
-map <Space>jl <Plug>(easymotion-bd-jk)
-nmap <Space>jl <Plug>(easymotion-overwin-line)
+    nmap <leader>f0 :set foldlevel=0<CR>
+    nmap <leader>f1 :set foldlevel=1<CR>
+    nmap <leader>f2 :set foldlevel=2<CR>
+    nmap <leader>f3 :set foldlevel=3<CR>
+    nmap <leader>f4 :set foldlevel=4<CR>
+    nmap <leader>f5 :set foldlevel=5<CR>
+    nmap <leader>f6 :set foldlevel=6<CR>
+    nmap <leader>f7 :set foldlevel=7<CR>
+    nmap <leader>f8 :set foldlevel=8<CR>
+    nmap <leader>f9 :set foldlevel=9<CR>
 
-" s{char}{char} to move to {char}{char}
-nmap s <Plug>(easymotion-overwin-f2)
+    map <F9>  <ESC>:set guifont=Monaco:h10<ESC>:winpos 0 0<CR>:set lines=100 columns=100<CR>:set nowrap<CR>
+    map <F10> <ESC>:set guifont=Monaco:h12<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+    map <F11> <ESC>:set guifont=Monaco:h16<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+    map <F12> <ESC>:set guifont=Monaco:h24<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+endfunction "}
+function! SetChineseFont_func() "{
+    return
+    set gfw=Microsoft_Yahei_Mono:h24:cGB2312<CR>
+endfunction "}
+" end }
+
+    " Some helpers to edit mode
+    " http://vimcasts.org/e/14
+    cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
+    map <leader>ew :e %%
+    map <leader>es :sp %%
+    map <leader>ev :vsp %%
+    map <leader>et :tabe %%
 
 
-" colorscheme molokai
-:set nospell
+    " Map <Leader>ff to display all lines with keyword under cursor
+    " and ask which one to jump to
+    nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
+
+
+function! DiffFunc() "{
+    set diffexpr=
+    map <silent> <C-V><C-F> :browse vert diffsplit<CR>
+    " find one file to compare
+endfunction "}
+
+
+function! CommandLineFunc() "{
+    " cnoremap <C-j> <t_kd>
+    " cnoremap <C-k> <t_ku>
+    " cnoremap <C-a> <Home>
+    " cnoremap <C-e> <End>
+    cmap <C-a> <Home>
+    cmap <C-e> <End>
+endfunction "}
+
+
+function! TagbarFunc() "{
+    nmap <F7> <Esc>:!ctags -R *<CR>
+    nmap <F8> :TagbarToggle<CR>
+    let g:tagbar_left      = 1
+    "set tags=..\..\tags,..\..\..\tags,.\tags
+    let Tlist_Ctags_Cmd    = $VIM . '\vim74\ctags.exe'
+    let g:tagbar_autofocus = 1
+    nmap	<leader>ti :Tlist<CR>
+endfunction "}
+
+
+function! AddIndentFunc() "{
+    vnoremap < <gv
+    vnoremap > >gv
+endfunction "}
+function! DeleteEmptyLines(type) "{
+    if a:type == 'line'
+        silent execute ".,'\"g/^$/d"
+    endif
+endfunction "}
+
+
