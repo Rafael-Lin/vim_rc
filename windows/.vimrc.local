@@ -78,6 +78,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
     map \d :bd!<CR>
     imap ]] <ESC>:w<CR>
     nmap ]] <ESC>:w<CR>
+    map <leader>bd :bd!<CR>
     " map \d :tabclose<CR>
 
     nmap fd <ESC>
@@ -189,7 +190,7 @@ endfunction "}
     cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
     map <leader>ew :e %%
     map <leader>es :sp %%
-    map <leader>ev :vsp %%
+    map <leader>vsp :vsp %%
     map <leader>et :tabe %%
 
 
@@ -236,4 +237,4 @@ function! DeleteEmptyLines(type) "{
     endif
 endfunction "}
 
-
+call Fold_func()
