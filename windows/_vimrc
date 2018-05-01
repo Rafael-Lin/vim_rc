@@ -89,11 +89,13 @@
         " Inversion
         if s:tbg == "dark"
             set background=light
+            colorscheme typewriter
         else
             set background=dark
+            colorscheme ir_black
         endif
     endfunction
-    noremap <leader>bg :call ToggleBG()<CR>
+    noremap <leader>bgc :call ToggleBG()<CR>
 
     " if !has('gui')
         "set term=$TERM          " Make arrow and other keys work
@@ -115,7 +117,7 @@
     " Most prefer to automatically switch to the current file directory when
     " a new buffer is opened; to prevent this behavior, add the following to
     " your .vimrc.before.local file:
-       let g:spf13_no_autochdir = 1
+       " let g:spf13_no_autochdir = 1
     if !exists('g:spf13_no_autochdir')
         autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
         " Always switch to the current file directory
@@ -207,10 +209,10 @@
         " Broken down into easily includeable segments
         set statusline=%<%f\                     " Filename
         set statusline+=%w%h%m%r                 " Options
-        if !exists('g:override_spf13_bundles') && has('gui_running')
-            set statusline+=%{fugitive#statusline()} " Git Hotness
-        endif
-        set statusline+=\ [%{&ff}/%Y]            " Filetype
+        "if !exists('g:override_spf13_bundles') && has('gui_running')
+        "    set statusline+=%{fugitive#statusline()} " Git Hotness
+        "endif
+        "set statusline+=\ [%{&ff}/%Y]            " Filetype
         set statusline+=\ [%{getcwd()}]          " Current dir
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
@@ -230,8 +232,8 @@
     set scrolljump=5                " Lines to scroll when cursor leaves screen
     set scrolloff=3                 " Minimum lines to keep above and below cursor
     set foldenable                  " Auto fold code
-    " set list
-    " set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    set list
+    set listchars=tab:沑 ,trail:�,extends:#,nbsp:. " Highlight problematic whitespace
 
 " }
 
@@ -253,13 +255,14 @@
     " To disable the stripping of whitespace, add the following to your
     " .vimrc.before.local file:
     "   let g:spf13_keep_trailing_whitespace = 1
-    autocmd FileType c,tex,org,cpp,java,txt,cs,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
-    autocmd FileType haskell,puppet,ruby,html,javascript,xml,cpp,yml setlocal expandtab shiftwidth=2 softtabstop=2
+    autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
     " preceding line best in a plugin but here for now.
 
     autocmd BufNewFile,BufRead *.coffee set filetype=coffee
+
 
     " Workaround vim-commentary for Haskell
     autocmd FileType haskell setlocal commentstring=--\ %s
@@ -273,6 +276,7 @@
     " The default leader is '\', but many people prefer ',' as it's in a standard
     " location. To override this behavior and set it back to '\' (or any other
     " character) add the following to your .vimrc.before.local file:
+    "   let g:spf13_leader='\'
     if !exists('g:spf13_leader')
         let mapleader = ','
     else
@@ -1042,7 +1046,7 @@
     " vim-airline {
         " Set configuration options for the statusline plugin vim-airline.
         " Use the powerline theme and optionally enable powerline symbols.
-        " To use the symbols , , , , , , and .in the statusline
+        " To use the symbols ?, ?, ?, ?, ?, ?, and ?.in the statusline
         " segments add the following to your .vimrc.before.local file:
         "   let g:airline_powerline_fonts=1
         " If the previous symbols do not render for you then install a
@@ -1050,14 +1054,14 @@
 
         " See `:echo g:airline_theme_map` for some more choices
         " Default in terminal vim is 'dark'
-        if isdirectory(expand("~/.vim/bundle/vim-airline/"))
+        if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
             if !exists('g:airline_theme')
                 let g:airline_theme = 'solarized'
             endif
             if !exists('g:airline_powerline_fonts')
                 " Use the default set of separators with a few customizations
-                let g:airline_left_sep='›'  " Slightly fancier than '>'
-                let g:airline_right_sep='‹' " Slightly fancier than '<'
+                let g:airline_left_sep='�'  " Slightly fancier than '>'
+                let g:airline_right_sep='�' " Slightly fancier than '<'
             endif
         endif
     " }
@@ -1078,8 +1082,8 @@
             elseif OSX() && has("gui_running")
                 set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h11,Consolas\ Regular:h12,Courier\ New\ Regular:h14
             elseif WINDOWS() && has("gui_running")
-                set guifont=Monaco:h12,Menlo:h12,Consolas:h12,Courier_New:h12
-                " set guifont=Source\ Code\ Pro\ Bold\ 13:h13,Menlo:h12,Consolas:h12,Courier_New:h12
+                set guifont=Monaco:h11,Menlo:h11,Consolas:h11,Courier_New:h11
+                " set guifont=Source\ Code\ Pro\ Bold\ 13:h13,Menlo:h11,Consolas:h11,Courier_New:h11
             endif
         endif
     else
@@ -1206,23 +1210,26 @@
     function! s:EditSpf13Config()
         call <SID>ExpandFilenameAndExecute("tabedit", "~/_vimrc")
         call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before")
-        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.bundles")
+        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before.local")
 
-        execute bufwinnr(".vimrc") . "wincmd w"
+        execute bufwinnr("_vimrc") . "wincmd w"
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.local")
         wincmd l
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
+        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles")
         wincmd l
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
+        " call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
+        " wincmd l
+        " call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
 
-        if <SID>IsSpf13Fork()
-            execute bufwinnr(".vimrc") . "wincmd w"
-            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.fork")
-            wincmd l
-            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.fork")
-            wincmd l
-            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
-        endif
+        " if <SID>IsSpf13Fork()
+        "     execute bufwinnr(".vimrc") . "wincmd w"
+        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.fork")
+        "     wincmd l
+        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.fork")
+        "     wincmd l
+        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
+        " endif
 
         execute bufwinnr(".vimrc.local") . "wincmd w"
     endfunction
@@ -1251,3 +1258,28 @@
     endif
 " }
 "
+
+
+let g:airline_powerline_fonts = 1
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+nnoremap <C-tab> :bn<CR>
+nnoremap <C-s-tab> :bp<CR>
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#symbol = '!'
+
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+" old vim-powerline symbols
+let g:airline_left_sep = '|'
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = '|'
+let g:airline_right_alt_sep = '|'
+let g:airline_symbols.branch = '|'
+let g:airline_symbols.readonly = '|'
+let g:airline#extensions#tagbar#enabled = 1
+
+let g:airline_section_a = airline#section#create(['', ' ', ''])

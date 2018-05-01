@@ -1,21 +1,25 @@
-"Use Win short cute func() {
-    if WINDOWS()
-        nmap <leader>cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
-        "filename
-        nmap <leader>cl :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
-        "filepath
-        nmap <leader>ci :silent !explorer %:p:h:gs?\/?\\\\\\?<CR>
-        "open file folder
-        map  ,ci :!start explorer %:p:h:gs?\/?\\\\\\?<CR>
-    endif
-"}
-"
+autocmd BufNewFile,BufRead *.xaml set filetype=html
+autocmd FileType txt set noexpandtab
+autocmd FileType c,tex,org,cpp,java,cs,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+autocmd FileType haskell,puppet,ruby,html,javascript,xml,cpp,yml setlocal expandtab shiftwidth=2 softtabstop=2
+set listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
+set list
 
-function! Fold_func() "{
+if WINDOWS() "{
+    nmap <leader>cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+    "filename
+    nmap <leader>cl :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+    "filepath
+    nmap <leader>ci :silent !explorer %:p:h:gs?\/?\\\\\\?<CR>
+    "open file folder
+    map  ,ci :!start explorer %:p:h:gs?\/?\\\\\\?<CR>
+endif "}
+
+function! Fold_Marker_func() "{
     set foldmethod=marker
     set foldmarker={,}
     set foldlevel=5 "Default level number
-    set foldcolumn=2 "Default column number
+    set foldcolumn=3 "Default column number
 endfunction "}
 
 "Set foldcolumn {
@@ -24,11 +28,10 @@ function! Fold_Syntax_func()
     set foldmarker={,}
     "set foldmethod=marker
     set foldmethod=syntax
-endfunction 
+endfunction
 "}
 
 " move single line up and down {
-
 nnoremap <A-j> :m .+1<CR>==
 nnoremap <A-k> :m .-2<CR>==
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -57,13 +60,17 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "}
 
 " ack function {
+    if executable('ag')
+      let g:ackprg = 'ag --vimgrep'
+    endif
+
     nmap <leader>g :noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
     " nnoremap <C-G>  :exec 'Ack '. '<C-R>=expand("<cword>")<CR> ' . g:projPath
     nnoremap <C-G>  :exec 'ag '. '<C-R>=expand("<cword>")<CR> ' ". g:projPath . "
 " }
 
 "colorscheme{
-    " colorscheme molokai 
+    " colorscheme molokai
     colorscheme ir_black
 "}
 
@@ -87,17 +94,20 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " tab related {
     "Open in new tab (ctrl+t)
-    map <silent> <C-T>  : browse tabnew<CR>
+    " map <silent> <C-T>  : browse tabnew<CR>
+    " conflict with ctag
 "}
+
+:set iskeyword-=.
+:set fencs=ucs-bom,utf-8,default,latin1
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
+
 
 " leader+i+g : toggle vim indent guide
 " leader+tt : toggle tagbar
 " ,ff : search the word in the cursor
 ", u : undo tree
 
-:set iskeyword-=.
-:set fencs=ucs-bom,utf-8,default,latin1
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 
 " :%s/^\(\s*\).*\zs{\s*$/\r\1{/ -> reformat the brace style
 
@@ -160,49 +170,24 @@ let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 " augroup END
 
 
-" fold level { 
+" fold level {
 function! FontSizeSetting_func() "{
-
-    nmap <leader>f0 :set foldlevel=0<CR>
-    nmap <leader>f1 :set foldlevel=1<CR>
-    nmap <leader>f2 :set foldlevel=2<CR>
-    nmap <leader>f3 :set foldlevel=3<CR>
-    nmap <leader>f4 :set foldlevel=4<CR>
-    nmap <leader>f5 :set foldlevel=5<CR>
-    nmap <leader>f6 :set foldlevel=6<CR>
-    nmap <leader>f7 :set foldlevel=7<CR>
-    nmap <leader>f8 :set foldlevel=8<CR>
-    nmap <leader>f9 :set foldlevel=9<CR>
-
     map <F9>  <ESC>:set guifont=Monaco:h10<ESC>:winpos 0 0<CR>:set lines=100 columns=100<CR>:set nowrap<CR>
     map <F10> <ESC>:set guifont=Monaco:h12<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
     map <F11> <ESC>:set guifont=Monaco:h16<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
     map <F12> <ESC>:set guifont=Monaco:h24<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
-endfunction "}
+endfunction
+"}
+
 function! SetChineseFont_func() "{
     return
     set gfw=Microsoft_Yahei_Mono:h24:cGB2312<CR>
 endfunction "}
 " end }
 
-    " Some helpers to edit mode
-    " http://vimcasts.org/e/14
-    cnoremap %% <C-R>=fnameescape(expand('%:h')).'/'<cr>
-    map <leader>ew :e %%
-    map <leader>es :sp %%
-    map <leader>vsp :vsp %%
-    map <leader>et :tabe %%
-
-
-    " Map <Leader>ff to display all lines with keyword under cursor
-    " and ask which one to jump to
-    nmap <Leader>ff [I:let nr = input("Which one: ")<Bar>exe "normal " . nr ."[\t"<CR>
-
-
 function! DiffFunc() "{
     set diffexpr=
     map <silent> <C-V><C-F> :browse vert diffsplit<CR>
-    " find one file to compare
 endfunction "}
 
 
@@ -218,23 +203,44 @@ endfunction "}
 
 function! TagbarFunc() "{
     nmap <F7> <Esc>:!ctags -R *<CR>
-    nmap <F8> :TagbarToggle<CR>
     let g:tagbar_left      = 1
-    "set tags=..\..\tags,..\..\..\tags,.\tags
     let Tlist_Ctags_Cmd    = $VIM . '\vim74\ctags.exe'
     let g:tagbar_autofocus = 1
     nmap	<leader>ti :Tlist<CR>
 endfunction "}
 
-
-function! AddIndentFunc() "{
-    vnoremap < <gv
-    vnoremap > >gv
-endfunction "}
 function! DeleteEmptyLines(type) "{
     if a:type == 'line'
         silent execute ".,'\"g/^$/d"
     endif
 endfunction "}
 
-call Fold_func()
+call Fold_Marker_func()
+
+call FontSizeSetting_func()
+
+call TagbarFunc()
+
+call CommandLineFunc()
+
+call DiffFunc()
+set hidden
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+
+
+let g:NERDTreeWinPos = "right"
+
+let s:format_syntax_mapping= '<leader>fs'
+let s:format_marker_mapping= '<leader>fm'
+let s:delete_tail_space_mapping= '<leader>ds'
+
+execute "noremap " . s:format_marker_mapping ":call Fold_Marker_func()<CR>"
+execute "noremap " . s:format_syntax_mapping ":call Fold_Syntax_func()<CR>"
+execute "noremap " . s:delete_tail_space_mapping ":call StripTrailingWhitespace()<CR>"
+
+" .vimrc.before.local 
+" --> .vimrc 
+" -->  .vim.local
+"
+"
