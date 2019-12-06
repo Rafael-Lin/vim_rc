@@ -1,6 +1,7 @@
 autocmd BufNewFile,BufRead *.xaml set filetype=html
 autocmd FileType txt set noexpandtab
-autocmd FileType c,tex,org,cpp,java,cs,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+autocmd FileType cs set foldmethod=indent
+autocmd FileType c,tex,org,cpp,java,go,php,javascript,puppet,python,rust,twig,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
 autocmd FileType haskell,puppet,ruby,html,javascript,xml,cpp,yml setlocal expandtab shiftwidth=2 softtabstop=2
 set listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
 set list
@@ -17,7 +18,12 @@ endif "}
 
 function! Fold_Marker_func() "{
     set foldmethod=marker
-    set foldmarker={,}
+    set foldmarker={{{,}}}
+    set foldlevel=5 "Default level number
+    set foldcolumn=3 "Default column number
+endfunction "}
+function! Fold_Indent_func() "{
+    set foldmethod=indent
     set foldlevel=5 "Default level number
     set foldcolumn=3 "Default column number
 endfunction "}
@@ -61,12 +67,18 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " ack function {
     if executable('ag')
+        set grepprg=ag\ --nogroup\ --nocolor\ --column
+        set grepformat=%f:%l:%c%m
       let g:ackprg = 'ag --vimgrep'
     endif
 
-    nmap <leader>g :noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
+    " nmap <leader>g :noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
+    " nmap <leader>g :Ag /<C-R>=expand("<cword>")<CR>/ *.*<CR> g:projPath
+    nmap <leader>g :Ag <C-R>=expand("<cword>") D:\dev\views\git_1\yieldstar\ <CR>
     " nnoremap <C-G>  :exec 'Ack '. '<C-R>=expand("<cword>")<CR> ' . g:projPath
-    nnoremap <C-G>  :exec 'ag '. '<C-R>=expand("<cword>")<CR> ' ". g:projPath . "
+    nnoremap <C-G>  :exec ':Ag '. '<C-R>=expand("<cword>")<CR> ' . g:projPath
+    " nnoremap <S-N>  :bnext<CR>
+    " nnoremap <S-P>  :bprevious<CR>
 " }
 
 "colorscheme{
@@ -81,7 +93,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "fast open tab and close tab{
     map \t :tabnew<CR>
-    map \w :tabclose<CR>
+    map <leader>tc :tabclose<CR>
     map \d :bd!<CR>
     imap ]] <ESC>:w<CR>
     nmap ]] <ESC>:w<CR>
@@ -90,6 +102,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
     nmap fd <ESC>
     imap fd <ESC>
+    vmap fd <ESC>
 "}
 
 " tab related {
@@ -101,7 +114,8 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 :set iskeyword-=.
 :set fencs=ucs-bom,utf-8,default,latin1
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
-
+let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 
 " leader+i+g : toggle vim indent guide
 " leader+tt : toggle tagbar
@@ -233,14 +247,34 @@ let g:NERDTreeWinPos = "right"
 
 let s:format_syntax_mapping= '<leader>fs'
 let s:format_marker_mapping= '<leader>fm'
+let s:format_indent_mapping= '<leader>fi'
 let s:delete_tail_space_mapping= '<leader>ds'
 
 execute "noremap " . s:format_marker_mapping ":call Fold_Marker_func()<CR>"
 execute "noremap " . s:format_syntax_mapping ":call Fold_Syntax_func()<CR>"
+execute "noremap " . s:format_indent_mapping ":call Fold_Indent_func()<CR>"
 execute "noremap " . s:delete_tail_space_mapping ":call StripTrailingWhitespace()<CR>"
 
-" .vimrc.before.local 
-" --> .vimrc 
+" .vimrc.before.local
+" --> .vimrc
 " -->  .vim.local
 "
 "
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+set runtimepath^=~/.vim/bundle/ag
+set runtimepath^=C:\Users\raflin\bin
+let g:ag_prg="C:\\Users\\raflin\\bin\\ag.exe --vimgrep"
+let g:ag_working_path_mode="r"
+
+command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile | put! a
+nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>

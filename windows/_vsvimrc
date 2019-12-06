@@ -1,5 +1,106 @@
 map \t :tabnew<CR>
-map \w :tabclose<CR>
+map \w :q<CR>
 map \d :bd!<CR>
 map <S-H> gT
 map <S-L> gt
+set ignorecase                  
+set incsearch                   " Find as you type search
+set hlsearch                    " Highlight search terms
+
+nmap fd <ESC>
+imap fd <ESC>
+vmap fd <ESC>
+
+
+set ignorecase smartcase
+nmap zcc :mapclear!<CR>
+" nmap zso :source C:\Users\mylin\vimfiles\_vimrc <CR>
+imap <F1> <Esc>y?[T<CR>p/void<CR>w
+nmap <F1> y?[T<CR>p/void<CR>w
+nmap zrn :vsc Project.AddNewItem<CR> 
+nmap zm :vsc CodeMaid.CleanupActiveDocument<CR>:make<CR>
+nmap zra zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc TestExplorer.RunAllTests<CR>
+imap zra <Esc>zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc TestExplorer.RunAllTests<CR>
+vmap zra <Esc><Esc>zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc TestExplorer.RunAllTests<CR>
+nmap zrt zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc ReSharper.ReSharper_UnitTestRunCurrentSession<CR>
+imap zrt <Esc>zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc ReSharper.ReSharper_UnitTestRunCurrentSession<CR>
+vmap zrt <Esc><Esc>zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc ReSharper.ReSharper_UnitTestRunCurrentSession<CR>
+nmap zrl zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc ReSharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
+imap zrl <Esc>zz:vsc CodeMaid.CleanupActiveDocument<CR>:vsc ReSharper.ReSharper_UnitTestSessionRepeatPreviousRun<CR>
+nmap zgc zz:vsc CodeMaid.CleanupActiveDocument<CR>:make<CR>:vsc Team.Git.GotoGitChanges<CR>
+nmap zgp :vsc Team.Git.Pull<CR>
+nmap zk :vsc View.NavigateBackward<CR>
+imap zk <Esc>:vsc View.NavigateBackward<CR>
+nmap zj :vsc View.NavigateForward<CR>
+imap zj <Esc>:vsc View.NavigateForward<CR>
+nmap z. :vsc View.QuickActions<CR>
+imap z. <Esc>:vsc View.QuickActions<CR>
+
+nmap gw1 :vsc Window.ApplyWindowLayout1<CR>
+nmap gw2 :vsc Window.ApplyWindowLayout2<CR>
+nmap gw3 :vsc Window.ApplyWindowLayout3<CR>
+nmap gw4 :vsc Window.ApplyWindowLayout4<CR>
+nmap gw5 :vsc Window.ApplyWindowLayout5<CR>
+nmap gw6 :vsc Window.ApplyWindowLayout6<CR>
+nmap gw7 :vsc Window.ApplyWindowLayout7<CR>
+nmap gfs :vsc View.FullScreen<CR>
+
+imap zae Assert.AreEqual(expected,actual);<Esc>T(
+nmap zae aAssert.AreEqual(expected,actual);<Esc>T(
+
+nmap zrr :vsc ReSharper.ReSharper_Rename<CR>
+nmap zrm :vsc ReSharper.ReSharper_ExtractMethod<CR>
+vmap zrm :vsc ReSharper.ReSharper_ExtractMethod<CR>
+nmap zre :vsc ReSharper.ReSharper_EncapsulateField<CR>
+map zrp :vsc ReSharper.ReSharper_IntroduceParameter<CR>
+map zri :vsc ReSharper.ReSharper_InlineVariable<CR>
+map zrv :vsc ReSharper.ReSharper_IntroVariable<CR>
+map zrf :vsc ReSharper.ReSharper_IntroduceField<CR>
+nmap zro :vsc ReSharper.ReSharper_Move<CR>
+nmap zrs :vsc ReSharper.ReSharper_ChangeSignature<CR>
+nmap zsc :vsc ReSharper.ReSharper_ShowCodeStructure<CR> 
+nmap zcs :vsc ReSharper.ReSharper_ChangeSignature<CR>
+nmap zpm :vsc ReSharper.ReSharper_PasteMultiple<CR>
+imap zpm <Esc>:vsc ReSharper.ReSharper_PasteMultiple<CR>
+nmap zf :vsc ReSharper.ReSharper_GoToDeclaration<CR>
+imap zf <Esc>:vsc ReSharper.ReSharper_GoToDeclaration<CR>
+
+
+nmap zrc :vsc CodeMaid.CleanupActiveDocument<CR>
+imap zrc <Esc>:vsc CodeMaid.CleanupActiveDocument<CR>
+nmap zrb :vsc Build.RebuildSolution<CR>
+imap zrb <Esc>:vsc Build.RebuildSolution<CR>
+nmap zrz :vsc CodeMaid.ReorganizeActiveDocument<CR>
+imap zrz <Esc>:vsc CodeMaid.ReorganizeActiveDocument<CR>
+
+:vmap <Esc> <Esc><Esc><Esc>
+:imap jj <Esc>
+:nmap <BS> a<BS>
+:nmap zh ^
+:nmap hh ^
+:imap zh <Esc>^i
+:nmap zl $a
+:nmap ll $
+:imap zl <End>
+:nmap hc ^C
+:nmap zb bcw
+:imap zd <Esc>dd
+:imap z; <End>;
+:nmap z; $a;<Esc>
+:imap z, <End>,
+:nmap z, $a,<Esc>
+nmap j gj
+nmap k gk
+nmap qq ZQ
+
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+nmap zq :wq<CR>
+" map C :set rnu!<CR>
+" insert single char
+:map ,i i?<Esc>r
+" append single char
+:map ,a a?<Esc>r

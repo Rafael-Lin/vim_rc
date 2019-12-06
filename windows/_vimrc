@@ -255,7 +255,7 @@
     " To disable the stripping of whitespace, add the following to your
     " .vimrc.before.local file:
     "   let g:spf13_keep_trailing_whitespace = 1
-    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
@@ -577,8 +577,8 @@
 
     " NerdTree {
         if isdirectory(expand("~/.vim/bundle/nerdtree"))
-            map <C-e> <plug>NERDTreeTabsToggle<CR>
-            map <leader>e :NERDTreeFind<CR>
+            " map <C-e> <plug>NERDTreeTabsToggle<CR>
+            map <C-e> :NERDTreeToggle<CR>
             nmap <leader>nt :NERDTreeFind<CR>
 
             let NERDTreeShowBookmarks=1
@@ -1283,3 +1283,5 @@ let g:airline_symbols.readonly = '|'
 let g:airline#extensions#tagbar#enabled = 1
 
 let g:airline_section_a = airline#section#create(['', ' ', ''])
+let g:airline_section_b = '%-0.10{getcwd()}'
+let g:airline_section_c = '%t'
