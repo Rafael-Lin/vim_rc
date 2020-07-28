@@ -23,6 +23,19 @@
    | wk2035(8/24) |   73.0 |
    | wk2036(8/31) |   72.5 |
 
+| wk2031                                 | total acquired kilo calorie | exercise | Balance(b) | Calorie deficit(2387-(b)) |
+|----------------------------------------+-----------------------------+----------+------------+---------------------------|
+| Mon                                    |                        1409 |      638 |        771 |                     -1616 |
+| Tu                                     |                        1314 |        0 |       1314 |                     -1073 |
+| Wed                                    |                           0 |          |          0 |                     -2387 |
+| Thu                                    |                           0 |          |          0 |                     -2387 |
+| Fri                                    |                           0 |          |          0 |                     -2387 |
+| Sat                                    |                           0 |          |          0 |                     -2387 |
+| Sun                                    |                             |          |          0 |                     -2387 |
+|----------------------------------------+-----------------------------+----------+------------+---------------------------|
+| Mon + Tu + Wed + Thu + Fri + Sat + Sun |                        2723 |      638 |       2085 |                    -14624 |
+#+TBLFM: $4=$2-$3::$5=$4-2387::@9=vsum(@2..@8)
+
  7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
 
 * LogTimeSpending : 
@@ -358,7 +371,8 @@ Dired 的功能還有很多很多，像是 mark 起來的檔案批次處理之�
 
 * TODO : understand the major mode, minor mode, layer
 
-* TODO : add the fat on the fat secret
+* DONE : add the fat on the fat secret
+  CLOSED: [2020-07-28 Tue 22:59]
 
 
 * DONE : insert time start and time end
@@ -456,7 +470,8 @@ Dired 的功能還有很多很多，像是 mark 起來的檔案批次處理之�
   CLOSED: [2020-07-28 Tue 11:02]
   https://confluence-apps-us.asml.com:8443/display/HMISSW/Weekly+2030
 * TODO : check car insurcance with website
-* TODO : check >s in the org-document by using ag 
+* DONE : check >s in the org-document by using ag 
+  CLOSED: [2020-07-28 Tue 22:47]
 * TODO : understand the basic .spacemacs
 * TODO : org drill => obsolete maybe? => waiting ==> add this special package into additional package => not work in org 9.2, 9.3
 ** TODO : check the memory management for org-mode
@@ -469,8 +484,10 @@ Dired 的功能還有很多很多，像是 mark 起來的檔案批次處理之�
   
 
 
-* TODO : add one hour meeting to table
-* TODO : add <s function into vim script, write one write function on the text
+* DONE : add one hour meeting to table
+  CLOSED: [2020-07-28 Tue 22:47]
+* DONE : add <s function into vim script, write one write function on the text
+  CLOSED: [2020-07-28 Tue 22:48]
 ** TODO : check yasnippet
   
  While it isn't vimscript, your search and replace task across a bunch of files sounds like a job for argdo:
@@ -483,8 +500,10 @@ Dired 的功能還有很多很多，像是 mark 起來的檔案批次處理之�
      wq!
  endfunction
 
-* TODO : copy the help data into google doc and let it speak up
-* TODO : re-edit the .spacemacs, find out the .template, diff with the my version
+* DONE : copy the help data into google doc and let it speak up ==> not work => use extension instead
+  CLOSED: [2020-07-28 Tue 22:54]
+* DONE : re-edit the .spacemacs, find out the .template, diff with the my version
+  CLOSED: [2020-07-28 Tue 22:54]
 * TODO : gpod : add abbreviation
 
   
@@ -503,3 +522,19 @@ auto function : global bc, all functions before inspection
   #+begin_src emacs-lisp
 (require 'ob-clojure)
 #+end_src
+* TODO : table calculation
+https://orgmode.org/org.html#Advanced-features
+https://orgmode.org/worg/org-tutorials/org-spreadsheet-lisp-formulas.html
+https://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html
+https://orgmode.org/manual/Field-and-range-formulas.html
+* TODO : include the competition programming into somewhere, bring it to company
+* DONE : check the voice-speaking of google doc
+  CLOSED: [2020-07-28 Tue 22:55]
+* TODO : dired mode org
+** TODO : s : re-arrange by modified date or size
+** TODO : X : unzip, x : zip - to be checked?
+** TODO 
+* TODO : check the receipt of May and June
+* DONE : check the google translator in Emacs
+  CLOSED: [2020-07-28 Tue 22:55]
+

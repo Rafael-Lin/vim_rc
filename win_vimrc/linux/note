@@ -1,0 +1,4 @@
+
+https://kb.iu.edu/d/acux
+change dos format into linux format
+tr -d '\15\32' < winfile.txt > unixfile.txt
