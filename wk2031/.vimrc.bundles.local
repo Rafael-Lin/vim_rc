@@ -1,0 +1,14 @@
+" add the plugin I want to add
+" remove the plugin I don't want
+" ex : UnBundle 'scrooloose/syntastic'
+" run :BundleClean!
+"
+" Bundle 'soft-aesthetic/soft-era-vim'
+" Bundle 'logico-dev/typewriter'
+Bundle 'rking/ag.vim'
+Bundle 'vimwiki'
+Bundle 'itchyny/calendar.vim'
+UnBundle 'scrooloose/syntastic'
+UnBundle 'scrooloose/nerdcommenter'
+UnBundle 'vim-indent-guides'
+

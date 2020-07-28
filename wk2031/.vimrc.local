@@ -1,0 +1,349 @@
+let g:airline_powerline_fonts = 1
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
+
+nnoremap <C-tab> :bn<CR>
+nnoremap <C-s-tab> :bp<CR>
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#whitespace#symbol = '!'
+
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+" old vim-powerline symbols
+let g:airline_left_sep = '|'
+let g:airline_left_alt_sep = '|'
+let g:airline_right_sep = '|'
+let g:airline_right_alt_sep = '|'
+let g:airline_symbols.branch = '|'
+let g:airline_symbols.readonly = '|'
+let g:airline#extensions#tagbar#enabled = 1
+
+let g:airline_section_a = airline#section#create(['', '', ''])
+let g:airline_section_b = '%-0.10{getcwd()}'
+let g:airline_section_c = '%t'
+
+" leader+i+g : toggle vim indent guide
+" leader+tt : toggle tagbar
+" ,ff : search the word in the cursor
+", u : undo tree
+
+
+" :%s/^\(\s*\).*\zs{\s*$/\r\1{/ -> reformat the brace style
+
+" Ctrl+] - go to definition
+" Ctrl+T - Jump back from the definition.
+" Ctrl+W Ctrl+] - Open the definition in a horizontal split
+
+" Add these lines in vimrc
+" map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+" map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+
+" Ctrl+\ - Open the definition in a new tab
+" Alt+] - Open the definition in a vertical split
+" g], g ctrl+] : select the proper candidate
+
+" After the tags are generated. You can use the following keys to tag into and tag out of functions:
+
+" Ctrl+Left MouseClick - Go to definition
+" Ctrl+Right MouseClick - Jump back from definition
+
+" ctrl-q -> equal to ctrl-v
+
+"capatilize each first lettter :
+" %s/\v<(.)(\w*)/\u\1\L\2/g
+" vertical diffsplit filename<Plug>(neosnippet_expand)
+
+" :set spell spelllang=en_us
+
+" userful : windo diffsplit
+" useful : ctrl + ^ -> change buffer
+
+" For a split window: You can use Ctrl-w + and Ctrl-w - to resize the height of
+" the current window by a single row. For a vsplit window: You can use Ctrl-w >
+" and Ctrl-w < to resize the width of the current window by a single column.
+" Additionally, these key combinations accept a count prefix so that you can
+" change the window size in larger steps. [e.g. Ctrl-w 10 + increases the window
+" size by 10 lines]
+"
+" To resize all windows to equal dimensions based on their splits, you can use
+" Ctrl-w =.
+"
+" To increase a window to its maximum height, use Ctrl-w _.
+"
+" To increase a window to its maximum width, use Ctrl-w |.
+"
+" To resize in different steps, you can create maps that will adjust th
+
+" :set fileencoding=gb18030
+
+:set fileencodings=ucs-bom,gb18030,utf-8,default
+
+" let g:netrw_banner = 0
+" let g:netrw_liststyle = 3
+" let g:netrw_browse_split = 4
+" let g:netrw_altv = 1
+" let g:netrw_winsize = 25
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
+
+:set iskeyword-=.
+:set fencs=ucs-bom,utf-8,default,latin1
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
+let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+
+"colorscheme{
+    " colorscheme molokai
+    colorscheme ir_black
+"}
+
+"binaryView{
+    " nmap <leader>b  :%! xxd
+    " nmap <leader>br :%! xxd -r
+"}
+function! List_Func() "{
+    set listchars=eol:$,tab:>.,trail:~,extends:>,precedes:<
+    set list
+    set nolist
+endfunction "}
+
+function! Filetype_Func() "{
+    autocmd BufNewFile,BufRead *.xaml set filetype=html
+    autocmd FileType txt set noexpandtab
+    autocmd FileType cs set foldmethod=indent
+    autocmd FileType c,tex,org,cpp,java,go,php,javascript,puppet,python,rust,twig,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    autocmd FileType haskell,puppet,ruby,html,javascript,xml,cpp,yml setlocal expandtab shiftwidth=2 softtabstop=2
+endfunction "}
+
+function! PathCopy_Func() "{
+    if WINDOWS() "{
+        nmap <leader>cs :let @*=substitute(expand("%"), "/", "\\", "g")<CR>
+        "copy filename by typing ,cs
+        nmap <leader>cl :let @*=substitute(expand("%:p"), "/", "\\", "g")<CR>
+        "copy filepath by typing ,cl
+        nmap <leader>ci :silent !explorer %:p:h:gs?\/?\\\\\\?<CR>
+        "open file folder by typing ,ci
+        map  ,ci :!start explorer %:p:h:gs?\/?\\\\\\?<CR>
+    endif "}
+endfunction "}
+
+function! Fold_Marker_func() "{
+    set foldmethod=marker
+    set foldmarker={{{,}}}
+    set foldlevel=5 "Default level number
+    set foldcolumn=3 "Default column number
+endfunction "}
+
+function! Fold_Indent_func() "{
+    set foldmethod=indent
+    set foldlevel=5 "Default level number
+    set foldcolumn=3 "Default column number
+endfunction "}
+
+function! Fold_Syntax_func()
+    " set foldcolumn=2 "Default column number
+    set foldmarker={,}
+    "set foldmethod=marker
+    set foldmethod=syntax
+endfunction
+
+function! Move_Single_Line()
+    nnoremap <A-j> :m .+1<CR>==
+    nnoremap <A-k> :m .-2<CR>==
+    inoremap <A-j> <Esc>:m .+1<CR>==gi
+    inoremap <A-k> <Esc>:m .-2<CR>==gi
+    vnoremap <A-j> :m '>+1<CR>gv=gv
+    vnoremap <A-k> :m '<-2<CR>gv=gv
+endfunction
+
+" disable sound on errors {
+    set noerrorbells
+    set visualbell
+    set nospell
+    set noswapfile
+    set relativenumber
+"}
+
+function! EasyMotion_Func() "{
+    " s{char}{char} to move to {char}{char}
+    map <Space>jj <Plug>(easymotion-bd-w)
+    map <Space>jl <Plug>(easymotion-bd-jk)
+    nmap <Space>jl <Plug>(easymotion-overwin-line)
+    nmap <Space>jw <Plug>(easymotion-overwin-w)
+    nmap s <Plug>(easymotion-overwin-f2)
+endfunction "}
+
+" ack function {
+function! AG_Func() "{
+    if executable('ag')
+        set grepprg=ag\ --nogroup\ --nocolor\ --column
+        set grepformat=%f:%l:%c%m
+      let g:ackprg = 'ag --vimgrep'
+    endif
+    nnoremap <C-G>  :exec ':Ag '. '--csharp ' . '-w ' . '<C-R>=expand("<cword>")<CR> ' . g:projPath
+
+    nnoremap <leader>cn :cnext<CR>
+    nnoremap <leader>cp :cprevious<CR>
+
+    " nmap <leader>g :noautocmd ack /<C-R>=expand("<cword>")<CR>/ *.*<CR>
+    " nmap <leader>g :Ag /<C-R>=expand("<cword>")<CR>/ *.*<CR> g:projPath
+    " nmap <leader>g :Ag <C-R>=expand("<cword>") C:\ <CR>
+    " nnoremap <C-G>  :exec 'Ack '. '<C-R>=expand("<cword>")<CR> ' . g:projPath
+    " nnoremap <C-J>  :exec ':Ag '. '-i ' . '<C-R>=expand("<cword>")<CR> ' . g:projPath
+    " nnoremap <C-J>  :grep! /<C-R>=expand("<cword>")<CR>
+    " => no used
+endfunction "}
+
+function! Tab_Func()
+"fast open tab and close tab{
+    " map \d :tabclose<CR>
+    imap ]] <ESC>:w<CR>
+    imap fd <ESC>
+    map <leader>bd :bd!<CR>
+    map <leader>tc :tabclose<CR>
+    map \d :bd!<CR>
+    map \t :tabnew<CR>
+    nmap ]] <ESC>:w<CR>
+    nmap fd <ESC>
+    vmap fd <ESC>
+endfunction
+
+function! FontSizeSetting_func() "{
+    map <F9>  <ESC>:set guifont=Monaco:h10<ESC>:winpos 0 0<CR>:set lines=100 columns=100<CR>:set nowrap<CR>
+    map <F10> <ESC>:set guifont=Monaco:h12<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+    map <F11> <ESC>:set guifont=Monaco:h16<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+    map <F12> <ESC>:set guifont=Monaco:h24<ESC> :call SetChineseFont_func()<CR>:winpos 0 0<CR>:set lines=999 columns=999<CR>
+endfunction
+
+function! SetChineseFont_func() "{
+    set gfw=Microsoft_Yahei_Mono:h24:cGB2312<CR>
+endfunction "}
+
+function! DiffFunc() "{
+    set diffexpr=
+    map <silent> <C-V><C-F> :browse vert diffsplit<CR>
+endfunction "}
+
+
+function! CommandLineFunc() "{
+    " cnoremap <C-j> <t_kd>
+    " cnoremap <C-k> <t_ku>
+    " cnoremap <C-a> <Home>
+    " cnoremap <C-e> <End>
+    cmap <C-a> <Home>
+    cmap <C-e> <End>
+endfunction "}
+
+
+function! TagbarFunc() "{
+    nmap <F7> <Esc>:!ctags -R *<CR>
+    let g:tagbar_left      = 1
+    let Tlist_Ctags_Cmd    = $VIM . '\vim74\ctags.exe'
+    let g:tagbar_autofocus = 1
+    " nmap	<leader>ti :Tlist<CR>
+endfunction "}
+
+function! DeleteEmptyLines(type) "{
+    if a:type == 'line'
+        silent execute ".,'\"g/^$/d"
+    endif
+endfunction "}
+
+function! MultiCursor_Func()
+    let g:multi_cursor_use_default_mapping=0
+
+    " Default mapping
+    let g:multi_cursor_start_word_key      = '<C-n>'
+    let g:multi_cursor_select_all_word_key = '<A-n>'
+    let g:multi_cursor_start_key           = 'g<C-n>'
+    let g:multi_cursor_select_all_key      = 'g<A-n>'
+    let g:multi_cursor_next_key            = '<C-n>'
+    let g:multi_cursor_prev_key            = '<C-p>'
+    let g:multi_cursor_skip_key            = '<C-x>'
+    let g:multi_cursor_quit_key            = '<Esc>'
+    set runtimepath^=~/.vim/bundle/ag
+    set runtimepath^=C:\Users\raflin\bin
+    let g:ag_prg="C:\\Users\\raflin\\bin\\ag.exe --vimgrep"
+    let g:ag_working_path_mode="r"
+endfunction
+
+command! -nargs=? Filter let @a='' | execute 'g/<args>/y A' | new | setlocal bt=nofile | put! a
+nnoremap <silent> <F3> :redir @a<CR>:g//<CR>:redir END<CR>:new<CR>:put! a<CR>
+
+let s:format_syntax_mapping= '<leader>fs'
+let s:format_marker_mapping= '<leader>fm'
+let s:format_indent_mapping= '<leader>fi'
+let s:delete_tail_space_mapping= '<leader>ds'
+
+execute "noremap " . s:format_marker_mapping ":call Fold_Marker_func()<CR>"
+execute "noremap " . s:format_syntax_mapping ":call Fold_Syntax_func()<CR>"
+execute "noremap " . s:format_indent_mapping ":call Fold_Indent_func()<CR>"
+execute "noremap " . s:delete_tail_space_mapping ":call StripTrailingWhitespace()<CR>"
+
+set hidden
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bp :bprev<CR>
+let g:NERDTreeWinPos = "right"
+
+
+" .vimrc.before.local
+" --> .vimrc
+" -->  .vim.local
+"
+
+
+" bind K to grep word under cursor
+" only work in linux
+nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+call List_Func()
+
+call Filetype_Func()
+
+call PathCopy_Func()
+
+" call Fold_Marker_func()
+call Fold_Indent_func()
+
+call Move_Single_Line()
+
+call EasyMotion_Func()
+
+call AG_Func()
+
+call Tab_Func()
+
+call FontSizeSetting_func()
+
+call TagbarFunc()
+
+call CommandLineFunc()
+
+call DiffFunc()
+
+call MultiCursor_Func()
+
+let g:vimwiki_list = [{'path': '~/vimwiki/', 'syntax': 'markdown', 'ext': '.wiki'}]
+let g:vimwiki_folding = 'list'
+
+
+function! InsertEmacsSourceCodeBlock()
+  call setline('.', ['#+begin_src','#+end_src'] )
+endfunction
+
+let s:insertEmacsSourceCodeBlock= '<s<tab>'
+execute "noremap " . s:insertEmacsSourceCodeBlock ":call InsertEmacsCodeBlock()<CR>"
+
+function! InsertEmacsQuoteBlock()
+  call setline('.', ['#+begin_quote','#+end_quote'] )
+endfunction
+
+let s:insertEmacsQuoteBlock= '<q<tab>'
+execute "noremap " . s:insertEmacsQuoteBlock ":call InsertEmacsQuoteBlock()<CR>"
+
