@@ -26,15 +26,36 @@
 | wk2031                                 | total acquired kilo calorie | exercise | Balance(b) | Calorie deficit(2387-(b)) |
 |----------------------------------------+-----------------------------+----------+------------+---------------------------|
 | Mon                                    |                        1409 |      638 |        771 |                     -1616 |
-| Tu                                     |                        1314 |        0 |       1314 |                     -1073 |
+| Tu                                     |                        1666 |        0 |       1666 |                      -721 |
 | Wed                                    |                           0 |          |          0 |                     -2387 |
 | Thu                                    |                           0 |          |          0 |                     -2387 |
 | Fri                                    |                           0 |          |          0 |                     -2387 |
 | Sat                                    |                           0 |          |          0 |                     -2387 |
 | Sun                                    |                             |          |          0 |                     -2387 |
 |----------------------------------------+-----------------------------+----------+------------+---------------------------|
-| Mon + Tu + Wed + Thu + Fri + Sat + Sun |                        2723 |      638 |       2085 |                    -14624 |
+| Mon + Tu + Wed + Thu + Fri + Sat + Sun |                        3075 |      638 |       2437 |                    -14272 |
 #+TBLFM: $4=$2-$3::$5=$4-2387::@9=vsum(@2..@8)
+
+| best practices | morning running | morning weight training | night tennis | night power | total |
+|----------------+-----------------+-------------------------+--------------+-------------+-------|
+| example        |             720 |                     250 |          699 |         120 |  1789 |
+#+TBLFM: $6=vsum($2..$5)
+
+| mins | burn calorie |
+|------+--------------|
+|    1 |           12 |
+|   30 |          360 |
+|   60 |          720 |
+|   80 |          960 |
+|   90 |         1080 |
+
+
+| alcohol  | calorie/100g |
+| volka    |          230 |
+| beer     |           80 |
+| red wine |           ?? |
+|          |              |
+#+TBLFM: $2=$1*12
 
  7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
 
@@ -534,7 +555,26 @@ https://orgmode.org/manual/Field-and-range-formulas.html
 ** TODO : s : re-arrange by modified date or size
 ** TODO : X : unzip, x : zip - to be checked?
 ** TODO 
-* TODO : check the receipt of May and June
+* DONE : check the receipt of May and June
+  CLOSED: [2020-07-28 Tue 23:38]
 * DONE : check the google translator in Emacs
   CLOSED: [2020-07-28 Tue 22:55]
+* TODO : how to merge mp3 with ffmpeg
+https://superuser.com/questions/314239/how-to-join-merge-many-mp3-files
+* TODO : how do you measure that you love a thing? like a house?
+* TODO : come up with work-out plan for 15, 30, 60, 90, 120 mins : 
+** TODO 120 mins : run 60mins, power : 60 mins
+* TODO : power 
+** burpee+plank : 12 mins
+** burpee : 6mins
+** forehand + backhand + jump : 12 mins
+** jump rope : 30 mins?
+** squart jump + jump rope : ??
+** abs : bring the thing to company?
+* TODO check how to use the car insurance
+* TODO check how to add abbr in linux for git 
+* TODO check the vimrc in linux
+* TODO download the things from github
+* TODO check how much calorie be burnt per mins for burpee?
+
 
