@@ -1,11 +1,25 @@
 * JiraTable
-  | jira | name                            | bamboo | PR |
-  |------+---------------------------------+--------+----|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper  |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem      |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]] | remove SetDependencies for _cal |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] |
-  |      |                                 |        |    |
+  | JIRA                                            | NAME                                                     | BAMBOO | PR | REMARK                                                    |
+  |-------------------------------------------------+----------------------------------------------------------+--------+----+-----------------------------------------------------------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]                                            | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | bamboo fail, ready to merge                               |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]                                            | fix unit converter problem                               |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | review                                                    |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]                                            | re-arch for imsageSavingHelper                           |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | dieX, dieY discuss                                        |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]                                            | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | fix the code smell, IC0NextComm change done, test locally |
+  | https://jira-apps-us.asml.com/browse/MBISW-3402 | Migrate SU from SystemStatus to MachingConstant          |        |    |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]                                            | Could not initialize Host GUI due to config file missing |        |    |                                                           |
+  | https://jira-apps-us.asml.com/browse/MBISW-4368 | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | check bamboo result                                       |
+  |-------------------------------------------------+----------------------------------------------------------+--------+----+-----------------------------------------------------------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]]                                            | StigmatorMonitorOperations                               |        |    |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]]                                            | IOpticalPixelSizeAngleCalibration                        |        |    |                                                           |
+  | https://jira-apps-us.asml.com/browse/MBISW-5765 | Remove SetDependencies of VideoChannelGeneric            |        |    |                                                           |
+  | https://jira-apps-us.asml.com/browse/MBISW-5045 | StageCluster.TryGetPosition                              |        |    |                                                           |
+  | https://jira-apps-us.asml.com/browse/MBISW-5766 | Remove SetDependencies of PixelSize                      |        |    |                                                           |
+  | https://jira-apps-us.asml.com/browse/MBISW-4366 | Expose IZControl                                         |        |    |                                                           |
+  | https://jira-apps-us.asml.com/browse/MBISW-1640 | Conversion function LinkedException and HRESULT          |        |    |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]                                            | Clean the dependencies diagram in SU                     |        |    |                                                           |
+
+
+
 * WeightPlan
   
 ** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
@@ -13,60 +27,75 @@
 *** TODO : wk2030_5 : 76
 *** TODO : check how to lose one kilo
 *** TODO : TDEE : total daily energy expenditure
+*** TODO : come up with work-out plan for 15, 30, 60, 90, 120 mins : 
+*** TODO : 120 mins : run 60mins, power : 60 mins
+*** TODO : power 
+**** burpee+plank : 12 mins
+**** burpee : 6mins
+**** forehand + backhand + jump : 12 mins
+**** jump rope : 30 mins?
+**** squart jump + jump rope : ??
+**** abs : bring the thing to company?
     
-   | time         | weight |
-   |--------------+--------|
-   | wk2031(7/27) |   75.0 |
-   | wk2032(8/03) |   74.5 |
-   | wk2033(8/10) |   74.0 |
-   | wk2034(8/17) |   73.5 |
-   | wk2035(8/24) |   73.0 |
-   | wk2036(8/31) |   72.5 |
+    | time         | weight | weight(pound) |
+    |--------------+--------+---------------|
+    | wk2031(7/27) |   75.0 |         165.3 |
+    | wk2032(8/03) |   74.5 |       164.198 |
+    | wk2033(8/10) |   74.0 |       163.096 |
+    | wk2034(8/17) |   73.5 |       161.994 |
+    | wk2035(8/24) |   73.0 |       160.892 |
+    | wk2036(8/31) |   72.5 |        159.79 |
+ #+TBLFM: $3=$2*2.204
 
-| wk2031                                 | total acquired kilo calorie | exercise | Balance(b) | Calorie deficit(2387-(b)) |
-|----------------------------------------+-----------------------------+----------+------------+---------------------------|
-| Mon                                    |                        1409 |      638 |        771 |                     -1616 |
-| Tu                                     |                        1666 |        0 |       1666 |                      -721 |
-| Wed                                    |                           0 |          |          0 |                     -2387 |
-| Thu                                    |                           0 |          |          0 |                     -2387 |
-| Fri                                    |                           0 |          |          0 |                     -2387 |
-| Sat                                    |                           0 |          |          0 |                     -2387 |
-| Sun                                    |                             |          |          0 |                     -2387 |
-|----------------------------------------+-----------------------------+----------+------------+---------------------------|
-| Mon + Tu + Wed + Thu + Fri + Sat + Sun |                        3075 |      638 |       2437 |                    -14272 |
-#+TBLFM: $4=$2-$3::$5=$4-2387::@9=vsum(@2..@8)
+ | wk2031                                 | total acquired kilo calorie | exercise | Balance(b) | Calorie deficit(2387-(b)) |
+ |----------------------------------------+-----------------------------+----------+------------+---------------------------|
+ | Mon                                    |                        1409 |      638 |        771 |                     -1616 |
+ | Tu                                     |                        1666 |        0 |       1666 |                      -721 |
+ | Wed                                    |                           0 |          |          0 |                     -2387 |
+ | Thu                                    |                           0 |          |          0 |                     -2387 |
+ | Fri                                    |                           0 |          |          0 |                     -2387 |
+ | Sat                                    |                           0 |          |          0 |                     -2387 |
+ | Sun                                    |                             |          |          0 |                     -2387 |
+ |----------------------------------------+-----------------------------+----------+------------+---------------------------|
+ | Mon + Tu + Wed + Thu + Fri + Sat + Sun |                        3075 |      638 |       2437 |                    -14272 |
+ #+TBLFM: $4=$2-$3::$5=$4-2387::@9=vsum(@2..@8)
 
-| best practices | morning running | morning weight training | night tennis | night power | total |
-|----------------+-----------------+-------------------------+--------------+-------------+-------|
-| example        |             720 |                     250 |          699 |         120 |  1789 |
-#+TBLFM: $6=vsum($2..$5)
+ | best practices | morning running | morning weight training | night tennis | night power | total |
+ |----------------+-----------------+-------------------------+--------------+-------------+-------|
+ | example        |             720 |                     250 |          699 |         120 |  1789 |
+ #+TBLFM: $6=vsum($2..$5)
 
-| mins | burn calorie |
-|------+--------------|
-|    1 |           12 |
-|   30 |          360 |
-|   60 |          720 |
-|   80 |          960 |
-|   90 |         1080 |
+ | mins | Run burn calorie | Burpee burnt calorie(9.4) |
+ |------+------------------+---------------------------|
+ |    1 |               12 |                         9 |
+ |   30 |              360 |                       270 |
+ |   60 |              720 |                       540 |
+ |   80 |              960 |                       720 |
+ |   90 |             1080 |                       810 |
+ #+TBLFM: $3=9*$1
 
 
-| alcohol  | calorie/100g |
-| volka    |          230 |
-| beer     |           80 |
-| red wine |           ?? |
-|          |              |
-#+TBLFM: $2=$1*12
+ | alcohol  | calorie/100g |
+ |----------+--------------|
+ | volka    |          230 |
+ | beer     |           80 |
+ | red wine |           ?? |
+ |          |              |
+ #+TBLFM: $2=$1*12
 
- 7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
+  7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
+
 
 * LogTimeSpending : 
   
   
 ** public
-|                               | <2020-07-27 Mon> | <2020-07-28 Tue> | <2020-07-29 Wed> | <2020-07-30 Thu> | <2020-07-31 Fri> |
-| jira : rear imageSavingHelper | 4h               |                  |                  |                  |                  |
-| meeting                       | 3h               | 2h               |                  |                  |                  |
-| [[https://jira-apps-us.asml.com/browse/MBISW-5797][pixel size unit issue]]         |                  | 1h               |                  |                  |                  |
+|                               | <2020-07-27 Mon> | <2020-07-28 Tue>                  | <2020-07-29 Wed>                                      | <2020-07-30 Thu> | <2020-07-31 Fri> |
+| jira : rear imageSavingHelper | 4h               | 2h : discuss on the dieX and DieY |                                                       |                  |                  |
+| meeting                       | 3h               | 2h                                |                                                       |                  |                  |
+| [[https://jira-apps-us.asml.com/browse/MBISW-5797][pixel size unit issue]]         |                  | 0.5h                              |                                                       |                  |                  |
+| expose imagesavinghelper      |                  | 2h : debug bamboo failure         | 2.5h                                                  |                  |                  |
+| remove dependencies           |                  |                                   | 1.5h+ remove the setDependencies for IC0NextComm + 2h |                  |                  |
 
 
 ** private  
@@ -75,55 +104,34 @@
 | [[https://jira-apps-us.asml.com/browse/MBISW-5797][pixel size unit issue]]                     |                  | 1h               |                  |                  |                  |
 
 
-[2020-07-27 Mon]
 
-* DONE : insert todo item hot key => S-M_RET
+
+* <2020-07-27 Mon>
+** DONE : insert todo item hot key => S-M_RET
   CLOSED: [2020-07-27 Mon 13:24]
-* DONE : change state : c-c c-t
+** DONE : change state : c-c c-t
   CLOSED: [2020-07-27 Mon 13:24]
-* TODO : chat with Nemo on 7 habits
-* TODO : chat with Alan on insurance
+** TODO : chat with Nemo on 7 habits
+** TODO : chat with Alan on insurance
   https://www.fubon.com/insurance/b2c/content/main/new02.html
-* TODO : open PR for imageSavingHelper 
+** TODO : open PR for imageSavingHelper 
   :LOGBOOK:
   CLOCK: [2020-07-27 Mon 14:05]--[2020-07-27 Mon 16:10] =>  2:05
   CLOCK: [2020-07-27 Mon 13:49]--[2020-07-27 Mon 14:05] =>  0:16
   :END:
-** TODO : understand the requirement
+*** TODO : understand the requirement
    1) combinate the 4 prototype function into one, leave the one with the longest parameter list
    2) remove the select and use enum to replace the select variable
    3) check the dieX and dieY
       1) In PassImageFileNamingData, there's no select, so add one enum input and how it interact with DieX, DieY?
       2) 
 
-* TODO : organize the dired+ setting
+** TODO : organize the dired+ setting
   https://kuanyui.github.io/2014/06/21/dired-tutorial-and-essential-configs/
 
   
 #+BEGIN_Quote
-我認為 Dired 是 Emacs 最獨特、吸引人、且最令人上癮與依賴的殺手級功能之一（就我所知目前還沒有其他編輯器有同等強大的工具）。相信聽過 Emacs 的很多人都會聽過 Emacser 的這種讚美，但當你實際想用時卻發現，C-h m 一看文件指令一大堆，而且很多指令名看不出來是做什麼的，根本不知從何下手。因此現在讓我們直奔主題：
-最常用的命令
-怎麼開啟 Dired？ C-x C-f 後不要選檔案、還在目錄時直接按下 Enter 就是了。
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
 g: 重新整理
 +: 新增目錄
 s: 按照時間/檔名排序檔案
@@ -152,11 +160,6 @@ X: 解壓縮
 (require 'dired)
 (require 'dired-x)                   ;這行請記得加，不然無法使用隱藏檔案等功能。
 (require 'dired+)                    ;請記得安裝 dired+，沒安裝的是笨蛋
-
-;; 讓 Dired 有「多欄式」效果：用 C-x 3 在螢幕上開兩個 dired 視窗（如
-;; 附圖），再來只要按 R 或 C（移動/複製檔案）時，會自動以另一個視窗為
-;; 預設目標路徑。
-(setq dired-dwim-target t)
 
 ;; 目錄排在檔案之前。
 (defun dired-directory-sort ()
@@ -382,32 +385,32 @@ M-a: 把檔案加入 SMPlayer 的播放清單中。
 Dired 的功能還有很多很多，像是 mark 起來的檔案批次處理之類的，不過其實我最常用的也就以上這些功能，只要能夠活用，相信 Dired 應該會成為你非常重要的工具。有興趣的可以在 Dired 中按C-h m再慢慢研究還有什麼功能。如有覺得不錯的也請不吝分享:-)。
 #+END_SRC
 
-* TODO : check the .spacemacs setting, try to add new plugin spc+fer
+** TODO : check the .spacemacs setting, try to add new plugin spc+fer
 
   https://zilongshanren.com/post/2015-12-06-spacemacs-rocks/
   http://book.emacs-china.org/
   compare with
   C:\Users\raflin\.emacs.d\core\templates\.spacemacs.template
-* TODO : check the hot key for add quote
+** TODO : check the hot key for add quote
 
-* TODO : understand the major mode, minor mode, layer
+** TODO : understand the major mode, minor mode, layer
 
-* DONE : add the fat on the fat secret
+** DONE : add the fat on the fat secret
   CLOSED: [2020-07-28 Tue 22:59]
 
 
-* DONE : insert time start and time end
+** DONE : insert time start and time end
   CLOSED: [2020-07-27 Mon 13:47]
   - c-cxi, c-cxo
 
-* DONE : circular view-mode-change : s-tab
+** DONE : circular view-mode-change : s-tab
   CLOSED: [2020-07-27 Mon 16:44]
     
 
-* TODO : understand the common-lisp
+** TODO : understand the common-lisp
   https://acl.readthedocs.io/en/latest/zhTW/ch2.html
 
-* TODO : understand org-mode :
+** TODO : understand org-mode :
   :LOGBOOK:
   CLOCK: [2020-07-27 Mon 16:49]--[2020-07-27 Mon 17:20] =>  0:31
   :END:
@@ -485,31 +488,31 @@ Dired 的功能還有很多很多，像是 mark 起來的檔案批次處理之�
   
 
 * [2020-07-28 Tue]  
-* DONE : add time-spending on Monday
+** DONE : add time-spending on Monday
   CLOSED: [2020-07-28 Tue 10:51]
-* DONE : add working items on wk2030?
+** DONE : add working items on wk2030?
   CLOSED: [2020-07-28 Tue 11:02]
   https://confluence-apps-us.asml.com:8443/display/HMISSW/Weekly+2030
-* TODO : check car insurcance with website
-* DONE : check >s in the org-document by using ag 
+** TODO : check car insurcance with website
+** DONE : check >s in the org-document by using ag 
   CLOSED: [2020-07-28 Tue 22:47]
-* TODO : understand the basic .spacemacs
-* TODO : org drill => obsolete maybe? => waiting ==> add this special package into additional package => not work in org 9.2, 9.3
-** TODO : check the memory management for org-mode
+** TODO : understand the basic .spacemacs
+** TODO : org drill => obsolete maybe? => waiting ==> add this special package into additional package => not work in org 9.2, 9.3
+**** TODO : check the memory management for org-mode
  https://orgmode.org/worg/org-contrib/org-drill.html
  
-* TODO : jira issue, remove iC0Comm dependencies
+** TODO : jira issue, remove iC0Comm dependencies
   https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview?commentId=24664&action=view
-* DONE : record the calorie ac in the morning+lunch
+** DONE : record the calorie ac in the morning+lunch
   CLOSED: [2020-07-28 Tue 13:20]
   
 
 
-* DONE : add one hour meeting to table
+** DONE : add one hour meeting to table
   CLOSED: [2020-07-28 Tue 22:47]
-* DONE : add <s function into vim script, write one write function on the text
+** DONE : add <s function into vim script, write one write function on the text
   CLOSED: [2020-07-28 Tue 22:48]
-** TODO : check yasnippet
+*** TODO : check yasnippet
   
  While it isn't vimscript, your search and replace task across a bunch of files sounds like a job for argdo:
 
@@ -521,15 +524,15 @@ Dired 的功能還有很多很多，像是 mark 起來的檔案批次處理之�
      wq!
  endfunction
 
-* DONE : copy the help data into google doc and let it speak up ==> not work => use extension instead
+** DONE : copy the help data into google doc and let it speak up ==> not work => use extension instead
   CLOSED: [2020-07-28 Tue 22:54]
-* DONE : re-edit the .spacemacs, find out the .template, diff with the my version
+** DONE : re-edit the .spacemacs, find out the .template, diff with the my version
   CLOSED: [2020-07-28 Tue 22:54]
-* TODO : gpod : add abbreviation
+** TODO : gpod : add abbreviation
 
   
 auto function : global bc, all functions before inspection
-* TODO : org mode changes in v9.3 https://orgmode.org/Changes.html
+** TODO : org mode changes in v9.3 https://orgmode.org/Changes.html
 
   <s+tab, <q+tab
   #+begin_src 
@@ -543,6 +546,7 @@ auto function : global bc, all functions before inspection
   #+begin_src emacs-lisp
 (require 'ob-clojure)
 #+end_src
+
 * TODO : table calculation
 https://orgmode.org/org.html#Advanced-features
 https://orgmode.org/worg/org-tutorials/org-spreadsheet-lisp-formulas.html
@@ -559,22 +563,396 @@ https://orgmode.org/manual/Field-and-range-formulas.html
   CLOSED: [2020-07-28 Tue 23:38]
 * DONE : check the google translator in Emacs
   CLOSED: [2020-07-28 Tue 22:55]
-* TODO : how to merge mp3 with ffmpeg
+
+* TODO : misc on the meeting
+  HS : hot spot
+location => image
+
+Non-HS : ROI : care area
+based on ROI, scan width, inpsection image
+HS : image center
+
+1) HS ==> 2) CS, LS, 
+group type
+recipe => 
+ICDU : 
+1: ICDU,
+2: cloud inspection, inspection result
+cloud file saving, 
+
+Klarf from KLA,
+
+3: ADRC : feed cloud file, load the result, based on the position, redo inspection
+different from ADRK=>(review)
+
+ADRC => recombination, ARD : review, 
+
+ADRC : run-time, need to load cloud file, 
+
+testID :
+0 => wafer alignment, 
+
+2 => 
+
+1: ls, 
+
+===
+
+load high/low offset, load sem/OM offset, by pattern matchting, 
+
+
+
+* <2020-07-29 Wed>
+
+** TODO : find the script to open folder in emacs
+
+** TODO : car insurance
+
+** TODO : come up with the good plan for exercise
+
+** TODO : merge the good code for vimrc and upload to github
+
+** TODO : refine the todo_list
+
+** TODO : fix the code smell
+** TODO : find the archive function in org-mode
+
+** TODO : how to merge mp3 with ffmpeg
 https://superuser.com/questions/314239/how-to-join-merge-many-mp3-files
-* TODO : how do you measure that you love a thing? like a house?
-* TODO : come up with work-out plan for 15, 30, 60, 90, 120 mins : 
-** TODO 120 mins : run 60mins, power : 60 mins
-* TODO : power 
-** burpee+plank : 12 mins
-** burpee : 6mins
-** forehand + backhand + jump : 12 mins
-** jump rope : 30 mins?
-** squart jump + jump rope : ??
-** abs : bring the thing to company?
-* TODO check how to use the car insurance
-* TODO check how to add abbr in linux for git 
-* TODO check the vimrc in linux
-* TODO download the things from github
-* TODO check how much calorie be burnt per mins for burpee?
+** TODO : how do you measure that you love a thing? like a house?
+** TODO check how to use the car insurance
+** TODO check how to add abbr in linux for git 
+** TODO check the vimrc in linux
+** TODO download the things from github?
+** DONE check how much calorie be burnt per mins for burpee?
+   CLOSED: [2020-07-29 Wed 14:22]
+*** TODO 
+Intel 到底怎麼了? Part 2
+
+Intel為什麼會找上台積電代工? 這不是一個突然的決定, 一切都是有跡可循的, 冰凍三尺非一日之寒.
+
+要先說清楚, 找台積電代工有兩種情況, 一種是當初買進來的單位(像英飛凌無線部門) 本來就有一些採用較舊的台積電28nm製程的RF電路, 這種純粹屬於計畫需要, 沒有必要為了轉單而轉單.
+
+而另外一種情況才是Intel本身造成的問題. 要知道產能的規劃是長期的, 環環相扣, 一個環節出問題就會對未來造成影響 - 建廠, 備料, 培訓人員, 調整機台, 等TD (technology development) 把製程配方調出來了, 開始小量試產, 一邊調整良率, 另一方面design team提早一兩年開始設計, 最後在雙方約定好的時間, 設計團隊把藍圖交給晶圓廠, 開始一層一層的光罩慢慢做, 幾週後生產, 封裝, 測試, 然後交貨.
+
+理想的狀況下, Intel 10nm製程開發順暢, 14nm廠一邊量產, 10nm廠一邊慢慢熱身準備就緒, 等到良率達標, 可以開始接大單了, design team在10nm上也差不多設計好了, 然後10nm大門一開, 誰先上? GT先上, 因為GT (Graphic) 圖形處理的架構比較一致, 設計週期比較短, 可以比較快擠出設計藍圖. 然後CPU老大, Server老二陸續進去, 然後10nm產量持續增加, 14nm慢慢騰出產能. 接下來呢?
+
+要知道 Intel 10萬大軍扣掉TMG/CPU/Server, 還有很多鬆散的外圍組織也需要晶片. 這些單位很多都是前CEO BK揮霍老本買進來的敗家收藏, 像是原本還算有點名氣但逐漸被人遺忘的FPGA公司Altera (改名PSG), 為了重返手機市場榮耀買進來的英飛凌無線部門(改名iCDG), 趕流行被當冤大頭買貴了的人工智慧Nervana(改名AIPG), 自動駕駛Mobileye. 扣掉這些大型裝飾, 還有一些基礎IP, IO, 記憶體, 還有小號CPU Atom. 最後就是一些量不大, 一台公車(MPW Shuttle)就可以打發的單位, 像是純做研究/發paper/出新聞稿的Intel Labs, 幫TMG做測試晶片的AD (Advanced Design). 總之, 山頭林立, 無奇不有.
+
+更有甚者, 還有一些不知什麼原因默默地在Intel裡載浮載沉討生活的浪人group, 我認識的一位業內老前輩統稱這些group是後娘養的, 沒人疼的孩子. 這些浪人group其實曾經也是有頭有臉隸屬於正規組織的, 但是這些正規組織被解散了 (像英特爾一時興起的晶圓代工, Intel Custom Foundry), 設計部門的頭目為了手下武士的生計, 只好在Intel裡面幫人打工, 譬如Server部門要做什麼記憶體控制IC, 人手不夠, 就暫時讓浪人group來接這個活. 如果面臨太多競爭, 像是遇到印度班加洛用人海戰術又愛誇口一切沒問題把活搶走了, 或是遇到馬來西亞濱城幹起活來不要命的華人工程師, 那只能摸摸鼻子, 去接一些別人撿剩的朝不保夕的活, 像是幫大陸的中興ZTE做chip, 每天看著川普的臉色等著project被cancel. 看過動物星球頻道的就知道飢餓的時候是沒有選擇的餘地的. Intel內部就是這樣一個弱肉強食的世界.
+
+總之, 這些各式各樣的單位, 就按照對公司的獲利貢獻的重要程度, 來決定要不要排進去10nm或繼續用14nm的多餘產能.
+
+結果世事難料, 10nm難產, Fab空轉, 最重要的CPU/Server/GT怎麼辦? 只好繼續佔用14nm的產能. 最慘的情況來了, TMG裡面負責製程研發的單位是TD(technology development). TD本來就處在人人過勞的極限狀態, 以前14nm弄好了, 主力就移師10nm, 留下一小批人力維護14nm, 然後再分出一小隊精銳先鋒去7nm. 現在14nm要繼續搞, 還要搞14nm+, 14nm++, 14nm+++(所謂的擠牙膏), 那分給10nm人數就少了, 7nm就更少了. 硬生生地就讓自己越陷越深. 所以說一步錯, 步步錯.
+
+現在14nm產能都給了公司的命脈CPU/Server, 那其他剩下的單位怎麼辦? 日子還是要過, IC還是要出貨, 為了求生路, 大家就紛紛發難, 勢力相對大一點的iCDG就跳出來說, 我們在英飛凌時代就是用台積電, 合作愉快, 讓我們繼續用吧. AIPG說我們的AI chip不能等, 有多少的data等著我們train, Nvidia都甩過我們好幾條街了, 所以我們一定要用最好的製程, 沒有Intel 10nm就給我TSMC 7nm. 竟然連一些幫Server系統做周邊chip的小咖說話都大聲起來, 不給我們出去, Server也出不了貨, 大家要死一起死!
+
+到了這種地步, Intel高層有任何選擇嗎? 開放到TSMC下單是不得已而為之的最後解決方法. Intel身為一家上市公司, 對股東有盈利的義務, 但盈利不代表一定要靠自己生產晶片, 就像Jordan打籃球再神也不能只靠自己得分, 有時候關鍵時刻也要分球給Steve Kerr (結果多年後金州勇士隊就在他的教導下崛起了).
+
+至於Intel開始到TSMC下單之後對本身公司體質產生了嚴重的副作用, 還有CPU的project怎麼也開始用起TSMC了, 下回分解.
+
+---
+
+大家都在問英特爾到底怎麼了? 其實不論7nm delay或是外包台積電都不是新聞, 都是早就
+在進行中的事, 只是第一次這樣公開宣布, 把外面的人嚇了一跳, 裡面的人則是見怪不怪.
+
+還在intel的時候, 是在product team, 但因為工作的關係常有機會跟製程的team打交道,
+有事沒事就會互相聊聊八卦. Intel的TMG (Technology Manufacturing Group) 是一個很封
+閉的軍事化組織, 自成一國, 紀律嚴明, 但裡面的人累得像狗一樣, 流動率也很高. TMG大
+到不能倒, 歷屆CEO都不敢動它的主意, 所以TMG的頭頭就像地方軍閥一樣. 一直到2018年被
+Murthy趕走之前, Sohail就是TMG的老大, 他手下的大將們就會輪流擔任每一代製程的負責
+人, 例如22nm的主管就是Kaizad.
+
+TMG一直以來都保持製程領先, 2012年22nm領先群雄, 從沒把tsmc/samsung放在眼裡.
+Kaizad立下大功, 平安下莊. 在這個時間點, CPU還基本上維持Tick-Tock規律(一次改架構,
+一次改製程). 還記得那幾年台積電常來Oregon招人, 三不五時收到HR的linkedin訊息, 有
+時還包下飯店的宴客廳請人吃免費晚餐, 順便問問要不要回台灣發展.
+
+2014上半年是一個很重要的轉折點, 14nm的CPU該出來了卻沒出來, 導致22nm的CPU變成了
+Tick-Tock-Tock. 負責14nm的TMG的負責人是Sanjay, 2015就被趕走了, 可見當一代製程的
+主管也是個高風險高報酬的職業, 成了就榮升VP/Fellow, 敗了就捲鋪蓋走人. 現在回頭看,
+這其實是很好的制度.
+
+2014下半年, 14nm Broadwell終於出了, 但也從那時開始, delay變成了常態. Tick-Tock變
+成Tick-Tock-Tock-Tock-Tock. 到現在也沒人有在提Tick-Tock了, 只知道TikTok.
+
+這是為什麼呢? 話說22nm平安下莊的Kaizad又扛起了10nm的大旗. 但這次沒上次那麼順利了.
+具體原因只能用我收集到的資訊來說個大概. Intel一向對於密度(transistor density) 有
+一種近乎癡迷的執著. 1mm^2面積裡能塞幾個transistor, 這個數字越高越好, 簡報上的
+MTr/mm^2就是要show一條漂亮的直線, 分析師不管提什麼問題, 說tsmc做這個Samsung做這
+個, Intel一慣動作就是拿density出來打臉. 在早期這也合理的. 但是隨著製程越縮越小,
+很多以前不用考慮的問題都跑出來了. 線寬越來越小, 間距越來越短, 就算你能做到M1-M4
+超細超近, 但你能真的拿來route嗎? 速度受影響之後還是要拉高到高層金屬, 那你的宣稱
+的density的好處又能真正拿到多少?
+
+總之, 10nm一開始的規格訂得太aggressive. TMG的人拼死拼活日夜加班也達不到良率. 那
+你說當初訂規格為什麼不跟design team商量, 別作繭自縛一昧追求density, 先出來再說,
+反正大家最後的目標就是出一顆好的CPU, 這就回到了前面說的TMG的老大心態. TMG做出來
+的製程, CPU設計部門就是只有吞下去的一條路, design rule太複雜? 甘我什麼事, 請自己
+解決. CPU部門只好各種各樣的疊床架屋的flow來解決各種各樣奇怪的問題, 開發時程也被
+拖累, 也慢慢變成了一個不是人待的地方, 只剩下拿H1B簽證的員工死撐著, 這是後話了.
+CPU team這樣久了Tock(架構)也沒力氣搞了, 甚至本來Oregon跟以色列有一個自己的CPU架
+構小tick-tock, 後來也全部由以色列來做了. 所以大樓之將傾, 都是從一根柱子的崩塌開
+始的.
+
+另外一說, 關於10nm的density規格, TMG也不是沒有聽product team的意見, 但是只有圖形
+處理Graphic team (GT)有時間搞一些PPA的研究, 然後反饋給TMG. Graphic本來就比較不重
+視速度, 而是重視density, 所以GT和TMG一拍即合, 一搭一唱, 各取所需.
+
+就在無限的14nm Tick-Tock-Tock-Tock-... 回音中, 10nm良率龜速的往上爬. Kaizad倒是
+位子坐得穩, 畢竟除了他之外, 其他人來壓不住陣腳只會更糟, CPU team人跑掉太多, 所以
+design也是落後. 同一時間7nm輪到台灣之光Chia-Hong上陣扛大旗. 看了10nm的例子, 7nm
+決定要對自己好一點, 放寬一點規格, 但是又忍不住要挑戰gate-all-around (GAA) FET.
+這是一個和當初FinFET一樣的劃時代的新突破. 台積電試過了但還沒實際用在目前主流製程,
+先走了EUV路線, Samsung看過了, 也先放一旁. Intel有著製程王者的堅持和驕傲, 非要挑
+戰這條路, 搞到最後放棄了. 7nm現在只好化繁為簡, 只能爭取越快出來越好, 先祝福台灣
+之光可以平安下莊.
+
+寫了這麼多, 還沒寫到找TSMC代工的部分, 那又可以寫一大篇了.
 
 
+---
+
+回到美國就是回到了現實世界，德國的童話世界只能當成往事來回味。回到現實世界的第一件事就是要調整心態，從政府照顧無微不至的社會主義，轉成一切靠自己的資本主義。在美國這個資本主義社會，從上到下人人向錢看，這大概是從德國回美國最大的文化衝擊。德國人很少討論錢的話題，美國人很少討論錢以外的話題，以前在德國時公司裡同事像家人一樣的感覺，在美國像天方夜譚。在這裡，工作僅僅是一份糊口用的固定現金流，和公司的關係就是打工領錢的雇傭關係，公司可以用各種理由開除你，甚至有時和你的工作績效一點關係也沒有，反過來你也可以隨時開除公司跳槽走人。
+
+大環境變化以天來計算，公司營運起起伏伏，很可能上一季還營收超過預期，這一季就要大家共體時艱開始砍人，真正理由是什麼也不重要，可能是財報出來前要給華爾街一點動機調高股價，也可能只是正常的換血，裁掉貴的換成便宜好用的。在大公司當個打工仔就像站在一塊浮冰上，浮冰慢慢融化面積越來越小，逼得站在上面的人要嘛往中心擠，要嘛努力游到附近大塊一點的浮冰，就算好不容易站到了靠中心一點的位置，也有可能因為年紀太大直接被踢下海。
+
+我們能做的，只能先求站穩腳步生存下來，再來才是盡量最佳化未來每一步的選擇，減少錯誤決策，讓最後的結果往理想值慢慢靠近，就像machine learning algorithm，先設定好目標，找到和目標關聯性最大的因素，然後幫每個因素找到最佳的比重。
+
+以50歲做一個里程碑，理想中的50歲是什麼模樣，結婚了沒，有沒有房，有沒有房貸，有幾個小孩，小孩還在國高中階段的話，大學學費存了多少。別覺得這還是很遙遠的未來，有了一個目標值，才能現在開始最佳化，趁著站在浮冰上的時候，慢慢開始打造自己的小船。
+
+最理想的情況當然是50歲達成財務自由，不用再為了錢而工作，不管是當包租公包租婆，還是靠投資的被動收入，先別說不可能，最近blind (一個美國科技業的八卦app) 上一個熱門討論串就是某FB的網民問，45歲有了300萬美金可不可以退休了。
+
+次理想的情況是擁有一個自己穩定的小事業，有固定的現金流，還是需要勞心勞力，但沒有被裁員的風險，自負盈虧，這樣也小勝充滿不確定性的殘酷職場。
+
+上述兩項有點困難的話，最有可能的就是還是要領一份薪水，那就要看看四周50歲以上的同事是怎麼生存下來的，選擇一條適合自己的路。
+
+個人覺得不管是哪一種目標，既然工作的薪水有限，那就把工作的CP值拉到最高，多出來的時間才有時間投入副業，多角化分散風險。CP值最簡單的量化方法就是時薪 (薪水除以實際工作時數)。要增加時薪，就要在維持一樣的工作產出前提下，減少實際的工作時數，本身技術和經驗的累積是基本條件，但是技術層出不窮翻新速度越來越快，要時時追上最新的技術越來越來吃力。
+
+彌補的方法就是人脈。影集Breaking Bad裡面的王牌律師Saul的名言就是 I know a guy, who knows a guy... 　在科技業，人脈的好壞可以大大影響你工作的績效，隨便舉個我們這一行的例子，因為天天要用Synopsys的設計工具，三不五時就會遇到卡關的問題，或是結果不合預期。你可以上網查，但十之八九查不出所以然，也可以問AE, 大部分時候也問不出所以然，比較負責的AE會願意讓你把資料庫打包送回Synopsys總公司給RD們 debug，但RD忙得半死(所以才需要CAE/AE來把關），真的要輪到你的case時可能一兩季都過去了。這時候如果你有非常資深的Synopsys Consultant的人脈，一通電話過去可能兩分鐘就解決了，順便得到一組隱藏變數，一來一往，多出來的時間就是自己的，個人的祕密武器庫也增加一項寶物。
+
+人脈的更大的好處是增加訊息來源，公司裡面各個單位的表現好壞都是動態的，一方面要注意自己腳下這一塊有沒有下沉的風險，另一方面要隨時掌握那些單位有成長空間有缺人，然後誰可以保你進去。在任何時候都要準備好Plan A，Plan B，Plan C。
+
+最近身邊同事離職的，跳槽的，人心惶惶的太多，所以有感而發隨手寫寫~
+
+
+
+SUBSCRIBE
+Search Healthline
+
+How Many Calories Do Burpees Burn?
+Calories burned
+How many should you do?
+How to do a burpee
+Benefits
+Similar exercises
+Burpee modifications
+Takeaway
+Even if you don’t consider yourself an avid workout enthusiast, you’ve likely heard of burpees. Burpees are a calisthenics exercise, a type of exercise that uses your body weight.
+
+With calisthenics exercises, you can improve not only strength and endurance, but also coordination and flexibility.
+
+When working out, you may wonder how effective an exercise is based on how many calories it burns. The number of calories burned during exercise varies with weight, intensity, and other factors.
+
+According to Baton Rouge General, you can burn roughly 160 calories doing 17 minutes of burpees.
+
+In this article, we’ll take a closer look at how many calories burpees burn, how to do them, and other benefits of doing burpees.
+
+Calories burned
+As mentioned above, you burn around 160 calories for every 17 minutes that you do burpees. Let’s break this number down to something more practical:
+
+By the numbers
+Roughly 9.4 calories are burned for every minute of burpees performed.
+It takes most people around three seconds to do a single burpee.
+Three seconds per burpee equals 20 burpees per minute, depending on speed and frequency.
+After doing some simple math, we can see that it takes roughly 20 burpees to burn around 10 calories. However, weight can affect the number of calories burned during exercise as well.
+
+According to Harvard Medical School, when performing 30 minutes of vigorous calisthenics:
+
+Weight and calories
+A 155-pound person will burn about 1.25 times more calories than a 125-pound person.
+A 185-pound person will burn about 1.5 times more calories than a 125-pound person.
+Given this information, the average person can burn anywhere from 10 to 15 calories for every 20 burpees.
+
+Below is a chart that may help you determine how many calories you will burn while performing burpees, depending on your weight.
+
+Weight	Number of burpees	Calories
+125-pound person	20	10
+155-pound person	20	12.5
+185-pound person	20	15
+How many burpees should you do?
+Burpees are considered an advanced calisthenics move, so it’s important to take your time and perform them with proper form to avoid injury.
+
+If you’re performing a single burpee every three seconds, you can expect to perform roughly 20 burpees per minute. If you perform your burpees more slowly, you might do 10 to 15 burpees per minute instead.
+
+Also, different variations of burpees may change the amount of time it takes you to do a single burpee.
+
+
+HEALTHLINE CHALLENGES
+Create a movement routine that you can do at home
+Our Move Your Body Challenge has one exercise for 25 days to build a routine, no equipment needed.
+
+Enter your email
+Get Healthline's daily Nutrition newsletter
+Your privacy is important to us
+
+How to do a burpee
+The easiest way to think of a burpee is that it’s a full plank followed by a squat jump. Here is a great visual tutorial for how to do a burpee:
+
+Here are some step-by-step instructions:
+
+Stand facing forward. Your feet should be hip-width apart and your arms should be at your sides.
+Lower yourself down into a squat by pushing your hips back and bending your knees. Focus your weight into your heels, rather than onto the balls of your feet.
+Lean forward and place your palms flat on the floor in front of you. The position of your palms should be narrower than your feet.
+Jump your feet back, stretching your legs and landing on the balls of your feet. Think of this transition as jumping into a full plank. During this position, engage the abs for support and be sure not to raise or sag your back.
+Jump your feet forward again until they are positioned next to your hands.
+Reach up with your arms over your head and jump up, then reach back down to cycle through the entire move again.
+Although the directions above are for a standard burpee, other popular burpee variations include:
+
+adding a pushup while in the plank position
+adding a plank jack while in the plank position
+adding a tuck jump while in the standing position
+No matter which type of burpee variation you choose to do, learning proper form is the most important thing.
+
+powered by Rubicon Project
+Benefits of burpees
+Burpees are a full-body calisthenics workout that focus on building muscle strength. They can help to improve strength and endurance as part of a regular workout routine and may also have other benefits too.
+
+In a 2014 community-based studyTrusted Source, researchers found that bodyweight exercises, such as burpees, were able to significantly reduce blood pressure in healthy adult women.
+
+Not only are burpees a great strength-building exercise, they can also be performed as part of a high intensity interval training (HIIT) regimen. HIIT focuses on bursts of intense exercise alternated with periods of recovery.
+
+The benefits of HIIT have been extensively studied for a variety of conditions, including type 2 diabetes, obesity, and heart health. In one studyTrusted Source, researchers found that HIIT could potentially have a positive impact on mitochondrial function and fiber type in muscle cells.
+
+Alternatives to burpees
+There are many reasons why someone may not be able to safely or effectively perform a burpee, but not to worry — there are plenty of similar calisthenics exercises that you can do instead.
+
+Check out some of these burpee alternatives for an equally effective workout:
+
+Jumping jacks
+Jumping jacks are another full-body calisthenics exercise that can be performed as a HIIT workout. Unlike burpees, jumping jacks do not place as much bodyweight pressure on the shoulders.
+
+Jump squats
+Jump squats allow you to perform the last portion of a burpee without having to perform the plank. This exercise will place similar pressure on the knees as burpees do, but again, not as much pressure on the shoulders.
+
+Pushups
+Pushups are a great beginner’s full-body calisthenics move that place minimal strain on the joints. The shoulders and abs remain engaged and depending on the pushup variation, so do the legs and glutes.
+
+Plank jacks
+Plank jacks are a great alternative to burpees when you’re unable to transition between plank and standing. Like burpees, they use the plank position but do not return to standing, meaning less strain on the knees.
+
+Plank jacks also make a great HIIT workout, just like burpees.
+
+Burpee modifications
+If you’re still interested in performing a burpee but cannot perform it in its entirety, the alternative might be to modify it. To perform a modified burpee, try these adjustments:
+
+Perform each move one at a time.
+Step into and out of plank rather than jump.
+Stand to finish rather than jump to finish.
+The bottom line
+Burpees are a great calisthenics exercise that burn anywhere from 10 to 15 calories per minute. If you’ve never performed a burpee before, it’s important to learn proper form to avoid injury.
+
+If you’re looking to round out your exercise program with more calisthenics moves like burpees, an exercise professional can help. Visit the American College of Sports Medicine’s ProFinder to find an exercise professional near you.
+
+ADVERTISEMENT
+Need a more effective fitness routine?
+Find the perfect fitness equipment to support your at-home workout.
+
+Last medically reviewed on June 6, 2019
+
+ 5 sourcescollapsed
+
+
+
+
+
+
+Medically reviewed by Daniel Bubnis, M.S., NASM-CPT, NASE Level II-CSS — Written by Eleesha Lockett, MS on June 6, 2019
+
+related stories
+3 Ways to Do a Squat Thrust
+How Many Calories Do I Burn in a Day?
+6 Unusual Ways to Burn Calories
+8 Calisthenics Exercises for Beginners
+Staying Physically Active May Lower Your Risk of Death by 30%
+
+Eating Breakfast Can Help You Burn More Carbs When You Work Out
+
+From 20s to 60s, Here’s How 9 Women Got the Abs of Their Dreams
+
+I Challenged Myself to 30 Days of Weighted Squats... Here’s What […]
+
+13 Fatigue-Fighting Hacks to Supercharge Your Mornings
+Was this article helpful?
+Yes
+No
+
+READ THIS NEXT
+3 Ways to Do a Squat Thrust
+Medically reviewed by Daniel Bubnis, MS, NASM-CPT, NASE Level II-CSS
+Squat thrusts or burpees are challenging exercises, but if you learn to master them, they can yield results. Learn three different ways to do squat…
+
+READ MORE
+How Many Calories Do I Burn in a Day?
+Medically reviewed by Kathy Warwick, RD, LD
+How many calories you burn daily depends on your sex, age, and activity level. We look at how many calories are needed to maintain weight or to lose…
+
+READ MORE
+6 Unusual Ways to Burn Calories
+Medically reviewed by Franziska Spritzler, RD, CDE
+There are more ways to burn calories than just exercise. Here are 6 unusual ways to burn calories, which have nothing to do with diet or exercise.
+
+READ MORE
+8 Calisthenics Exercises for Beginners
+Medically reviewed by Daniel Bubnis, MS, NASM-CPT, NASE Level II-CSS
+Calisthenics were developed thousands of years ago in ancient Greece. Learn how you can incorporate these timeless exercises into your workouts.
+
+READ MORE
+Staying Physically Active May Lower Your Risk of Death by 30%
+In a new study, people who engaged in sufficient aerobic activity were 29 percent less likely to die from any cause, compared to people who didn't…
+
+READ MORE
+10 Arm-Toning Dumbbell Exercises
+Medically reviewed by Jake Tipane, CPT
+Having stronger arms and shoulders has many benefits. It can increase your muscle strength and muscle tone, reduce your risk of injury, improve your…
+
+READ MORE
+6 Ways to Improve Your Vo2 Max
+Medically reviewed by Jake Tipane, CPT
+Vo2 Max is one way to determine your fitness level, and typically athletes have very high numbers. We'll discuss how to improve yours.
+
+READ MORE
+These Are the 12 Best Dumbbells to Use at Home, According to a Trainer
+Medically reviewed by Jake Tipane, CPT
+Choosing the best set of dumbbells for you will take a bit of research, but no matter what your budget or fitness level is, there's an option for you.
+
+READ MORE
+Is a Foam Roller Recommended to Ease a Tight IT Band?
+Medically reviewed by Gregory Minnis, DPT
+If you have a tight IT band, you might have heard that foam rolling is your best option. We'll discuss what is best to east this tight tissue.
+
+READ MORE
+Is It Normal to Take a Nap After a Workout?
+Medically reviewed by Daniel Bubnis, M.S., NASM-CPT, NASE Level II-CSS
+After doing intense exercise, some people feel the urge to take a nap. We'll discuss the pros and cons of sleeping after exercise.
+
+READ MORE
+ 
+Get our wellness newsletter
+Fitness and nutrition tips, health news, and more.
+
+Enter your email
+Your privacy is important to us
+
+About Us
+Health Topics
+Health News
+Contact Us
+Advertise With Us
+Advertising Policy
+Newsletters
+Careers
+Find An Online Doctor
+Do Not Sell My Info
+Privacy Settings
+© 2005-2020 Healthline Media a Red Ventures Company. All rights reserved. Our website services, content, and products are for informational purposes only. Healthline Media does not provide medical advice, diagnosis, or treatment. See additional information.

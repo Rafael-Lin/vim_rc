@@ -445,7 +445,6 @@ you should place your code here."
                     )
               )
 
-
 (defun browse-file-directory ()
   "Open the current file's directory however the OS would."
   (interactive)
