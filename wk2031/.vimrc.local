@@ -98,7 +98,7 @@ let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
 
 "colorscheme{
     " colorscheme molokai
-    colorscheme ir_black
+ colorscheme ir_black
 "}
 
 "binaryView{

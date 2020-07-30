@@ -1,41 +1,45 @@
 * JiraTable
-  | JIRA                                            | NAME                                                     | BAMBOO | PR | REMARK                                                    |
-  |-------------------------------------------------+----------------------------------------------------------+--------+----+-----------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]                                            | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | bamboo fail, ready to merge                               |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]                                            | fix unit converter problem                               |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | review                                                    |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]                                            | re-arch for imsageSavingHelper                           |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | dieX, dieY discuss                                        |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]                                            | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | fix the code smell, IC0NextComm change done, test locally |
-  | https://jira-apps-us.asml.com/browse/MBISW-3402 | Migrate SU from SystemStatus to MachingConstant          |        |    |                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]                                            | Could not initialize Host GUI due to config file missing |        |    |                                                           |
-  | https://jira-apps-us.asml.com/browse/MBISW-4368 | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | check bamboo result                                       |
-  |-------------------------------------------------+----------------------------------------------------------+--------+----+-----------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]]                                            | StigmatorMonitorOperations                               |        |    |                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]]                                            | IOpticalPixelSizeAngleCalibration                        |        |    |                                                           |
-  | https://jira-apps-us.asml.com/browse/MBISW-5765 | Remove SetDependencies of VideoChannelGeneric            |        |    |                                                           |
-  | https://jira-apps-us.asml.com/browse/MBISW-5045 | StageCluster.TryGetPosition                              |        |    |                                                           |
-  | https://jira-apps-us.asml.com/browse/MBISW-5766 | Remove SetDependencies of PixelSize                      |        |    |                                                           |
-  | https://jira-apps-us.asml.com/browse/MBISW-4366 | Expose IZControl                                         |        |    |                                                           |
-  | https://jira-apps-us.asml.com/browse/MBISW-1640 | Conversion function LinkedException and HRESULT          |        |    |                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]                                            | Clean the dependencies diagram in SU                     |        |    |                                                           |
+  | JIRA | NAME                                                     | BAMBOO | PR | Thu | REMARK                                                    |
+  |------+----------------------------------------------------------+--------+----+-----+-----------------------------------------------------------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | 0   | bamboo fail, ready to merge                               |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem                               |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | 1h  | review, fix conflict, fix code smell                      |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper                           |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | 5h  | dieX, dieY discuss, fix diX/Y,                            |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]] | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | 1h  | fix the code smell, IC0NextComm change done, test locally |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]] | Migrate SU from SystemStatus to MachingConstant          |        |    |     |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]] | Could not initialize Host GUI due to config file missing |        |    |     |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]] | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | 1h  | check bamboo result                                       |
+  
+  | next sprint wk33                                |                                                 |   |   |   |
+  |-------------------------------------------------+-------------------------------------------------+---+---+---|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]]                                            | StigmatorMonitorOperations                      |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]]                                            | IOpticalPixelSizeAngleCalibration               |   |   |   |
+  | https://jira-apps-us.asml.com/browse/MBISW-5765 | Remove SetDependencies of VideoChannelGeneric   |   |   |   |
+  | https://jira-apps-us.asml.com/browse/MBISW-5045 | StageCluster.TryGetPosition                     |   |   |   |
+  | https://jira-apps-us.asml.com/browse/MBISW-5766 | Remove SetDependencies of PixelSize             |   |   |   |
+  | https://jira-apps-us.asml.com/browse/MBISW-4366 | Expose IZControl                                |   |   |   |
+  | https://jira-apps-us.asml.com/browse/MBISW-1640 | Conversion function LinkedException and HRESULT |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]                                            | Clean the dependencies diagram in SU            |   |   |   |
 
 
 
 * WeightPlan
   
 ** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
-*** TODO : 1550, TDEE : 2387, target : 2387 - 800 : 1587
-*** TODO : wk2030_5 : 76
-*** TODO : check how to lose one kilo
+*** TODO : BMR : 1550, TDEE : 2387, target intake calorie : 2387 - 800 : 1587
+*** DONE : wk2030_5 : 76
+    CLOSED: [2020-07-30 Thu 09:58]
+*** DONE : check how to lose one kilo
+    CLOSED: [2020-07-30 Thu 09:58]
 *** TODO : TDEE : total daily energy expenditure
 *** TODO : come up with work-out plan for 15, 30, 60, 90, 120 mins : 
-*** TODO : 120 mins : run 60mins, power : 60 mins
+*** TODO : 120 mins : run 60 mins, power : 60 mins
 *** TODO : power 
 **** burpee+plank : 12 mins
 **** burpee : 6mins
-**** forehand + backhand + jump : 12 mins
 **** jump rope : 30 mins?
 **** squart jump + jump rope : ??
 **** abs : bring the thing to company?
+**** Jump_Stay_in_Air, training
     
     | time         | weight | weight(pound) |
     |--------------+--------+---------------|
@@ -51,13 +55,13 @@
  |----------------------------------------+-----------------------------+----------+------------+---------------------------|
  | Mon                                    |                        1409 |      638 |        771 |                     -1616 |
  | Tu                                     |                        1666 |        0 |       1666 |                      -721 |
- | Wed                                    |                           0 |          |          0 |                     -2387 |
- | Thu                                    |                           0 |          |          0 |                     -2387 |
- | Fri                                    |                           0 |          |          0 |                     -2387 |
- | Sat                                    |                           0 |          |          0 |                     -2387 |
- | Sun                                    |                             |          |          0 |                     -2387 |
+ | Wed                                    |                        1437 |      649 |        788 |                     -1599 |
+ | Thu                                    |                        2387 |      584 |       1803 |                      -584 |
+ | Fri                                    |                        2387 |          |       2387 |                         0 |
+ | Sat                                    |                        2387 |          |       2387 |                         0 |
+ | Sun                                    |                        2387 |          |       2387 |                         0 |
  |----------------------------------------+-----------------------------+----------+------------+---------------------------|
- | Mon + Tu + Wed + Thu + Fri + Sat + Sun |                        3075 |      638 |       2437 |                    -14272 |
+ | Mon + Tu + Wed + Thu + Fri + Sat + Sun |                       14060 |     1871 |      12189 |                     -4520 |
  #+TBLFM: $4=$2-$3::$5=$4-2387::@9=vsum(@2..@8)
 
  | best practices | morning running | morning weight training | night tennis | night power | total |
@@ -78,10 +82,24 @@
  | alcohol  | calorie/100g |
  |----------+--------------|
  | volka    |          230 |
- | beer     |           80 |
- | red wine |           ?? |
+ | beer     |         43.3 |
+ | red wine |         82.9 |
  |          |              |
- #+TBLFM: $2=$1*12
+ |          |              |
+ |          |              |
+
+
+ Forehand + backhand + jump : 12 mins
+ 
+ | item         | duration |
+ |--------------+----------|
+ | forehand     | 00:01:30 |
+ | backhand     | 00:01:30 |
+ | jumping jack | 00:01:30 |
+ | serve        | 00:01:30 |
+ |--------------+----------|
+ | Total        | 00:06:00 |
+ #+TBLFM: @6$2=vsum(@2$2..@5$2);T
 
   7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
 
@@ -604,7 +622,8 @@ load high/low offset, load sem/OM offset, by pattern matchting,
 
 * <2020-07-29 Wed>
 
-** TODO : find the script to open folder in emacs
+** DONE : find the script to open folder in emacs
+   CLOSED: [2020-07-30 Thu 10:07]
 
 ** TODO : car insurance
 
@@ -612,7 +631,8 @@ load high/low offset, load sem/OM offset, by pattern matchting,
 
 ** TODO : merge the good code for vimrc and upload to github
 
-** TODO : refine the todo_list
+** DONE : refine the todo_list
+   CLOSED: [2020-07-30 Thu 10:08]
 
 ** TODO : fix the code smell
 ** TODO : find the archive function in org-mode
@@ -956,3 +976,54 @@ Find An Online Doctor
 Do Not Sell My Info
 Privacy Settings
 © 2005-2020 Healthline Media a Red Ventures Company. All rights reserved. Our website services, content, and products are for informational purposes only. Healthline Media does not provide medical advice, diagnosis, or treatment. See additional information.
+
+* <2020-07-30 Thu>
+
+** TODO : add the training planning in table
+
+** DONE : add discussion : 1.5 hr on ticket
+   CLOSED: [2020-07-30 Thu 17:38]
+
+** DONE : check chinese in the table  => all chinese may work
+   CLOSED: [2020-07-30 Thu 10:28]
+
+** TODO : check multiple row in one cell of table
+
+** DONE : Add the burnt calorie and eaten one into app
+   CLOSED: [2020-07-30 Thu 10:24]
+
+** TODO : excel file into org-table, org-table into excel file
+   Save the file as a tab delimited file (using Excel or the localc command mentioned in @YoungFrog's answer). Then run org-table-import at the point where you want the table inserted.
+
+** TODO : org-table, exclude one column
+   
+
+** DONE : check the living room size, estimate the sofa width
+   CLOSED: [2020-07-30 Thu 10:50]
+
+** TODO : amigo call
+https://www.facebook.com/pages/category/Construction-Company/%E9%98%BF%E7%B1%B3%E5%93%A5%E5%BB%BA%E7%AF%89%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-941714262700569/
+
+| 欣園堡 | https://newhouse.591.com.tw/home/housing/detail?hid=121883 | 本原街二段0510巷 |
+|        |                                                            |                  |
+|        |                                                            |                  |
+
+|----------+-------------------|
+| Verse No | Verse             |
+|----------+-------------------|
+|        1 | Line1 Line1 Line1 |
+|        2 | Line2 Line2 Line2 |
+|----------+-------------------|
+
+
++------------+------------+------------+
+|fjdsklfjsdklfjds            |            |            |
++------------+------------+------------+
+|            |  jkfjsdkl        |            |
++------------+-----------+------------+
+|            |            |            |
++------------+------------+------------+
+|            |            |            |
++------------+------------+------------+
+|            |            |            |
++------------+------------+------------+
