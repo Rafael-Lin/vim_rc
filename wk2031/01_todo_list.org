@@ -1,13 +1,13 @@
 * JiraTable
-  | JIRA | NAME                                                     | BAMBOO | PR | Thu | REMARK                                                    |
-  |------+----------------------------------------------------------+--------+----+-----+-----------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | 0   | bamboo fail, ready to merge                               |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem                               |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | 1h  | review, fix conflict, fix code smell                      |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper                           |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | 5h  | dieX, dieY discuss, fix diX/Y,                            |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]] | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | 1h  | fix the code smell, IC0NextComm change done, test locally |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]] | Migrate SU from SystemStatus to MachingConstant          |        |    |     |                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]] | Could not initialize Host GUI due to config file missing |        |    |     |                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]] | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | 1h  | check bamboo result                                       |
+  | JIRA | NAME                                                     | BAMBOO | PR | Thu | Fri | REMARK                                                                    |
+  |------+----------------------------------------------------------+--------+----+-----+-----+---------------------------------------------------------------------------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | 0   |     | bamboo fail, ready to merge                                               |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | 1h  | 1h  | review, fix conflict, fix code smell                                      |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | 5h  |     | dieX, dieY discuss, fix diX/Y, SetSeScanWidthTest locally pass, run again |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]] | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | 1h  |     | fix the code smell, IC0NextComm change done, test locally                 |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]] | Migrate SU from SystemStatus to MachingConstant          |        |    |     |     |                                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]] | Could not initialize Host GUI due to config file missing |        |    |     |     |                                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]] | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | 1h  | 6h  | check bamboo result, it work locally                                      |
   
   | next sprint wk33                                |                                                 |   |   |   |
   |-------------------------------------------------+-------------------------------------------------+---+---+---|
@@ -19,17 +19,15 @@
   | https://jira-apps-us.asml.com/browse/MBISW-4366 | Expose IZControl                                |   |   |   |
   | https://jira-apps-us.asml.com/browse/MBISW-1640 | Conversion function LinkedException and HRESULT |   |   |   |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]                                            | Clean the dependencies diagram in SU            |   |   |   |
+  |-------------------------------------------------+-------------------------------------------------+---+---+---|
+  | https://jira-apps-us.asml.com/browse/MBISW-5779 | FT example                                      |   |   |   |
 
 
 
 * WeightPlan
   
 ** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
-*** TODO : BMR : 1550, TDEE : 2387, target intake calorie : 2387 - 800 : 1587
-*** DONE : wk2030_5 : 76
-    CLOSED: [2020-07-30 Thu 09:58]
-*** DONE : check how to lose one kilo
-    CLOSED: [2020-07-30 Thu 09:58]
+*** TODO : BMR : 1550, TDEE : 2387, target intake calorie :: below 1500, muscle weight : 35.5 KG 
 *** TODO : TDEE : total daily energy expenditure
 *** TODO : come up with work-out plan for 15, 30, 60, 90, 120 mins : 
 *** TODO : 120 mins : run 60 mins, power : 60 mins
@@ -49,20 +47,21 @@
     | wk2034(8/17) |   73.5 |       161.994 |
     | wk2035(8/24) |   73.0 |       160.892 |
     | wk2036(8/31) |   72.5 |        159.79 |
+    | wk2037(9/07) |   72.0 |       158.688 |
  #+TBLFM: $3=$2*2.204
 
- | wk2031                                 | total acquired kilo calorie | exercise | Balance(b) | Calorie deficit(2387-(b)) |
- |----------------------------------------+-----------------------------+----------+------------+---------------------------|
- | Mon                                    |                        1409 |      638 |        771 |                     -1616 |
- | Tu                                     |                        1666 |        0 |       1666 |                      -721 |
- | Wed                                    |                        1437 |      649 |        788 |                     -1599 |
- | Thu                                    |                        2387 |      584 |       1803 |                      -584 |
- | Fri                                    |                        2387 |          |       2387 |                         0 |
- | Sat                                    |                        2387 |          |       2387 |                         0 |
- | Sun                                    |                        2387 |          |       2387 |                         0 |
- |----------------------------------------+-----------------------------+----------+------------+---------------------------|
- | Mon + Tu + Wed + Thu + Fri + Sat + Sun |                       14060 |     1871 |      12189 |                     -4520 |
- #+TBLFM: $4=$2-$3::$5=$4-2387::@9=vsum(@2..@8)
+ | wk2031 | total acquired kilo calorie | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
+ |--------+-----------------------------+----------+------------+---------------------------+--------|
+ | Mon    |                        1409 |      638 |        771 |                     -1616 |        |
+ | Tu     |                        1666 |        0 |       1666 |                      -721 |        |
+ | Wed    |                        1437 |      649 |        788 |                     -1599 |   74.2 |
+ | Thu    |                        1494 |      584 |        910 |                     -1477 |   74.0 |
+ | Fri    |                        2387 |          |       2387 |                         0 |        |
+ | Sat    |                        2387 |          |       2387 |                         0 |        |
+ | Sun    |                        2387 |          |       2387 |                         0 |        |
+ |--------+-----------------------------+----------+------------+---------------------------+--------|
+ | total  |                       13167 |     1871 |      11296 |                     -5413 |        |
+ #+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
 
  | best practices | morning running | morning weight training | night tennis | night power | total |
  |----------------+-----------------+-------------------------+--------------+-------------+-------|
@@ -79,14 +78,16 @@
  #+TBLFM: $3=9*$1
 
 
- | alcohol  | calorie/100g |
- |----------+--------------|
- | volka    |          230 |
- | beer     |         43.3 |
- | red wine |         82.9 |
- |          |              |
- |          |              |
- |          |              |
+ | alcohol                                | calorie/100g |
+ |----------------------------------------+--------------|
+ | volka                                  |          230 |
+ | beer                                   |         43.3 |
+ | red wine                               |         82.9 |
+ | chicken breast (no skin)               |          104 |
+ | chicken inner muscle                   |          102 |
+ | chinese omelette with tuna (per share) |          375 |
+ | cola                                   |           42 |
+ |                                        |              |
 
 
  Forehand + backhand + jump : 12 mins
@@ -102,26 +103,6 @@
  #+TBLFM: @6$2=vsum(@2$2..@5$2);T
 
   7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
-
-
-* LogTimeSpending : 
-  
-  
-** public
-|                               | <2020-07-27 Mon> | <2020-07-28 Tue>                  | <2020-07-29 Wed>                                      | <2020-07-30 Thu> | <2020-07-31 Fri> |
-| jira : rear imageSavingHelper | 4h               | 2h : discuss on the dieX and DieY |                                                       |                  |                  |
-| meeting                       | 3h               | 2h                                |                                                       |                  |                  |
-| [[https://jira-apps-us.asml.com/browse/MBISW-5797][pixel size unit issue]]         |                  | 0.5h                              |                                                       |                  |                  |
-| expose imagesavinghelper      |                  | 2h : debug bamboo failure         | 2.5h                                                  |                  |                  |
-| remove dependencies           |                  |                                   | 1.5h+ remove the setDependencies for IC0NextComm + 2h |                  |                  |
-
-
-** private  
-|                                           | <2020-07-27 Mon> | <2020-07-28 Tue> | <2020-07-29 Wed> | <2020-07-30 Thu> | <2020-07-31 Fri> |
-| [pending]org-drill, looks obsolete now 4h |                  | 2.5h             |                  |                  |                  |
-| [[https://jira-apps-us.asml.com/browse/MBISW-5797][pixel size unit issue]]                     |                  | 1h               |                  |                  |                  |
-
-
 
 
 * <2020-07-27 Mon>
@@ -977,6 +958,8 @@ Do Not Sell My Info
 Privacy Settings
 © 2005-2020 Healthline Media a Red Ventures Company. All rights reserved. Our website services, content, and products are for informational purposes only. Healthline Media does not provide medical advice, diagnosis, or treatment. See additional information.
 
+
+
 * <2020-07-30 Thu>
 
 ** TODO : add the training planning in table
@@ -1004,26 +987,32 @@ Privacy Settings
 ** TODO : amigo call
 https://www.facebook.com/pages/category/Construction-Company/%E9%98%BF%E7%B1%B3%E5%93%A5%E5%BB%BA%E7%AF%89%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-941714262700569/
 
-| 欣園堡 | https://newhouse.591.com.tw/home/housing/detail?hid=121883 | 本原街二段0510巷 |
-|        |                                                            |                  |
-|        |                                                            |                  |
+** TODO : table el checking
+ | 欣園堡 | https://newhouse.591.com.tw/home/housing/detail?hid=121883 | 本原街二段0510巷 |
+ |        |                                                            |                  |
+ |        |                                                            |                  |
 
-|----------+-------------------|
-| Verse No | Verse             |
-|----------+-------------------|
-|        1 | Line1 Line1 Line1 |
-|        2 | Line2 Line2 Line2 |
-|----------+-------------------|
+ |----------+-------------------|
+ | Verse No | Verse             |
+ |----------+-------------------|
+ |        1 | Line1 Line1 Line1 |
+ |        2 | Line2 Line2 Line2 |
+ |----------+-------------------|
 
 
-+------------+------------+------------+
-|fjdsklfjsdklfjds            |            |            |
-+------------+------------+------------+
-|            |  jkfjsdkl        |            |
-+------------+-----------+------------+
-|            |            |            |
-+------------+------------+------------+
-|            |            |            |
-+------------+------------+------------+
-|            |            |            |
-+------------+------------+------------+
+ +------------+------------+------------+
+ |fjdsklfjsdklfjds            |            |            |
+ +------------+------------+------------+
+ |            |  jkfjsdkl        |            |
+ +------------+-----------+------------+
+ |            |            |            |
+ +------------+------------+------------+
+ |            |            |            |
+ +------------+------------+------------+
+ |            |            |            |
+ +------------+------------+------------+
+
+ 
+** TODO : organize todo2018 with this
+
+*** TODO : copy the todo2018 data into this
