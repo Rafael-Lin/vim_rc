@@ -93,8 +93,11 @@ let g:airline_section_c = '%t'
 :set iskeyword-=.
 :set fencs=ucs-bom,utf-8,default,latin1
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
-let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
-let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+if WINDOWS()
+    let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+else
+    let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+endif
 
 "colorscheme{
     " colorscheme molokai
