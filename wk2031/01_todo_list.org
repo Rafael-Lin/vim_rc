@@ -9,18 +9,18 @@
   | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]] | Could not initialize Host GUI due to config file missing |        |    |     |     |                                                                           |
   | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]] | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | 1h  | 6h  | check bamboo result, it work locally                                      |
   
-  | next sprint wk33                                |                                                 |   |   |   |
-  |-------------------------------------------------+-------------------------------------------------+---+---+---|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]]                                            | StigmatorMonitorOperations                      |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]]                                            | IOpticalPixelSizeAngleCalibration               |   |   |   |
-  | https://jira-apps-us.asml.com/browse/MBISW-5765 | Remove SetDependencies of VideoChannelGeneric   |   |   |   |
-  | https://jira-apps-us.asml.com/browse/MBISW-5045 | StageCluster.TryGetPosition                     |   |   |   |
-  | https://jira-apps-us.asml.com/browse/MBISW-5766 | Remove SetDependencies of PixelSize             |   |   |   |
-  | https://jira-apps-us.asml.com/browse/MBISW-4366 | Expose IZControl                                |   |   |   |
-  | https://jira-apps-us.asml.com/browse/MBISW-1640 | Conversion function LinkedException and HRESULT |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]                                            | Clean the dependencies diagram in SU            |   |   |   |
-  |-------------------------------------------------+-------------------------------------------------+---+---+---|
-  | https://jira-apps-us.asml.com/browse/MBISW-5779 | FT example                                      |   |   |   |
+  | next sprint wk33 |                                                 |   |   |   |
+  |------------------+-------------------------------------------------+---+---+---|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]]             | StigmatorMonitorOperations                      |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]]             | IOpticalPixelSizeAngleCalibration               |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5765][5765]]             | Remove SetDependencies of VideoChannelGeneric   |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]             | StageCluster.TryGetPosition                     |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5766][5766]]             | Remove SetDependencies of PixelSize             |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4366][4366]]             | Expose IZControl                                |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-1640][1640]]             | Conversion function LinkedException and HRESULT |   |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]             | Clean the dependencies diagram in SU            |   |   |   |
+  |------------------+-------------------------------------------------+---+---+---|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5779][5779]]             | FT example                                      |   |   |   |
 
 
 
@@ -56,11 +56,11 @@
  | Tu     |                        1666 |        0 |       1666 |                      -721 |        |
  | Wed    |                        1437 |      649 |        788 |                     -1599 |   74.2 |
  | Thu    |                        1494 |      584 |        910 |                     -1477 |   74.0 |
- | Fri    |                        2387 |          |       2387 |                         0 |        |
- | Sat    |                        2387 |          |       2387 |                         0 |        |
+ | Fri    |                        1416 |        0 |       1416 |                      -971 |   74.3 |
+ | Sat    |                        2366 |        0 |       2366 |                       -21 |        |
  | Sun    |                        2387 |          |       2387 |                         0 |        |
  |--------+-----------------------------+----------+------------+---------------------------+--------|
- | total  |                       13167 |     1871 |      11296 |                     -5413 |        |
+ | total  |                       12175 |     1871 |      10304 |                     -6405 |        |
  #+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
 
  | best practices | morning running | morning weight training | night tennis | night power | total |
@@ -105,15 +105,29 @@
   7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
 
 
+* Expense wk2032
+
+| item      | <2020-08-02 Sun> | <2020-08-03 Mon> | <2020-08-04 Tue> | <2020-08-05 Wed> | <2020-08-06 Thu> | <2020-08-07 Fri> |
+|-----------+------------------+------------------+------------------+------------------+------------------+------------------|
+| drink     |              240 |                  |                  |                  |                  |                  |
+| snack     |               89 |                  |                  |                  |                  |                  |
+| gasolne   |             1058 |                  |                  |                  |                  |                  |
+| insurance |            13788 |                  |                  |                  |                  |                  |
+|-----------+------------------+------------------+------------------+------------------+------------------+------------------|
+| total     |            15175 |                  |                  |                  |                  |                  |
+#+TBLFM: @6$2=vsum(@2..@5)
 * <2020-07-27 Mon>
 ** DONE : insert todo item hot key => S-M_RET
   CLOSED: [2020-07-27 Mon 13:24]
 ** DONE : change state : c-c c-t
   CLOSED: [2020-07-27 Mon 13:24]
-** TODO : chat with Nemo on 7 habits
-** TODO : chat with Alan on insurance
+** DONE : chat with Nemo on 7 habits
+   CLOSED: [2020-08-02 Sun 22:18]
+** DONE : chat with Alan on insurance
+   CLOSED: [2020-08-02 Sun 22:18]
   https://www.fubon.com/insurance/b2c/content/main/new02.html
-** TODO : open PR for imageSavingHelper 
+** DONE : open PR for imageSavingHelper 
+   CLOSED: [2020-08-02 Sun 22:18]
   :LOGBOOK:
   CLOCK: [2020-07-27 Mon 14:05]--[2020-07-27 Mon 16:10] =>  2:05
   CLOCK: [2020-07-27 Mon 13:49]--[2020-07-27 Mon 14:05] =>  0:16
@@ -615,12 +629,14 @@ load high/low offset, load sem/OM offset, by pattern matchting,
 ** DONE : refine the todo_list
    CLOSED: [2020-07-30 Thu 10:08]
 
-** TODO : fix the code smell
+** DONE : fix the code smell
+   CLOSED: [2020-08-02 Sun 12:55]
 ** TODO : find the archive function in org-mode
 
 ** TODO : how to merge mp3 with ffmpeg
 https://superuser.com/questions/314239/how-to-join-merge-many-mp3-files
-** TODO : how do you measure that you love a thing? like a house?
+** DONE : how do you measure that you love a thing? like a house?
+   CLOSED: [2020-08-02 Sun 12:55]
 ** TODO check how to use the car insurance
 ** TODO check how to add abbr in linux for git 
 ** TODO check the vimrc in linux
@@ -1017,7 +1033,105 @@ https://www.facebook.com/pages/category/Construction-Company/%E9%98%BF%E7%B1%B3%
 
 *** TODO : copy the todo2018 data into this
 
+* <2020-08-02 Sun>
 
-* <2020-07-31 Fri>
-* https://m.momoshop.com.tw/goods.momo?i_code=7172793
+** TODO send out the money to mom : 8000
 
+** TODO sofa factory organization 
+
+*** 坐又銘沙發 : 中正南路164號
+
+*** 新家園 : 永康區東橋七路378號
+
+*** AJ2 : 28 mins : 台南市西港區中州21-30號 
+    AJ2 馬爾默 => https://www.aj2.com.tw/product/scandinavian/malmo_l_shaped_sofa/1942
+    馬爾默沙發提供「兩段式可調式椅背」，除了可以盤腿舒服躺著的 86cm 深度，也可以移動成一般坐深深度 56cm。
+
+*** Horia 赫里亞手工訂製沙發-台南旗艦店 702台南市南區永成路二段369-2號 : 15 mins
+ 雅伯達
+ 切爾西
+ 歐萊雅 = > good fu
+https://www.horia.com.tw/work/
+https://www.youtube.com/watch?v=yMeT8AsRDKo&feature=youtu.be
+
+*** 庫克
+
+*** 美克
+
+** TODO daily expenditure recording for next week (especially on alcohol)
+
+** TODO Check out the tennis-video from earth
+** TODO : planning on the work-out on footwork and serve
+
+** TODO : return one of the video back to library
+
+** TODO : check out the type of wood, and target restaurant table
+
+松木
+白蠟木
+梣木
+
+台南白河美雅家俱
+* <2020-08-03 Mon>
+
+** TODO print out the car_insurance_doc and send it back
+
+** TODO understand the car insurance in detail
+■21
+強制責任保險
+每一人傷害醫療
+每一人死殘
+■09
+車體損失險丙式
+■30B1 超額責任險-乙式(不含酒償)
+■31
+第三人傷害
+■32
+■50A 第三人財損
+駕駛人傷害險-實支實付
+■51A 乘客體傷責任
+■77C 道路救援保險
+
+
+** TODO : 成大家具
+   https://www.mobile01.com/topicdetail.php?f=467&t=5287781
+
+** TODO : 
+請水電裝浴室燈
+客廳吸頂燈
+大門
+砂門鎖
+一樓窗需要修理
+四樓後面的門需要修理
+
+Last : 水肥師父
+
+
+270cm for the living room wall 
+120 TV set : 
+90 : shoes tablet : 
+60 cm : others
+
+270 - 90 = 180 
+
+** TODO : check mutiple rename usage in dired
+http://pragmaticemacs.com/emacs/dired-rename-multiple-files/
+
+** TODO : check this session list of vimrc 
+
+** TODO : add line number in emacs
+
+** TODO : 吸頂燈
+https://tw.buy.yahoo.com/gdsale/TOSIHBA-61EC-%E9%9B%85%E8%87%B4-LED%E9%81%99%E6%8E%A7-%E5%90%B8%E9%A0%82%E7%87%88-8569213.html
+LEDTWTH61EC
+
+** 滑門 : 
+   1. 鐵拉門
+   雙軌的四片拉門，黑鋁框+5mm強化清玻璃+上懸吊加下軌+少連動加緩衝的價格是快五萬，寬度322cm、高度255cm，其中加緩衝的價格就大概加了快1萬...不過少了與牆碰撞的傷害，才不會等到哪天牆受傷或是玻璃可能有意外破掉的危險（強化玻璃應該不會這麼容易破？）
+而下軌的配合施工沒有另外加錢，我用的Krono Saxon地板原本連工帶料的錢就可以幫忙處理。
+https://www.mobile01.com/topicdetail.php?f=360&t=6143873
+
+** TODO : copy something from outside to spacemacs, insert link
+
+** TODO : watch 
+https://m.momoshop.com.tw/goods.momo?i_code=7172793
