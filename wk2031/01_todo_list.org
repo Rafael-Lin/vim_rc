@@ -3,7 +3,7 @@
   |------+----------------------------------------------------------+--------+----+-----+-----+---------------------------------------------------------------------------|
   | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | 0   |     | bamboo fail, ready to merge                                               |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | 1h  | 1h  | review, fix conflict, fix code smell                                      |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | 5h  |     | dieX, dieY discuss, fix diX/Y, SetSeScanWidthTest locally pass, run again |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | 5h  | 2h  | dieX, dieY discuss, fix diX/Y, SetSeScanWidthTest locally pass, run again |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]] | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | 1h  |     | fix the code smell, IC0NextComm change done, test locally                 |
   | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]] | Migrate SU from SystemStatus to MachingConstant          |        |    |     |     |                                                                           |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]] | Could not initialize Host GUI due to config file missing |        |    |     |     |                                                                           |
@@ -1016,3 +1016,8 @@ https://www.facebook.com/pages/category/Construction-Company/%E9%98%BF%E7%B1%B3%
 ** TODO : organize todo2018 with this
 
 *** TODO : copy the todo2018 data into this
+
+
+* <2020-07-31 Fri>
+* https://m.momoshop.com.tw/goods.momo?i_code=7172793
+
