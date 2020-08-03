@@ -91,7 +91,6 @@
             set background=light
         else
             set background=dark
-            colorscheme ir_black
         endif
     endfunction
     noremap <leader>bg :call ToggleBG()<CR>
@@ -116,7 +115,7 @@
     " Most prefer to automatically switch to the current file directory when
     " a new buffer is opened; to prevent this behavior, add the following to
     " your .vimrc.before.local file:
-       " let g:spf13_no_autochdir = 1
+    "   let g:spf13_no_autochdir = 1
     if !exists('g:spf13_no_autochdir')
         autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
         " Always switch to the current file directory
@@ -208,10 +207,10 @@
         " Broken down into easily includeable segments
         set statusline=%<%f\                     " Filename
         set statusline+=%w%h%m%r                 " Options
-        "if !exists('g:override_spf13_bundles') && has('gui_running')
-        "    set statusline+=%{fugitive#statusline()} " Git Hotness
-        "endif
-        "set statusline+=\ [%{&ff}/%Y]            " Filetype
+        if !exists('g:override_spf13_bundles')
+            set statusline+=%{fugitive#statusline()} " Git Hotness
+        endif
+        set statusline+=\ [%{&ff}/%Y]            " Filetype
         set statusline+=\ [%{getcwd()}]          " Current dir
         set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
     endif
@@ -232,7 +231,7 @@
     set scrolloff=3                 " Minimum lines to keep above and below cursor
     set foldenable                  " Auto fold code
     set list
-    set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    set listchars=tab:â€º\ ,trail:â€¢,extends:#,nbsp:. " Highlight problematic whitespace
 
 " }
 
@@ -254,7 +253,7 @@
     " To disable the stripping of whitespace, add the following to your
     " .vimrc.before.local file:
     "   let g:spf13_keep_trailing_whitespace = 1
-    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
@@ -575,8 +574,8 @@
 
     " NerdTree {
         if isdirectory(expand("~/.vim/bundle/nerdtree"))
-            " map <C-e> <plug>NERDTreeTabsToggle<CR>
-            map <C-e> :NERDTreeToggle<CR>
+            map <C-e> <plug>NERDTreeTabsToggle<CR>
+            map <leader>e :NERDTreeFind<CR>
             nmap <leader>nt :NERDTreeFind<CR>
 
             let NERDTreeShowBookmarks=1
@@ -1032,23 +1031,23 @@
             let g:indent_guides_enable_on_vim_startup = 1
         endif
     " }
- 
+
     " Wildfire {
     let g:wildfire_objects = {
                 \ "*" : ["i'", 'i"', "i)", "i]", "i}", "ip"],
                 \ "html,xml" : ["at"],
                 \ }
     " }
- 
+
     " vim-airline {
         " Set configuration options for the statusline plugin vim-airline.
         " Use the powerline theme and optionally enable powerline symbols.
-        " To use the symbols ¿, ¿, ¿, ¿, ¿, ¿, and ¿.in the statusline
+        " To use the symbols î‚°, î‚±, î‚², î‚³, î‚ , î‚¢, and î‚¡.in the statusline
         " segments add the following to your .vimrc.before.local file:
         "   let g:airline_powerline_fonts=1
         " If the previous symbols do not render for you then install a
         " powerline enabled font.
- 
+
         " See `:echo g:airline_theme_map` for some more choices
         " Default in terminal vim is 'dark'
         if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
@@ -1057,8 +1056,8 @@
             endif
             if !exists('g:airline_powerline_fonts')
                 " Use the default set of separators with a few customizations
-                let g:airline_left_sep='›'  " Slightly fancier than '>'
-                let g:airline_right_sep='‹' " Slightly fancier than '<'
+                let g:airline_left_sep='â€º'  " Slightly fancier than '>'
+                let g:airline_right_sep='â€¹' " Slightly fancier than '<'
             endif
         endif
     " }
@@ -1079,7 +1078,7 @@
             elseif OSX() && has("gui_running")
                 set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h11,Consolas\ Regular:h12,Courier\ New\ Regular:h14
             elseif WINDOWS() && has("gui_running")
-                set guifont=Monaco:h11,Menlo:h11,Consolas:h11,Courier_New:h11
+                set guifont=Andale_Mono:h10,Menlo:h10,Consolas:h10,Courier_New:h10
             endif
         endif
     else
@@ -1110,7 +1109,7 @@
         " vimviews, vimundo, and vimswap files/directories, add the following to
         " your .vimrc.before.local file:
         "   let g:spf13_consolidated_directory = <full path to desired directory>
-        let g:spf13_consolidated_directory = $HOME . '/.vim/'
+        "   eg: let g:spf13_consolidated_directory = $HOME . '/.vim/'
         if exists('g:spf13_consolidated_directory')
             let common_dir = g:spf13_consolidated_directory . prefix
         else
@@ -1204,28 +1203,25 @@
     endfunction
 
     function! s:EditSpf13Config()
-        call <SID>ExpandFilenameAndExecute("tabedit", "~/_vimrc")
+        call <SID>ExpandFilenameAndExecute("tabedit", "~/.vimrc")
         call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before")
-        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before.local")
+        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.bundles")
 
-        execute bufwinnr("_vimrc") . "wincmd w"
+        execute bufwinnr(".vimrc") . "wincmd w"
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.local")
         wincmd l
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles")
+        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
         wincmd l
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
-        " call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
-        " wincmd l
-        " call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
 
-        " if <SID>IsSpf13Fork()
-        "     execute bufwinnr(".vimrc") . "wincmd w"
-        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.fork")
-        "     wincmd l
-        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.fork")
-        "     wincmd l
-        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
-        " endif
+        if <SID>IsSpf13Fork()
+            execute bufwinnr(".vimrc") . "wincmd w"
+            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.fork")
+            wincmd l
+            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.fork")
+            wincmd l
+            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
+        endif
 
         execute bufwinnr(".vimrc.local") . "wincmd w"
     endfunction
@@ -1235,21 +1231,21 @@
 " }
 
 " Use fork vimrc if available {
-    if filereadable(expand("$HOME/.vimrc.fork"))
-        source $HOME/.vimrc.fork
+    if filereadable(expand("~/.vimrc.fork"))
+        source ~/.vimrc.fork
     endif
 " }
 
 " Use local vimrc if available {
-    if filereadable(expand("$HOME/.vimrc.local"))
-        source $HOME/.vimrc.local
+    if filereadable(expand("~/.vimrc.local"))
+        source ~/.vimrc.local
     endif
 " }
 
 " Use local gvimrc if available and gui is running {
     if has('gui_running')
-        if filereadable(expand("$HOME/.gvimrc.local"))
-            source $HOME/.gvimrc.local
+        if filereadable(expand("~/.gvimrc.local"))
+            source ~/.gvimrc.local
         endif
     endif
 " }

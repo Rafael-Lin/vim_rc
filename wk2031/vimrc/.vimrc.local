@@ -1,13 +1,14 @@
+" Rainbow {
+    if isdirectory(expand("~/.vim/bundle/rainbow/"))
+        let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
+    endif
+"}
 
-    " Rainbow {
-        if isdirectory(expand("~/.vim/bundle/rainbow/"))
-            let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
-        endif
-    "}
-
-        if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
-            let g:indent_guides_enable_on_vim_startup = 0
-        endif
+" indent-guides {
+    if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
+        let g:indent_guides_enable_on_vim_startup = 0
+    endif
+"}
 
 if has('gui_running')
     set guioptions-=T           " Remove the toolbar
@@ -18,34 +19,47 @@ if has('gui_running')
         endif
     endif
 endif
-noremap  <C-W><C-U> : CtrlPMRU <CR>
-noremap  <C-W><C-P> : exec ':CtrlP ' . g:projPath<CR>
-let g:airline_powerline_fonts = 1
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
+" Ctrlp{
+    noremap  <C-W><C-U> : CtrlPMRU <CR>
+    noremap  <C-W><C-P> : exec ':CtrlP ' . g:projPath<CR>
+"}
+"
+" Buffer change {
+    nnoremap <C-tab> :bn<CR>
+    nnoremap <C-s-tab> :bp<CR>
+    set hidden
+    nnoremap <C-N> :bnext<CR>
+    nnoremap <C-P> :bprev<CR>
+    nnoremap <leader>bn :bnext<CR>
+    nnoremap <leader>bp :bprev<CR>
+    let g:NERDTreeWinPos = "right"
+"}
+" airline {
+    let g:airline_powerline_fonts = 1
 
-nnoremap <C-tab> :bn<CR>
-nnoremap <C-s-tab> :bp<CR>
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#whitespace#symbol = '!'
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#buffer_nr_show = 1
 
-if !exists('g:airline_symbols')
-let g:airline_symbols = {}
-endif
-" old vim-powerline symbols
-let g:airline_left_sep = '|'
-let g:airline_left_alt_sep = '|'
-let g:airline_right_sep = '|'
-let g:airline_right_alt_sep = '|'
-let g:airline_symbols.branch = '|'
-let g:airline_symbols.readonly = '|'
-let g:airline#extensions#tagbar#enabled = 1
+    let g:airline#extensions#whitespace#enabled = 0
+    let g:airline#extensions#whitespace#symbol = '!'
 
-let g:airline_section_a = airline#section#create(['', '', ''])
-let g:airline_section_b = '%-0.10{getcwd()}'
-let g:airline_section_c = '%t'
+    if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+    endif
+    " old vim-powerline symbols
+    let g:airline_left_sep = '|'
+    let g:airline_left_alt_sep = '|'
+    let g:airline_right_sep = '|'
+    let g:airline_right_alt_sep = '|'
+    let g:airline_symbols.branch = '|'
+    let g:airline_symbols.readonly = '|'
+    let g:airline#extensions#tagbar#enabled = 1
 
+    let g:airline_section_a = airline#section#create(['', '', ''])
+    let g:airline_section_b = '%-0.10{getcwd()}'
+    let g:airline_section_c = '%t'
+"}
 " leader+i+g : toggle vim indent guide
 " leader+tt : toggle tagbar
 " ,ff : search the word in the cursor
@@ -116,7 +130,8 @@ set iskeyword-=.
 set fencs=ucs-bom,utf-8,default,latin1
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:20,results:20'
 if WINDOWS()
-    let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+    " let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+    let g:ctrlp_user_command = 'find1 %s -type f'        " MacOSX/Linux
 else
     let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
 endif
@@ -314,13 +329,6 @@ execute "noremap " . s:format_marker_mapping ":call Fold_Marker_func()<CR>"
 execute "noremap " . s:format_syntax_mapping ":call Fold_Syntax_func()<CR>"
 execute "noremap " . s:format_indent_mapping ":call Fold_Indent_func()<CR>"
 execute "noremap " . s:delete_tail_space_mapping ":call StripTrailingWhitespace()<CR>"
-
-set hidden
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bp :bprev<CR>
-let g:NERDTreeWinPos = "right"
 
 
 " .vimrc.before.local

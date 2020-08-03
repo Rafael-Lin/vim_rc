@@ -1,0 +1,15 @@
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+let g:spf13_no_autochdir = 1
+let g:spf13_leader=','
+
+
+" let g:spf13_bundle_groups=['general', 'writing', 'neocomplete', 'programming', 'php', 'python', 'misc',]
+let g:spf13_bundle_groups=['general',
+            \'neocomplete', 
+            " \'html',
+            \'programming'
+            \]

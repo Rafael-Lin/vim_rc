@@ -1,13 +1,15 @@
 * JiraTable
-  | JIRA | NAME                                                     | BAMBOO | PR | Thu | Fri | REMARK                                                                    |
-  |------+----------------------------------------------------------+--------+----+-----+-----+---------------------------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | 0   |     | bamboo fail, ready to merge                                               |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | 1h  | 1h  | review, fix conflict, fix code smell                                      |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | 5h  | 2h  | dieX, dieY discuss, fix diX/Y, SetSeScanWidthTest locally pass, run again |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]] | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | 1h  |     | fix the code smell, IC0NextComm change done, test locally                 |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]] | Migrate SU from SystemStatus to MachingConstant          |        |    |     |     |                                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]] | Could not initialize Host GUI due to config file missing |        |    |     |     |                                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]] | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | 1h  | 6h  | check bamboo result, it work locally                                      |
+  | JIRA    | NAME                                                     | BAMBOO | PR | Mon  | Fri | REMARK                                                                    |
+  |---------+----------------------------------------------------------+--------+----+------+-----+---------------------------------------------------------------------------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]    | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | 0    |     | merged                                                                    |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]    | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | 0.5h | 1h  | merged                                                                    |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]    | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | 3.0h | 2h  | dieX, dieY discuss, fix diX/Y, SetSeScanWidthTest locally pass, run again |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]    | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | 1h   |     | fix the code smell, IC0NextComm change done, test locally                 |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]]    | Migrate SU from SystemStatus to MachingConstant          |        |    |      |     |                                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]    | Could not initialize Host GUI due to config file missing |        |    |      |     |                                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]    | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | 1h   | 6h  | check bamboo result, it work locally               code conflict          |
+  |---------+----------------------------------------------------------+--------+----+------+-----+---------------------------------------------------------------------------|
+  | meeting |                                                          |        |    |      |     |                                                                           |
   
   | next sprint wk33 |                                                 |   |   |   |
   |------------------+-------------------------------------------------+---+---+---|
@@ -48,6 +50,7 @@
     | wk2035(8/24) |   73.0 |       160.892 |
     | wk2036(8/31) |   72.5 |        159.79 |
     | wk2037(9/07) |   72.0 |       158.688 |
+    |              |        |               |
  #+TBLFM: $3=$2*2.204
 
  | wk2031 | total acquired kilo calorie | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
@@ -1074,7 +1077,8 @@ https://www.youtube.com/watch?v=yMeT8AsRDKo&feature=youtu.be
 台南白河美雅家俱
 * <2020-08-03 Mon>
 
-** TODO print out the car_insurance_doc and send it back
+** DONE print out the car_insurance_doc and send it back
+   CLOSED: [2020-08-03 Mon 16:31]
 
 ** TODO understand the car insurance in detail
 ■21
@@ -1122,10 +1126,10 @@ http://pragmaticemacs.com/emacs/dired-rename-multiple-files/
 ** TODO : add line number in emacs
 
 ** TODO : 吸頂燈
-https://tw.buy.yahoo.com/gdsale/TOSIHBA-61EC-%E9%9B%85%E8%87%B4-LED%E9%81%99%E6%8E%A7-%E5%90%B8%E9%A0%82%E7%87%88-8569213.html
-LEDTWTH61EC
+   https://tw.buy.yahoo.com/gdsale/TOSIHBA-61EC-%E9%9B%85%E8%87%B4-LED%E9%81%99%E6%8E%A7-%E5%90%B8%E9%A0%82%E7%87%88-8569213.html
+   LEDTWTH61EC
 
-** 滑門 : 
+滑門 : 
    1. 鐵拉門
    雙軌的四片拉門，黑鋁框+5mm強化清玻璃+上懸吊加下軌+少連動加緩衝的價格是快五萬，寬度322cm、高度255cm，其中加緩衝的價格就大概加了快1萬...不過少了與牆碰撞的傷害，才不會等到哪天牆受傷或是玻璃可能有意外破掉的危險（強化玻璃應該不會這麼容易破？）
 而下軌的配合施工沒有另外加錢，我用的Krono Saxon地板原本連工帶料的錢就可以幫忙處理。
@@ -1134,4 +1138,16 @@ https://www.mobile01.com/topicdetail.php?f=360&t=6143873
 ** TODO : copy something from outside to spacemacs, insert link
 
 ** TODO : watch 
-https://m.momoshop.com.tw/goods.momo?i_code=7172793
+   4R36-07G0R/SRPD53K1
+   https://m.momoshop.com.tw/goods.momo?i_code=7172793
+
+** TODO : check how to export the comments out from commands from vim
+
+** TODO : collect the commands from spf13
+   check what is nerdtree tab?
+check ,ac usage in xml
+
+| undotree   | <leader>u                          | change sround | cs"'          | yield surround | ysW              | remove surround | ds"          | neosnippet add  | c-k        | open tagbar       | <leader>tt |
+| tag enter  | c-]                                | go back       | c-T           | easyMotion     | <,,>w            | open vimrc set  | <leader>ev   | save vimrc set  | <leader>sv | ctrlpFunky        | <leader>fu |
+| <leader>sl | session list                       | <session save | <leader>ss    | session close  | <leader>cs       | json?           | <leader>jt   | \t              |            | change background | <leader>bg |
+| ,ff        | display all usage under the cursor | ,=            | equalize size | ,q             | easier format it | f11             | full screen? | ,ew ,es ,ev ,et | ?          |                   |            |

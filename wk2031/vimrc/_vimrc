@@ -231,7 +231,7 @@
     set scrolloff=3                 " Minimum lines to keep above and below cursor
     set foldenable                  " Auto fold code
     set list
-    set listchars=tab:â€º\ ,trail:â€¢,extends:#,nbsp:. " Highlight problematic whitespace
+    set listchars=tab:¿\ ,trail:¿,extends:#,nbsp:. " Highlight problematic whitespace
 
 " }
 
@@ -253,7 +253,7 @@
     " To disable the stripping of whitespace, add the following to your
     " .vimrc.before.local file:
     "   let g:spf13_keep_trailing_whitespace = 1
-    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
+    autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,yml,perl,sql autocmd BufWritePre <buffer> if !exists('g:spf13_keep_trailing_whitespace') | call StripTrailingWhitespace() | endif
     "autocmd FileType go autocmd BufWritePre <buffer> Fmt
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType haskell,puppet,ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
@@ -551,6 +551,7 @@
     " }
 
     " Ctags {
+        " set tags=./tags;
         set tags=./tags;/,~/.vimtags
 
         " Make tags placed in .git/tags file available in all levels of a repository
@@ -1031,23 +1032,23 @@
             let g:indent_guides_enable_on_vim_startup = 1
         endif
     " }
- 
+
     " Wildfire {
     let g:wildfire_objects = {
                 \ "*" : ["i'", 'i"', "i)", "i]", "i}", "ip"],
                 \ "html,xml" : ["at"],
                 \ }
     " }
- 
+
     " vim-airline {
         " Set configuration options for the statusline plugin vim-airline.
         " Use the powerline theme and optionally enable powerline symbols.
-        " To use the symbols î‚°, î‚±, î‚², î‚³, î‚ , î‚¢, and î‚¡.in the statusline
+        " To use the symbols ¿, ¿, ¿, ¿, ¿, ¿, and ¿.in the statusline
         " segments add the following to your .vimrc.before.local file:
         "   let g:airline_powerline_fonts=1
         " If the previous symbols do not render for you then install a
         " powerline enabled font.
- 
+
         " See `:echo g:airline_theme_map` for some more choices
         " Default in terminal vim is 'dark'
         if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
@@ -1056,8 +1057,8 @@
             endif
             if !exists('g:airline_powerline_fonts')
                 " Use the default set of separators with a few customizations
-                let g:airline_left_sep='â€º'  " Slightly fancier than '>'
-                let g:airline_right_sep='â€¹' " Slightly fancier than '<'
+                let g:airline_left_sep='¿'  " Slightly fancier than '>'
+                let g:airline_right_sep='¿' " Slightly fancier than '<'
             endif
         endif
     " }
@@ -1109,7 +1110,7 @@
         " vimviews, vimundo, and vimswap files/directories, add the following to
         " your .vimrc.before.local file:
         "   let g:spf13_consolidated_directory = <full path to desired directory>
-        "   eg: let g:spf13_consolidated_directory = $HOME . '/.vim/'
+        let g:spf13_consolidated_directory = $HOME . '/.vim/'
         if exists('g:spf13_consolidated_directory')
             let common_dir = g:spf13_consolidated_directory . prefix
         else
@@ -1197,31 +1198,34 @@
         endfor
         return s:is_fork
     endfunction
-
+     
     function! s:ExpandFilenameAndExecute(command, file)
         execute a:command . " " . expand(a:file, ":p")
     endfunction
 
     function! s:EditSpf13Config()
-        call <SID>ExpandFilenameAndExecute("tabedit", "~/.vimrc")
+        call <SID>ExpandFilenameAndExecute("tabedit", "~/_vimrc")
         call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before")
-        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.bundles")
+        call <SID>ExpandFilenameAndExecute("vsplit", "~/.vimrc.before.local")
 
-        execute bufwinnr(".vimrc") . "wincmd w"
+        execute bufwinnr("_vimrc") . "wincmd w"
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.local")
         wincmd l
-        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
+        call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles")
         wincmd l
         call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
+        " call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.local")
+        " wincmd l
+        " call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.local")
 
-        if <SID>IsSpf13Fork()
-            execute bufwinnr(".vimrc") . "wincmd w"
-            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.fork")
-            wincmd l
-            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.fork")
-            wincmd l
-            call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
-        endif
+        " if <SID>IsSpf13Fork()
+        "     execute bufwinnr(".vimrc") . "wincmd w"
+        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.fork")
+        "     wincmd l
+        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.before.fork")
+        "     wincmd l
+        "     call <SID>ExpandFilenameAndExecute("split", "~/.vimrc.bundles.fork")
+        " endif
 
         execute bufwinnr(".vimrc.local") . "wincmd w"
     endfunction
@@ -1231,21 +1235,21 @@
 " }
 
 " Use fork vimrc if available {
-    if filereadable(expand("~/.vimrc.fork"))
-        source ~/.vimrc.fork
+    if filereadable(expand("$HOME/.vimrc.fork"))
+        source $HOME/.vimrc.fork
     endif
 " }
 
 " Use local vimrc if available {
-    if filereadable(expand("~/.vimrc.local"))
-        source ~/.vimrc.local
+    if filereadable(expand("$HOME/.vimrc.local"))
+        source $HOME/.vimrc.local
     endif
 " }
 
 " Use local gvimrc if available and gui is running {
     if has('gui_running')
-        if filereadable(expand("~/.gvimrc.local"))
-            source ~/.gvimrc.local
+        if filereadable(expand("$HOME/.gvimrc.local"))
+            source $HOME/.gvimrc.local
         endif
     endif
 " }
