@@ -57,7 +57,7 @@
           set runtimepath=$HOME/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,$HOME/.vim/after
         endif
     " }
-
+    
     " Arrow Key Fix {
         " https://github.com/spf13/spf13-vim/issues/780
         if &term[:4] == "xterm" || &term[:5] == 'screen' || &term[:3] == 'rxvt'
@@ -641,10 +641,8 @@
     " ctrlp {
         if isdirectory(expand("~/.vim/bundle/ctrlp.vim/"))
             let g:ctrlp_working_path_mode = 'ra'
-            " nnoremap <silent> <D-t> :CtrlP<CR>
-            " nnoremap <silent> <D-r> :CtrlPMRU<CR>
-            noremap  <C-W><C-U> : CtrlPMRU <CR>
-            noremap  <C-W><C-P> : exec ':CtrlP ' . g:projPath<CR>
+            nnoremap <silent> <D-t> :CtrlP<CR>
+            nnoremap <silent> <D-r> :CtrlPMRU<CR>
             let g:ctrlp_custom_ignore = {
                 \ 'dir':  '\.git$\|\.hg$\|\.svn$',
                 \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
@@ -1033,14 +1031,14 @@
             let g:indent_guides_enable_on_vim_startup = 1
         endif
     " }
-
+ 
     " Wildfire {
     let g:wildfire_objects = {
                 \ "*" : ["i'", 'i"', "i)", "i]", "i}", "ip"],
                 \ "html,xml" : ["at"],
                 \ }
     " }
-
+ 
     " vim-airline {
         " Set configuration options for the statusline plugin vim-airline.
         " Use the powerline theme and optionally enable powerline symbols.
@@ -1049,7 +1047,7 @@
         "   let g:airline_powerline_fonts=1
         " If the previous symbols do not render for you then install a
         " powerline enabled font.
-
+ 
         " See `:echo g:airline_theme_map` for some more choices
         " Default in terminal vim is 'dark'
         if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))

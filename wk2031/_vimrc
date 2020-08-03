@@ -262,7 +262,6 @@
 
     autocmd BufNewFile,BufRead *.coffee set filetype=coffee
 
-
     " Workaround vim-commentary for Haskell
     autocmd FileType haskell setlocal commentstring=--\ %s
     " Workaround broken colour highlighting in Haskell
@@ -583,6 +582,7 @@
             let NERDTreeShowBookmarks=1
             let NERDTreeIgnore=['\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$']
             let NERDTreeChDirMode=0
+            let NERDTreeQuitOnOpen=1
             let NERDTreeMouseMode=2
             let NERDTreeShowHidden=1
             let NERDTreeKeepTreeInNewTab=1
@@ -641,17 +641,15 @@
 
     " ctrlp {
         if isdirectory(expand("~/.vim/bundle/ctrlp.vim/"))
-            " let g:ctrlp_working_path_mode = 'ra'
-            noremap  <C-W><C-U> : CtrlPMRU <CR>
-            noremap  <C-W><C-P> : exec ':CtrlP ' . g:projPath<CR>
-
+            let g:ctrlp_working_path_mode = 'ra'
+            nnoremap <silent> <D-t> :CtrlP<CR>
+            nnoremap <silent> <D-r> :CtrlPMRU<CR>
             let g:ctrlp_custom_ignore = {
                 \ 'dir':  '\.git$\|\.hg$\|\.svn$',
                 \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
             if executable('ag')
-                " let s:ctrlp_fallback = 'ag %s ""'
-                let s:ctrlp_fallback = 'ag %s '
+                let s:ctrlp_fallback = 'ag %s --nocolor -l -g ""'
             elseif executable('ack-grep')
                 let s:ctrlp_fallback = 'ack-grep %s --nocolor -f'
             elseif executable('ack')
@@ -691,7 +689,7 @@
 
     " Rainbow {
         if isdirectory(expand("~/.vim/bundle/rainbow/"))
-            let g:rainbow_active = 0 "0 if you want to enable it later via :RainbowToggle
+            let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
         endif
     "}
 
@@ -1031,26 +1029,26 @@
         if isdirectory(expand("~/.vim/bundle/vim-indent-guides/"))
             let g:indent_guides_start_level = 2
             let g:indent_guides_guide_size = 1
-            let g:indent_guides_enable_on_vim_startup = 0
+            let g:indent_guides_enable_on_vim_startup = 1
         endif
     " }
-
+ 
     " Wildfire {
     let g:wildfire_objects = {
                 \ "*" : ["i'", 'i"', "i)", "i]", "i}", "ip"],
                 \ "html,xml" : ["at"],
                 \ }
     " }
-
+ 
     " vim-airline {
         " Set configuration options for the statusline plugin vim-airline.
         " Use the powerline theme and optionally enable powerline symbols.
-        " To use the symbols ?, ?, ?, ?, ?, ?, and ?.in the statusline
+        " To use the symbols ¿, ¿, ¿, ¿, ¿, ¿, and ¿.in the statusline
         " segments add the following to your .vimrc.before.local file:
         "   let g:airline_powerline_fonts=1
         " If the previous symbols do not render for you then install a
         " powerline enabled font.
-
+ 
         " See `:echo g:airline_theme_map` for some more choices
         " Default in terminal vim is 'dark'
         if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
@@ -1082,7 +1080,6 @@
                 set guifont=Andale\ Mono\ Regular:h12,Menlo\ Regular:h11,Consolas\ Regular:h12,Courier\ New\ Regular:h14
             elseif WINDOWS() && has("gui_running")
                 set guifont=Monaco:h11,Menlo:h11,Consolas:h11,Courier_New:h11
-                " set guifont=Source\ Code\ Pro\ Bold\ 13:h13,Menlo:h11,Consolas:h11,Courier_New:h11
             endif
         endif
     else
@@ -1256,7 +1253,3 @@
         endif
     endif
 " }
-"
-
-
-
