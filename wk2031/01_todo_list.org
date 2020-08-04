@@ -1151,3 +1151,13 @@ check ,ac usage in xml
 | tag enter  | c-]                                | go back       | c-T           | easyMotion     | <,,>w            | open vimrc set  | <leader>ev   | save vimrc set  | <leader>sv | ctrlpFunky        | <leader>fu |
 | <leader>sl | session list                       | <session save | <leader>ss    | session close  | <leader>cs       | json?           | <leader>jt   | \t              |            | change background | <leader>bg |
 | ,ff        | display all usage under the cursor | ,=            | equalize size | ,q             | easier format it | f11             | full screen? | ,ew ,es ,ev ,et | ?          |                   |            |
+
+** TODO : check vimdiff and ctrlp
+http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
+https://medium.com/prodopsio/solving-git-merge-conflicts-with-vim-c8a8617e3633
+
+https://vimawesome.com/plugin/ctrlp-vim-everything-has-changed
+http://kien.github.io/ctrlp.vim/#installation
+
+** TODO : understand how spf13 install
+** TODO : understand why 3 lines are still at the top
