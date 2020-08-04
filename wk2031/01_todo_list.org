@@ -10,7 +10,7 @@
   | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]   | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] |       2 | 1h   |     | check bamboo result, it work locally               code conflict          |
   |--------+----------------------------------------------------------+--------+----+---------+------+-----+---------------------------------------------------------------------------|
   | Joseph |                                                          |        |    |         |      |     |                                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                          |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]] |         |      |     |                                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                          http://www.e-leather.com.tw/News?class=1                |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]] |         |      |     |                                                                           |
   
   | next sprint wk33 |                                                 |   |   |   |
   |------------------+-------------------------------------------------+---+---+---|
@@ -1072,8 +1072,11 @@ https://www.facebook.com/pages/category/Construction-Company/%E9%98%BF%E7%B1%B3%
 ** TODO send out the money to mom : 8000
 
 ** TODO sofa factory organization 
+*** leather knowledge
+    http://www.e-leather.com.tw/News?class=1
 
 *** 坐又銘沙發 : 中正南路164號
+    https://www.zuoyominsofa.com/knowledge_detail.aspx?ID=c1af10c9-3f10-4299-b1e0-afb04b326a4f
 
 *** 新家園 : 永康區東橋七路378號
 
@@ -1089,8 +1092,36 @@ https://www.horia.com.tw/work/
 https://www.youtube.com/watch?v=yMeT8AsRDKo&feature=youtu.be
 
 *** 庫克
+    庫克沙發骨架保固5年   沙發表面材質保固一年呢!!!!
+    https://www.ck-sofa.com.tw/products-1-2.html
 
 *** 美克
+    work : https://www.twmk.com.tw/pics-show-1-1.html
+    寬280cm、深100cm，尺寸調整印象中在一定範圍內是不加價的
+    家裡剛好也有設一個臥榻的位置
+    坐墊厚度有5、7.5、10公分之分
+    椅，有斜角
+    小凳子
+高碳鋼S彈簧
+
+北歐
+瑪嘉烈
+麥拉倫
+安德魯
+TWMK90
+TWMK Minotti
+TWMK Living
+珍愛
+--
+獨立筒
+
+note : 
+(1)他們家是我喜歡的深度110cm那種(不是一般90~103)，以及因為110cm深度，大腿支撐完整。甚至可以盤腿在沙發上。
+(2)坐點在45cm處，是最理想的高度，搭配椅面深，腿部很放鬆。
+(3)扶手寬度15~20cm都有，屬於肥大的扶手，我坐點45cm，扶手不算太高，剛好可以當頭枕躺著。
+(4)椅背和椅面角度剛剛好，對於男女都可以坐得很服貼，腰部不會簍空。
+(5)角架高度有符合我需求15cm高，Dyson掃地機器人可自由進出。
+(6)不會太軟，也不會太硬到感覺把你整個人往外挺，包覆感好。
 
 ** DONE daily expenditure recording for next week (especially on alcohol)
    CLOSED: [2020-08-03 Mon 22:30]
@@ -1311,10 +1342,10 @@ Jumper Liu
 ** TODO : ask Jerry on the need to remove the _calibration function, change code
    SCHEDULED: <2020-08-04 Tue>
 
-** TODO : write down the mail for Cyrus
-   SCHEDULED: <2020-08-04 Tue>
+** DONE : write down the mail for Cyrus
+   CLOSED: [2020-08-04 Tue 21:08] SCHEDULED: <2020-08-04 Tue>
 
-** TODO : update the form in the confluence for wk2031
-   SCHEDULED: <2020-08-10 Mon>
+** DONE : update the form in the confluence for wk2031
+   CLOSED: [2020-08-04 Tue 21:08] SCHEDULED: <2020-08-10 Mon>
    https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=Weekly+2031
    https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=Weekly+2030
