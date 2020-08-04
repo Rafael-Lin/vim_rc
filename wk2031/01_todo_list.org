@@ -41,36 +41,65 @@
 **** abs : bring the thing to company?
 **** Jump_Stay_in_Air, training
     
-    | time         | weight | weight(pound) |
-    |--------------+--------+---------------|
-    | wk2031(7/27) |   75.0 |         165.3 |
-    | wk2032(8/03) |   74.5 |       164.198 |
-    | wk2033(8/10) |   74.0 |       163.096 |
-    | wk2034(8/17) |   73.5 |       161.994 |
-    | wk2035(8/24) |   73.0 |       160.892 |
-    | wk2036(8/31) |   72.5 |        159.79 |
-    | wk2037(9/07) |   72.0 |       158.688 |
-    |              |        |               |
- #+TBLFM: $3=$2*2.204
+    | time         | week No. | weight | weight(pound) | days |
+    |--------------+----------+--------+---------------+------|
+    | wk2031(7/27) |        1 |   75.0 |         165.3 |    7 |
+    | wk2032(8/03) |        2 |   74.5 |       164.198 |   14 |
+    | wk2033(8/10) |        3 |   74.0 |       163.096 |   21 |
+    | wk2034(8/17) |        4 |   73.5 |       161.994 |   28 |
+    | wk2035(8/24) |        5 |   73.0 |       160.892 |   35 |
+    | wk2036(8/31) |        6 |   72.5 |        159.79 |   42 |
+    | wk2037(9/07) |        7 |   72.0 |       158.688 |   49 |
+    |              |          |        |            0. |    0 |
+ #+TBLFM: $4=$3*2.204::$5=$2*7
+** wk2031 Calorie
+| wk2031 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
+|--------+----------+----------+------------+---------------------------+--------|
+| Mon    |     1666 |      638 |       1028 |                     -1359 |    75. |
+| Tu     |     1314 |        0 |       1314 |                     -1073 |        |
+| Wed    |     1437 |      649 |        788 |                     -1599 |   74.2 |
+| Thu    |     1494 |      584 |        910 |                     -1477 |   74.0 |
+| Fri    |     1416 |        0 |       1416 |                      -971 |   74.3 |
+| Sat    |     2366 |        0 |       2366 |                       -21 |        |
+| Sun    |     1817 |        0 |       1817 |                      -570 |        |
+|--------+----------+----------+------------+---------------------------+--------|
+| total  |    11510 |     1871 |       9639 |                     -7070 |        |
+#+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
 
- | wk2031 | total acquired kilo calorie | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
- |--------+-----------------------------+----------+------------+---------------------------+--------|
- | Mon    |                        1409 |      638 |        771 |                     -1616 |        |
- | Tu     |                        1666 |        0 |       1666 |                      -721 |        |
- | Wed    |                        1437 |      649 |        788 |                     -1599 |   74.2 |
- | Thu    |                        1494 |      584 |        910 |                     -1477 |   74.0 |
- | Fri    |                        1416 |        0 |       1416 |                      -971 |   74.3 |
- | Sat    |                        2366 |        0 |       2366 |                       -21 |        |
- | Sun    |                        2387 |          |       2387 |                         0 |        |
- |--------+-----------------------------+----------+------------+---------------------------+--------|
- | total  |                       12175 |     1871 |      10304 |                     -6405 |        |
+** wk2032 Calorie
+| wk2032 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
+|--------+----------+----------+------------+---------------------------+--------|
+| Mon    |      943 |      720 |        223 |                     -2164 |   75.2 |
+| Tu     |     2387 |        0 |       2387 |                         0 |        |
+| Wed    |     2387 |          |       2387 |                         0 |        |
+| Thu    |     2387 |          |       2387 |                         0 |        |
+| Fri    |     2387 |        0 |       2387 |                         0 |        |
+| Sat    |     2387 |        0 |       2387 |                         0 |        |
+| Sun    |     2387 |        0 |       2387 |                         0 |        |
+|--------+----------+----------+------------+---------------------------+--------|
+| total  |    15265 |      720 |      14545 |                     -2164 |        |
+#+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
+
+
+*** Calorie template
+ | wk2032 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
+ |--------+----------+----------+------------+---------------------------+--------|
+ | Mon    |     2387 |        0 |       2387 |                         0 |        |
+ | Tu     |     2387 |        0 |       2387 |                         0 |        |
+ | Wed    |     2387 |          |       2387 |                         0 |        |
+ | Thu    |     2387 |          |       2387 |                         0 |        |
+ | Fri    |     2387 |        0 |       2387 |                         0 |        |
+ | Sat    |     2387 |        0 |       2387 |                         0 |        |
+ | Sun    |     2387 |        0 |       2387 |                         0 |        |
+ |--------+----------+----------+------------+---------------------------+--------|
+ | total  |    16709 |        0 |      16709 |                         0 |        |
  #+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
 
  | best practices | morning running | morning weight training | night tennis | night power | total |
  |----------------+-----------------+-------------------------+--------------+-------------+-------|
  | example        |             720 |                     250 |          699 |         120 |  1789 |
  #+TBLFM: $6=vsum($2..$5)
-
+** Exercise burnt Calorie per mins
  | mins | Run burn calorie | Burpee burnt calorie(9.4) |
  |------+------------------+---------------------------|
  |    1 |               12 |                         9 |
@@ -80,32 +109,32 @@
  |   90 |             1080 |                       810 |
  #+TBLFM: $3=9*$1
 
+** Calorie in food
+  | alcohol                                | calorie/100g |
+  |----------------------------------------+--------------|
+  | volka                                  |          230 |
+  | beer                                   |         43.3 |
+  | red wine                               |         82.9 |
+  | chicken breast (no skin)               |          104 |
+  | chicken inner muscle                   |          102 |
+  | chinese omelette with tuna (per share) |          375 |
+  | cola                                   |           42 |
+  |                                        |              |
 
- | alcohol                                | calorie/100g |
- |----------------------------------------+--------------|
- | volka                                  |          230 |
- | beer                                   |         43.3 |
- | red wine                               |         82.9 |
- | chicken breast (no skin)               |          104 |
- | chicken inner muscle                   |          102 |
- | chinese omelette with tuna (per share) |          375 |
- | cola                                   |           42 |
- |                                        |              |
 
-
- Forehand + backhand + jump : 12 mins
+  Forehand + backhand + jump : 12 mins
  
- | item         | duration |
- |--------------+----------|
- | forehand     | 00:01:30 |
- | backhand     | 00:01:30 |
- | jumping jack | 00:01:30 |
- | serve        | 00:01:30 |
- |--------------+----------|
- | Total        | 00:06:00 |
- #+TBLFM: @6$2=vsum(@2$2..@5$2);T
+  | item         | duration |
+  |--------------+----------|
+  | forehand     | 00:01:30 |
+  | backhand     | 00:01:30 |
+  | jumping jack | 00:01:30 |
+  | serve        | 00:01:30 |
+  |--------------+----------|
+  | Total        | 00:06:00 |
+  #+TBLFM: @6$2=vsum(@2$2..@5$2);T
 
-  7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
+   7700 / 2 / 7 = 550 KCperday, if I want to lose 0.5KG per week
 
 
 * Expense wk2032
@@ -1061,12 +1090,14 @@ https://www.youtube.com/watch?v=yMeT8AsRDKo&feature=youtu.be
 
 *** 美克
 
-** TODO daily expenditure recording for next week (especially on alcohol)
+** DONE daily expenditure recording for next week (especially on alcohol)
+   CLOSED: [2020-08-03 Mon 22:30]
 
 ** TODO Check out the tennis-video from earth
 ** TODO : planning on the work-out on footwork and serve
 
-** TODO : return one of the video back to library
+** DONE : return one of the video back to library
+   CLOSED: [2020-08-03 Mon 22:30]
 
 ** TODO : check out the type of wood, and target restaurant table
 
