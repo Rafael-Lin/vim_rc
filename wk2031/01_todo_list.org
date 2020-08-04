@@ -1,15 +1,16 @@
 * JiraTable
-  | JIRA    | NAME                                                     | BAMBOO | PR | Mon  | Fri | REMARK                                                                    |
-  |---------+----------------------------------------------------------+--------+----+------+-----+---------------------------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]    | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | 0    |     | merged                                                                    |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]    | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | 0.5h | 1h  | merged                                                                    |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]    | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | 3.0h | 2h  | dieX, dieY discuss, fix diX/Y, SetSeScanWidthTest locally pass, run again |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]    | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-18/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] | 1h   |     | fix the code smell, IC0NextComm change done, test locally                 |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]]    | Migrate SU from SystemStatus to MachingConstant          |        |    |      |     |                                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]    | Could not initialize Host GUI due to config file missing |        |    |      |     |                                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]    | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | 1h   | 6h  | check bamboo result, it work locally               code conflict          |
-  |---------+----------------------------------------------------------+--------+----+------+-----+---------------------------------------------------------------------------|
-  | meeting |                                                          |        |    |      |     |                                                                           |
+  | JIRA   | NAME                                                     | BAMBOO | PR | storyPt | Mon  | Tue | REMARK                                                                    |
+  |--------+----------------------------------------------------------+--------+----+---------+------+-----+---------------------------------------------------------------------------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]   | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] |         | 0    |     | merged                                                                    |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]   | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] |         | 0.5h |     | merged                                                                    |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3.0h | 3h  | dieX, dieY discuss, fix diX/Y, SetSeScanWidthTest locally pass, run again |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-34/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] |         | 1h   |     | fix the code smell, IC0NextComm change done, test locally                 |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]]   | Migrate SU from SystemStatus to MachingConstant          |        |    |         |      |     |                                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]   | Could not initialize Host GUI due to config file missing |        |    |       2 |      |     |                                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]   | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] |       2 | 1h   |     | check bamboo result, it work locally               code conflict          |
+  |--------+----------------------------------------------------------+--------+----+---------+------+-----+---------------------------------------------------------------------------|
+  | Joseph |                                                          |        |    |         |      |     |                                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                          |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]] |         |      |     |                                                                           |
   
   | next sprint wk33 |                                                 |   |   |   |
   |------------------+-------------------------------------------------+---+---+---|
@@ -25,7 +26,8 @@
   | [[https://jira-apps-us.asml.com/browse/MBISW-5779][5779]]             | FT example                                      |   |   |   |
 
 
-
+* git book
+git log -p --grep="MBISW-5793" > d:\5793.diff
 * WeightPlan
   
 ** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
@@ -70,7 +72,7 @@
 | wk2032 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
 |--------+----------+----------+------------+---------------------------+--------|
 | Mon    |      943 |      720 |        223 |                     -2164 |   75.2 |
-| Tu     |     2387 |        0 |       2387 |                         0 |        |
+| Tu     |     2387 |        0 |       2387 |                         0 |   74.3 |
 | Wed    |     2387 |          |       2387 |                         0 |        |
 | Thu    |     2387 |          |       2387 |                         0 |        |
 | Fri    |     2387 |        0 |       2387 |                         0 |        |
@@ -1192,3 +1194,127 @@ http://kien.github.io/ctrlp.vim/#installation
 
 ** TODO : understand how spf13 install
 ** TODO : understand why 3 lines are still at the top
+
+* [2020-08-04 Tue]
+
+** DONE : check mail from Tom
+   CLOSED: [2020-08-04 Tue 09:45]
+   Hello Jumper,
+
+I think your summary is very nice. Maybe you need both options:
+1.	Implement unit test for the Maintenance Manager. It can test all the interfaces of the Maintenance Manager, including some error behavior.
+2.	Also implement 1 integration test case when Maintenance Manager is tested in combination with the Facilities. These facilities are a real essential part of the functional operation of Maintenance Manager. If there is any problem, you’d like to discover it as soon as possible.
+This type of integration test is more difficult to make and takes more time to execute. So for this you can limit to only 1 test that tests the correct behavior. You don’t focus so much on error handling.
+
+This proposal looks nice for auto-test: https://confluence-apps-us.asml.com:8443/display/HMISSW/Integration+test.
+
+If the test bench can already be used like Yue suggests, that’s also a nice option for short term. It can help to show all this functionality is working before we test this on proto! That’s really good, because it safes precious proto time.
+
+Regards, Tom
+
+
+Company Secret
+From: Yue Luo <Yue.Luo@hermes-microvision.com> 
+Sent: Monday, August 3, 2020 10:38 AM
+To: Jumper Liu <Jumper.Liu@hermes-microvision.com>; Tom Engels <tom.engels@asml.com>; Bas Kusters <bas.kusters@asml.com>; Robert Hung <Robert.Hung@hermes-microvision.com>
+Cc: Joseph Li <joseph.li@hermes-microvision.com>; Rafael Lin <rafael.lin@asml.com>
+Subject: RE: Maintenance Manager design
+
+Hi Jumper,
+For option 1 I think you do not need to change facilities code?
+In simulation mode, you add your own Fake ACPD in your own module and unit test/ manual will trigger fake event?
+
+For ICMaster simulation, I think you do not need to write that.
+Next step ICMaster protocol simulation will be done by Altron. After that you can add your part to unit test which can be run on single machine.
+You can run your test on test bench for now.
+
+Best,
+Yue Luo
+
+
+Company Secret
+From: Jumper Liu <Jumper.Liu@hermes-microvision.com> 
+Sent: Monday, August 3, 2020 9:55 AM
+To: Tom Engels <tom.engels@asml.com>; Bas Kusters <bas.kusters@asml.com>; Yue Luo <Yue.Luo@hermes-microvision.com>; Robert Hung <Robert.Hung@hermes-microvision.com>
+Cc: Joseph Li <joseph.li@hermes-microvision.com>; Rafael Lin <rafael.lin@asml.com>
+Subject: RE: Maintenance Manager design
+
+Hi Tom and Yue,
+Now we are going to design unit test and integration test for Stage Maintenance.
+https://jira-apps-us.asml.com/browse/MBISW-5847
+1.	Unit test, Just test for MaintenanceManager only, no need design draft and finished.
+2.	Integration test, design draft needed!
+Please review on the link https://confluence-apps-us.asml.com:8443/display/HMISSW/Integration+test.
+
+Please kindly help us:
+1.	Select Option1 or 2.
+2.	Mock or Simulate.
+
+Thanks.
+Sincerely,
+Jumper Liu
+
+
+
+
+Company Secret
+From: Tom Engels <tom.engels@asml.com> 
+Sent: Wednesday, June 10, 2020 11:56 PM
+To: Jumper Liu <Jumper.Liu@hermes-microvision.com>; Bas Kusters <bas.kusters@asml.com>; Yue Luo <Yue.Luo@hermes-microvision.com>; Robert Hung <Robert.Hung@hermes-microvision.com>
+Cc: Rafael Lin <rafael.lin@asml.com>; Leo Su <Leo.Su@hermes-microvision.com>
+Subject: RE: Maintenance Manager design
+
+Hi Jumper,
+
+It seems your team is making good progress on the Maintenance Manager BB and on the connection to the inspection sequence. 
+Based on first version of the code I saw, I’m confident this is going to be a nice example for other teams about how a BB should be made. Very nice job! 
+
+In the e-mail conversations I see there are still some design questions being solved. It seems you’re able to find to right persons to provide the correct input. 
+To be prepared for future changes to Maintenance Manager, or to share knowledge with other/new team members, I believe it’s important that all design questions, answers and decisions are properly documented. So please don’t forget to update the EDS with all the information you’ve collected during development of Maintenance Manager.
+
+Kind regards, Tom
+
+
+Company Secret
+From: Jumper Liu <Jumper.Liu@hermes-microvision.com> 
+Sent: Wednesday, June 10, 2020 8:39 AM
+To: Bas Kusters <bas.kusters@asml.com>; Yue Luo <Yue.Luo@hermes-microvision.com>; Tom Engels <tom.engels@asml.com>; Robert Hung <Robert.Hung@hermes-microvision.com>
+Cc: Rafael Lin <rafael.lin@asml.com>; Leo Su <Leo.Su@hermes-microvision.com>
+Subject: RE: Maintenance Manager design
+
+OK, Thanks Bas!
+
+Sincerely,
+Jumper Liu
+
+
+** TODO : check how to use archive
+
+** TODO : check jira tickets for Jo and Ho 
+
+** TODO : check eww for chinese website 
+
+** TODO : check how to move to next bullet point
+
+** TODO : check how to use table.el <2020-08-04 Tue>
+
+** TODO : check org-learn 
+
+** TODO : check website for learning voca 
+
+** TODO : transfer money to honey 
+
+** TODO : check how to draw plot for org 
+
+** TODO : check the working items in this weekend
+
+** TODO : ask Jerry on the need to remove the _calibration function, change code
+   SCHEDULED: <2020-08-04 Tue>
+
+** TODO : write down the mail for Cyrus
+   SCHEDULED: <2020-08-04 Tue>
+
+** TODO : update the form in the confluence for wk2031
+   SCHEDULED: <2020-08-10 Mon>
+   https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=Weekly+2031
+   https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=Weekly+2030
