@@ -1,29 +1,30 @@
 * JiraTable
-  | JIRA   | NAME                                                     | BAMBOO | PR | storyPt | Mon  | Tue | REMARK                                                                    |
-  |--------+----------------------------------------------------------+--------+----+---------+------+-----+---------------------------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]   | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] |         | 0    |     | merged                                                                    |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]   | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] |         | 0.5h |     | merged                                                                    |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3.0h | 3h  | dieX, dieY discuss, fix diX/Y, SetSeScanWidthTest locally pass, run again |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-34/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] |         | 1h   |     | fix the code smell, IC0NextComm change done, test locally                 |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]]   | Migrate SU from SystemStatus to MachingConstant          |        |    |         |      |     |                                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]   | Could not initialize Host GUI due to config file missing |        |    |       2 |      |     |                                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]   | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] |       2 | 1h   |     | check bamboo result, it work locally               code conflict          |
-  |--------+----------------------------------------------------------+--------+----+---------+------+-----+---------------------------------------------------------------------------|
-  | Joseph |                                                          |        |    |         |      |     |                                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                          http://www.e-leather.com.tw/News?class=1                |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]] |         |      |     |                                                                           |
+  | JIRA   | NAME                                                     | BAMBOO | PR | storyPt | Wed | Tue  | Mon | REMARK                                                    |
+  |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]   | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] |         |     | 0    |     | merged                                                    |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]   | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] |         |     | 0.5h |     | merged                                                    |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3h  | 3.0h | 3h  | discuss with Wei-Chun, new issue is created               |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-34/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] |         |     | 1h   |     | fix the code smell, IC0NextComm change done, test locally |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]]   | Migrate SU from SystemStatus to MachingConstant          |        |    |         |     |      |     |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]   | Could not initialize Host GUI due to config file missing |        |    |       2 |     |      |     |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]   | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] |       2 |     | 1h   |     | merged                                                    |
+  |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
+  | Joseph |                                                          |        |    |         |     |      |     |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                          |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]] |         |     |      |     |                                                           |
   
-  | next sprint wk33 |                                                 |   |   |   |
-  |------------------+-------------------------------------------------+---+---+---|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]]             | StigmatorMonitorOperations                      |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]]             | IOpticalPixelSizeAngleCalibration               |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5765][5765]]             | Remove SetDependencies of VideoChannelGeneric   |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]             | StageCluster.TryGetPosition                     |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5766][5766]]             | Remove SetDependencies of PixelSize             |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4366][4366]]             | Expose IZControl                                |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-1640][1640]]             | Conversion function LinkedException and HRESULT |   |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]             | Clean the dependencies diagram in SU            |   |   |   |
-  |------------------+-------------------------------------------------+---+---+---|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5779][5779]]             | FT example                                      |   |   |   |
+  | next sprint wk33 |                                                                      | StoryPoint |   |   |
+  |------------------+----------------------------------------------------------------------+------------+---+---|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5875][5875]]             | Re-arch for ImageSavingHelper and ImageFormatHelper - Implementation |          5 |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]]             | StigmatorMonitorOperations                                           |            |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]]             | IOpticalPixelSizeAngleCalibration                                    |            |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5765][5765]]             | Remove SetDependencies of VideoChannelGeneric                        |            |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]             | StageCluster.TryGetPosition                                          |            |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5766][5766]]             | Remove SetDependencies of PixelSize                                  |            |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4366][4366]]             | Expose IZControl                                                     |            |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-1640][1640]]             | Conversion function LinkedException and HRESULT                      |            |   |   |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]             | Clean the dependencies diagram in SU                                 |            |   |   |
+  |------------------+----------------------------------------------------------------------+------------+---+---|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5779][5779]]             | FT example                                                           |            |   |   |
 
 
 * git book
@@ -1122,7 +1123,10 @@ note :
 (4)椅背和椅面角度剛剛好，對於男女都可以坐得很服貼，腰部不會簍空。
 (5)角架高度有符合我需求15cm高，Dyson掃地機器人可自由進出。
 (6)不會太軟，也不會太硬到感覺把你整個人往外挺，包覆感好。
-
+*** 米拉之家 MILA
+710台南市永康區正南八街38號
+*** the main door
+https://www.da-chuan.com.tw/about-us.html
 ** DONE daily expenditure recording for next week (especially on alcohol)
    CLOSED: [2020-08-03 Mon 22:30]
 
@@ -1349,3 +1353,8 @@ Jumper Liu
    CLOSED: [2020-08-04 Tue 21:08] SCHEDULED: <2020-08-10 Mon>
    https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=Weekly+2031
    https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=Weekly+2030
+* [2020-08-05 Wed]
+** TODO : check what codelen is 
+** TODO : check resharper special method
+    http://www.e-leather.com.tw/News?class=1
+** TODO : pay the rent for the house
