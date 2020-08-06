@@ -1,13 +1,14 @@
 * JiraTable
+  [[http://tw.hermes-microvision.com/index;jsessionid=1BC1DF95464BE927212062B2BAC08B7C?p_p_id=62_INSTANCE_w0HkJP4TyFOw&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&p_p_col_id=_118_INSTANCE_l8purViDBWpB__column-1&p_p_col_count=1&_62_INSTANCE_w0HkJP4TyFOw_struts_action=%2Fjournal_articles%2Fview&_62_INSTANCE_w0HkJP4TyFOw_returnToFullPageURL=http%3A%2F%2Ftw.hermes-microvision.com%2Findex%3Bjsessionid%3D1BC1DF95464BE927212062B2BAC08B7C%3Fp_p_id%3D62_INSTANCE_w0HkJP4TyFOw%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3D_118_INSTANCE_l8purViDBWpB__column-1%26p_p_col_count%3D1&_62_INSTANCE_w0HkJP4TyFOw_groupId=10180&_62_INSTANCE_w0HkJP4TyFOw_articleId=12224&_62_INSTANCE_w0HkJP4TyFOw_version=42.3][LunchMenu]]
   | JIRA   | NAME                                                     | BAMBOO | PR | storyPt | Wed | Tue  | Mon | REMARK                                                    |
   |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
   | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]   | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] |         |     | 0    |     | merged                                                    |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]   | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] |         |     | 0.5h |     | merged                                                    |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]   | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] |       2 |     | 1h   |     | merged                                                    |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3h  | 3.0h | 3h  | discuss with Wei-Chun, new issue is created               |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-34/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] |         |     | 1h   |     | fix the code smell, IC0NextComm change done, test locally |
   | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]]   | Migrate SU from SystemStatus to MachingConstant          |        |    |         |     |      |     |                                                           |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]   | Could not initialize Host GUI due to config file missing |        |    |       2 |     |      |     |                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]   | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] |       2 |     | 1h   |     | merged                                                    |
   |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
   | Joseph |                                                          |        |    |         |     |      |     |                                                           |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                          |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]] |         |     |      |     |                                                           |
@@ -30,7 +31,10 @@
 * git book
 git log -p --grep="MBISW-5793" > d:\5793.diff
 * WeightPlan
-  
+
+* Red Wine type   
+https://www.fatsecret.com/calories-nutrition/search?q=red%20wine
+
 ** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
 *** TODO : BMR : 1550, TDEE : 2387, target intake calorie :: below 1500, muscle weight : 35.5 KG 
 *** TODO : TDEE : total daily energy expenditure
@@ -72,15 +76,15 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
 ** wk2032 Calorie
 | wk2032 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
 |--------+----------+----------+------------+---------------------------+--------|
-| Mon    |      943 |      720 |        223 |                     -2164 |   75.2 |
-| Tu     |     2387 |        0 |       2387 |                         0 |   74.3 |
-| Wed    |     2387 |          |       2387 |                         0 |        |
-| Thu    |     2387 |          |       2387 |                         0 |        |
-| Fri    |     2387 |        0 |       2387 |                         0 |        |
+| Mon    |      982 |      720 |        262 |                     -2125 |   75.2 |
+| Tu     |     1239 |      780 |        459 |                     -1928 |   74.3 |
+| Wed    |     1384 |      863 |        521 |                     -1866 |   74.3 |
+| Thu    |     2387 |      318 |       2069 |                      -318 |   72.8 |
+| Fri    |     2387 |          |       2387 |                         0 |        |
 | Sat    |     2387 |        0 |       2387 |                         0 |        |
 | Sun    |     2387 |        0 |       2387 |                         0 |        |
 |--------+----------+----------+------------+---------------------------+--------|
-| total  |    15265 |      720 |      14545 |                     -2164 |        |
+| total  |    13153 |     2681 |      10472 |                     -6237 |        |
 #+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
 
 
@@ -1358,3 +1362,4 @@ Jumper Liu
 ** TODO : check resharper special method
     http://www.e-leather.com.tw/News?class=1
 ** TODO : pay the rent for the house
+   SCHEDULED: <2020-08-06 Thu>
