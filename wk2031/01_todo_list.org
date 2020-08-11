@@ -11,7 +11,7 @@
   
   | JIRA   | NAME                                                     | BAMBOO | PR | storyPt | Wed | Tue  | Mon | REMARK                                                    |
   |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3h  | 3.0h | 3h  | discuss with Wei-Chun, new issue is created               |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-20][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3h  | 3.0h | 3h  | discuss with Wei-Chun, new issue is created               |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-34/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] |         |     | 1h   |     | fix the code smell, IC0NextComm change done, test locally |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]   | StageCluster.TryGetPosition                              |        |    |         |     |      |     |                                                           |
   |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
@@ -36,8 +36,7 @@
 * git book
 git log -p --grep="MBISW-5793" > d:\5793.diff
 
-* Red Wine type   
-https://www.fatsecret.com/calories-nutrition/search?q=red%20wine
+* [[https://www.fatsecret.com/calories-nutrition/search?q=red%20wine][Red Wine Type]]
 
 * WeightPlan : [[https://www.fatsecret.com/Diary.aspx?pa=mdcs][myFatSecretOverview]], [[https://www.fatsecret.com/Default.aspx?pa=memh&id=68900470][myWeightHistory]]
 
@@ -1490,3 +1489,7 @@ machine DUV, bas lievn
 * TODO logical pattern?
 
 * TODO set : textWidth in both vim and emacs
+
+* TODO : c-y : paste something in the minibuffer
+
+* TODO : check the leetcode
