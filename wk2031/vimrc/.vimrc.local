@@ -26,12 +26,14 @@ endif
 "}
 "
 " set wrap or not{
-    noremap <leader>sw:set warp<CR>
-    noremap <leader>snr:set nowarp<CR>
+    noremap <leader>sw :set wrap<CR>
+    noremap <leader>snr :set nowrap<CR>
 "}
 
 " auto change dir {
-    lcd %:p:h 
+" % means current file, %:p means the full path, %:p:h means the directory
+    " :lcd %:p:h 
+    autocmd BufEnter * silent! lcd %:p:h
 "}
 "
 " Buffer change {
@@ -43,6 +45,8 @@ endif
     nnoremap <leader>bn :bnext<CR>
     nnoremap <leader>bp :bprev<CR>
     let g:NERDTreeWinPos = "right"
+    let g:NERDTreeQuitOnOpen=0
+    nnoremap <c-e> :NERDTreeToggle<CR>
 "}
 " airline {
     let g:airline_powerline_fonts = 1
