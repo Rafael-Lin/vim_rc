@@ -1,39 +1,44 @@
 * JiraTable
   [[http://tw.hermes-microvision.com/index;jsessionid=1BC1DF95464BE927212062B2BAC08B7C?p_p_id=62_INSTANCE_w0HkJP4TyFOw&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&p_p_col_id=_118_INSTANCE_l8purViDBWpB__column-1&p_p_col_count=1&_62_INSTANCE_w0HkJP4TyFOw_struts_action=%2Fjournal_articles%2Fview&_62_INSTANCE_w0HkJP4TyFOw_returnToFullPageURL=http%3A%2F%2Ftw.hermes-microvision.com%2Findex%3Bjsessionid%3D1BC1DF95464BE927212062B2BAC08B7C%3Fp_p_id%3D62_INSTANCE_w0HkJP4TyFOw%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3D_118_INSTANCE_l8purViDBWpB__column-1%26p_p_col_count%3D1&_62_INSTANCE_w0HkJP4TyFOw_groupId=10180&_62_INSTANCE_w0HkJP4TyFOw_articleId=12224&_62_INSTANCE_w0HkJP4TyFOw_version=42.3][LunchMenu]]
+** done 
+   
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | merged |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem       | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | merged |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]] | Expose GsaWaferAlignHelper in SU | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | merged |
+  |      |                                  |        |    |        |
+
+** on-going 
+  
   | JIRA   | NAME                                                     | BAMBOO | PR | storyPt | Wed | Tue  | Mon | REMARK                                                    |
   |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]]   | expose imageSavingHelper                                 | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] |         |     | 0    |     | merged                                                    |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]]   | fix unit converter problem                               | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] |         |     | 0.5h |     | merged                                                    |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]]   | Expose GsaWaferAlignHelper in SU                         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] |       2 |     | 1h   |     | merged                                                    |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-4][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3h  | 3.0h | 3h  | discuss with Wei-Chun, new issue is created               |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-20][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3h  | 3.0h | 3h  | discuss with Wei-Chun, new issue is created               |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-34/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] |         |     | 1h   |     | fix the code smell, IC0NextComm change done, test locally |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]]   | Migrate SU from SystemStatus to MachingConstant          |        |    |         |     |      |     |                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]]   | Could not initialize Host GUI due to config file missing |        |    |       2 |     |      |     |                                                           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]   | StageCluster.TryGetPosition                              |        |    |         |     |      |     |                                                           |
   |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
   | Joseph |                                                          |        |    |         |     |      |     |                                                           |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                          |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]] |         |     |      |     |                                                           |
   
-  | next sprint wk33 |                                                                      | StoryPoint |   |   |
-  |------------------+----------------------------------------------------------------------+------------+---+---|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5875][5875]]             | Re-arch for ImageSavingHelper and ImageFormatHelper - Implementation |          5 |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]]             | StigmatorMonitorOperations                                           |            |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]]             | IOpticalPixelSizeAngleCalibration                                    |            |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5765][5765]]             | Remove SetDependencies of VideoChannelGeneric                        |            |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]             | StageCluster.TryGetPosition                                          |            |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5766][5766]]             | Remove SetDependencies of PixelSize                                  |            |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-4366][4366]]             | Expose IZControl                                                     |            |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-1640][1640]]             | Conversion function LinkedException and HRESULT                      |            |   |   |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]]             | Clean the dependencies diagram in SU                                 |            |   |   |
-  |------------------+----------------------------------------------------------------------+------------+---+---|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5779][5779]]             | FT example                                                           |            |   |   |
+  | wk35 |                                                                      | StoryPoint |   |   |   |   |   |           |
+  |------+----------------------------------------------------------------------+------------+---+---+---+---+---+-----------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5875][5875]] | Re-arch for ImageSavingHelper and ImageFormatHelper - Implementation |          5 |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]] | Could not initialize Host GUI due to config file missing             |            |   | 2 |   |   |   | postbpone |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]] | StigmatorMonitorOperations                                           |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]] | IOpticalPixelSizeAngleCalibration                                    |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5765][5765]] | Remove SetDependencies of VideoChannelGeneric                        |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]] | Migrate SU from SystemStatus to MachingConstant                      |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4366][4366]] | Expose IZControl                                                     |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-1640][1640]] | Conversion function LinkedException and HRESULT                      |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]] | Clean the dependencies diagram in SU                                 |            |   |   |   |   |   |           |
+  |------+----------------------------------------------------------------------+------------+---+---+---+---+---+-----------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5779][5779]] | FT example                                                           |            |   |   |   |   |   |           |
 
 
 * git book
 git log -p --grep="MBISW-5793" > d:\5793.diff
-* WeightPlan
 
-* Red Wine type   
-https://www.fatsecret.com/calories-nutrition/search?q=red%20wine
+* [[https://www.fatsecret.com/calories-nutrition/search?q=red%20wine][Red Wine Type]]
+
+* WeightPlan : [[https://www.fatsecret.com/Diary.aspx?pa=mdcs][myFatSecretOverview]], [[https://www.fatsecret.com/Default.aspx?pa=memh&id=68900470][myWeightHistory]]
 
 ** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
 *** TODO : BMR : 1550, TDEE : 2387, target intake calorie :: below 1500, muscle weight : 35.5 KG 
@@ -68,7 +73,7 @@ https://www.fatsecret.com/calories-nutrition/search?q=red%20wine
 | Thu    |     1494 |      584 |        910 |                     -1477 |   74.0 |
 | Fri    |     1416 |        0 |       1416 |                      -971 |   74.3 |
 | Sat    |     2366 |        0 |       2366 |                       -21 |        |
-| Sun    |     1817 |        0 |       1817 |                      -570 |        |
+| Sun    |     1817 |        0 |       1817 |                      -570 |   74.3 |
 |--------+----------+----------+------------+---------------------------+--------|
 | total  |    11510 |     1871 |       9639 |                     -7070 |        |
 #+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
@@ -79,17 +84,30 @@ https://www.fatsecret.com/calories-nutrition/search?q=red%20wine
 | Mon    |      982 |      720 |        262 |                     -2125 |   75.2 |
 | Tu     |     1239 |      780 |        459 |                     -1928 |   74.3 |
 | Wed    |     1384 |      863 |        521 |                     -1866 |   74.3 |
-| Thu    |     2387 |      318 |       2069 |                      -318 |   72.8 |
-| Fri    |     2387 |          |       2387 |                         0 |        |
+| Thu    |     1319 |      318 |       1001 |                     -1386 |   72.8 |
+| Fri    |     1677 |          |       1677 |                      -710 |   72.3 |
+| Sat    |     2219 |      709 |       1510 |                      -877 |     73 |
+| Sun    |     2219 |        0 |       2219 |                      -168 |   73.3 |
+|--------+----------+----------+------------+---------------------------+--------|
+| total  |    11039 |     3390 |       7649 |                     -9060 |        |
+#+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
+
+** wk2033 Calorie 
+| wk2033 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
+|--------+----------+----------+------------+---------------------------+--------|
+| Mon    |     2387 |        0 |       2387 |                         0 |   73.6 |
+| Tu     |     2387 |        0 |       2387 |                         0 |        |
+| Wed    |     2387 |          |       2387 |                         0 |        |
+| Thu    |     2387 |          |       2387 |                         0 |        |
+| Fri    |     2387 |        0 |       2387 |                         0 |        |
 | Sat    |     2387 |        0 |       2387 |                         0 |        |
 | Sun    |     2387 |        0 |       2387 |                         0 |        |
 |--------+----------+----------+------------+---------------------------+--------|
-| total  |    13153 |     2681 |      10472 |                     -6237 |        |
+| total  |    16709 |        0 |      16709 |                         0 |        |
 #+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
 
-
 *** Calorie template
- | wk2032 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
+ | wk2033 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
  |--------+----------+----------+------------+---------------------------+--------|
  | Mon    |     2387 |        0 |       2387 |                         0 |        |
  | Tu     |     2387 |        0 |       2387 |                         0 |        |
@@ -126,6 +144,7 @@ https://www.fatsecret.com/calories-nutrition/search?q=red%20wine
   | chicken inner muscle                   |          102 |
   | chinese omelette with tuna (per share) |          375 |
   | cola                                   |           42 |
+  | dumpling                               |           45 |
   |                                        |              |
 
 
@@ -1394,3 +1413,116 @@ Jumper Liu
 Chernobyl
 「謊言的代價是什麼？並不是我們會錯把謊言當成真實，真正危險的是，如果我們聽了太多謊言，就再也認不清事實了
 https://e-info.org.tw/node/219719
+** TODO : pay the rent for the house
+   SCHEDULED: <2020-08-06 Thu>
+
+
+* meeting with bram
+** Q1 : introduce yourself
+*** two years in Linkou, the functional cluster mainly source and motion control
+I joined ASML in 2018, and was responsible for yieldStar SW. I was in Linkou and
+join PTS sensor team in the beginning. Then the work content is changed because
+my role mainly to support Linkou factory, so I mainly work with VHV D&E SW team
+on source and motion control functional cluster. I went to VHV for three times
+to support YS380 NPI product. The colleagues there is very friendly and whenever
+I have any questions, they are willing to help to out.
+
+At that time, although David is my GL, but I joined the activities with other SW
+D&E mostly for daily scrum.
+ 
+*** the difference between HMI and ASML SW is that the code is more organized
+    for ASML. I think that's because there are more SW FTEs for yieldstar. In
+    HMI, the schedule is very tight, and there are too many requests from
+    fields. That's part of the reason why the structure of the SW is not so good.
+    
+1. a little bit messy
+2. didn't used auto-fac and some design pattern
+3. challenge : integrate the concept of ASML SW into HMI would take some time,
+4. challenge : integrate the code of SBI and MBI is a long way to go. 
+5. hard to ensure quality due to the machine time is hard to get
+6. unit test is what we can do in current phase
+7. I'm a little bit junior, although I can solve jira tickets, but don't have the overview of the whole SW structure
+8. 
+
+responsibility of FCA
+1. regular meeting with other FCAs for new product
+2. code review on each pull request to find out potential risk and ensure quality
+3. make sure each changes are fully documented
+4. help team members to overcome technical difficulties.
+5. 
+
+what cultures do you like in ASML:
+1. speak up
+2. be transparent
+3. v-model
+4. love to invest on people's development, for example, all employee can join the course of English or 7 habits of highly effectively people if necessary
+5. Way of working
+
+
+*** how to ensure quality
+in ASML, the good part of it is the concept of V-model. That means before any SW
+changes, the EDS must contain the new design for new product, and after the SW
+implementation is done, the functional testing is necessary to ensure the
+quality of the modified functions and TAR have to be written down and recorded
+In the end, SW FTE have to talk to GL/TL about what change he made, and make
+sure the all relevant documents are updated.
+
+** QN : any quetstions?
+*** I know Tom is the architect for Infra team previously, so now if I take the role, what's the responsibility?
+*** not familiar with the Role and responsibility of this FCA
+
+    
+PCM : project C  M 
+
+last july, 
+ASML : 2013 
+DUV : 
+figure work 
+grow team 
+shrink 
+1 team 
+average FBA 
+PO : 
+how much? 
+infra : 8 people. 
+platform : 
+GUI : 
+infra team : diagnostic improvement related link 
+ASML : diagnostic => event log , tricky
+SDT : 
+BMT : 
+SPC : 
+interact :
+infra team, kathy. alignment. architect, 
+sonar cube -> 
+gatekeeper => 
+fit our achi
+explain 
+communicate 
+wafer stage : bas? DUV?
+machine DUV, bas lievn
+
+*** new language : 
+!Environment.NewLine
+
+* TODO Add todo in table?
+
+* TODO GDS abbreviation? => only x,y, z : color, from HPC
+
+* TODO simulation manager? => openGL
+
+* TODO SEM file?
+
+* TODO HMI format?
+
+* TODO HLT? or GDS?
+
+* TODO die size? 12 inch => diameter or perimeber?
+
+* TODO logical pattern?
+
+* TODO set : textWidth in both vim and emacs
+
+* TODO : c-y : paste something in the minibuffer
+
+* TODO : check the leetcode

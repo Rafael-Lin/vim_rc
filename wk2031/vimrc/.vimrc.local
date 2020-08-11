@@ -25,6 +25,17 @@ endif
     noremap  <C-W><C-P> : exec ':CtrlP ' . g:projPath<CR>
 "}
 "
+" set wrap or not{
+    noremap <leader>sw :set wrap<CR>
+    noremap <leader>snr :set nowrap<CR>
+"}
+
+" auto change dir {
+" % means current file, %:p means the full path, %:p:h means the directory
+    " :lcd %:p:h 
+    autocmd BufEnter * silent! lcd %:p:h
+"}
+"
 " Buffer change {
     nnoremap <C-tab> :bn<CR>
     nnoremap <C-s-tab> :bp<CR>
@@ -34,18 +45,20 @@ endif
     nnoremap <leader>bn :bnext<CR>
     nnoremap <leader>bp :bprev<CR>
     let g:NERDTreeWinPos = "right"
+    let g:NERDTreeQuitOnOpen=0
+    nnoremap <c-e> :NERDTreeToggle<CR>
 "}
 " airline {
     let g:airline_powerline_fonts = 1
 
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline#extensions#tabline#buffer_nr_show = 1
+    " let g:airline#extensions#tabline#enabled = 1
+    " let g:airline#extensions#tabline#buffer_nr_show = 1
 
     let g:airline#extensions#whitespace#enabled = 0
     let g:airline#extensions#whitespace#symbol = '!'
 
     if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+        let g:airline_symbols = {}
     endif
     " old vim-powerline symbols
     let g:airline_left_sep = '|'
@@ -54,11 +67,14 @@ endif
     let g:airline_right_alt_sep = '|'
     let g:airline_symbols.branch = '|'
     let g:airline_symbols.readonly = '|'
-    let g:airline#extensions#tagbar#enabled = 1
+    " let g:airline#extensions#tagbar#enabled = 1
 
     let g:airline_section_a = airline#section#create(['', '', ''])
-    let g:airline_section_b = '%-0.10{getcwd()}'
-    let g:airline_section_c = '%t'
+    " let g:airline_section_b = '%-0.10{getcwd()}'
+    " let g:airline_section_c = '%t'
+    let g:airline_section_b = '%{strftime("%c")}'
+    let g:airline_section_c = airline#section#create(['path'])
+    let g:airline_section_x = airline#section#create(['branch'])
 "}
 " leader+i+g : toggle vim indent guide
 " leader+tt : toggle tagbar
