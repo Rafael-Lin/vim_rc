@@ -38,7 +38,7 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
 
 * [[https://www.fatsecret.com/calories-nutrition/search?q=red%20wine][Red Wine Type]]
 
-* WeightPlan : [[https://www.fatsecret.com/Diary.aspx?pa=mdcs][myFatSecretOverview]], [[https://www.fatsecret.com/Default.aspx?pa=memh&id=68900470][myWeightHistory]]
+* WeightPlan : [[https://www.fatsecret.com/Diary.aspx?pa=mdcs][myFatSecretOverview]], [[https://www.fatsecret.com/Default.aspx?pa=memh&id=68900470][myWeightHistory]], target : burn 7000 KC for exercise for each week, 700 per day
 
 ** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
 *** TODO : BMR : 1550, TDEE : 2387, target intake calorie :: below 1500, muscle weight : 35.5 KG 
@@ -96,7 +96,7 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
 | wk2033 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
 |--------+----------+----------+------------+---------------------------+--------|
 | Mon    |     2387 |        0 |       2387 |                         0 |   73.6 |
-| Tu     |     2387 |        0 |       2387 |                         0 |        |
+| Tu     |     2387 |        0 |       2387 |                         0 |   74.0 |
 | Wed    |     2387 |          |       2387 |                         0 |        |
 | Thu    |     2387 |          |       2387 |                         0 |        |
 | Fri    |     2387 |        0 |       2387 |                         0 |        |
@@ -124,6 +124,7 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
  |----------------+-----------------+-------------------------+--------------+-------------+-------|
  | example        |             720 |                     250 |          699 |         120 |  1789 |
  #+TBLFM: $6=vsum($2..$5)
+
 ** Exercise burnt Calorie per mins
  | mins | Run burn calorie | Burpee burnt calorie(9.4) |
  |------+------------------+---------------------------|
@@ -133,6 +134,9 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
  |   80 |              960 |                       720 |
  |   90 |             1080 |                       810 |
  #+TBLFM: $3=9*$1
+
+ 20 burpee => burn 12.5KC
+ 1 burpee per 3 seconds
 
 ** Calorie in food
   | alcohol                                | calorie/100g |
@@ -146,7 +150,8 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
   | cola                                   |           42 |
   | dumpling                               |           45 |
   |                                        |              |
-
+[[https://mall.pchome.com.tw/prod/CBAF27-A40498973][success_high_speed_jump_rope]]
+[[https://shopee.tw/%E5%8F%B0%E7%81%A3%E7%8F%BE%E8%B2%A8-%E5%B0%88%E6%A5%AD%E6%88%90%E4%BA%BACrossfit%E6%88%B0%E9%AC%A5%E5%81%A5%E8%BA%AB%E8%BB%B8%E6%89%BF%E8%B7%B3%E7%B9%A9-%E9%8B%81%E5%90%88%E9%87%91%E6%9D%90%E8%B3%AA-%E7%94%B7%E5%A5%B3%E7%AB%B6%E9%80%9F%E6%AF%94%E8%B3%BD-%E8%80%83%E8%A9%A6%E7%94%A8-%E5%B0%88%E7%94%A8%E9%8B%BC%E7%B5%B2%E7%B9%A9-%E9%AB%98%E7%A9%A9%E5%AE%9A%E5%BA%A6-i.28111771.2067214582][high_speed_jump_rope]]
 
   Forehand + backhand + jump : 12 mins
  
@@ -823,24 +828,34 @@ Benefits
 Similar exercises
 Burpee modifications
 Takeaway
-Even if you don’t consider yourself an avid workout enthusiast, you’ve likely heard of burpees. Burpees are a calisthenics exercise, a type of exercise that uses your body weight.
+Even if you don’t consider yourself an avid workout enthusiast, you’ve likely
+heard of burpees. Burpees are a calisthenics exercise, a type of exercise that
+uses your body weight.
 
-With calisthenics exercises, you can improve not only strength and endurance, but also coordination and flexibility.
+With calisthenics exercises, you can improve not only strength and endurance,
+but also coordination and flexibility.
 
-When working out, you may wonder how effective an exercise is based on how many calories it burns. The number of calories burned during exercise varies with weight, intensity, and other factors.
+When working out, you may wonder how effective an exercise is based on how many
+calories it burns. The number of calories burned during exercise varies with
+weight, intensity, and other factors.
 
-According to Baton Rouge General, you can burn roughly 160 calories doing 17 minutes of burpees.
+According to Baton Rouge General, you can burn roughly 160 calories doing 17
+minutes of burpees.
 
-In this article, we’ll take a closer look at how many calories burpees burn, how to do them, and other benefits of doing burpees.
+In this article, we’ll take a closer look at how many calories burpees burn,
+how to do them, and other benefits of doing burpees.
 
 Calories burned
-As mentioned above, you burn around 160 calories for every 17 minutes that you do burpees. Let’s break this number down to something more practical:
+As mentioned above, you burn around 160 calories for every 17 minutes that you
+do burpees. Let’s break this number down to something more practical:
 
 By the numbers
 Roughly 9.4 calories are burned for every minute of burpees performed.
 It takes most people around three seconds to do a single burpee.
 Three seconds per burpee equals 20 burpees per minute, depending on speed and frequency.
-After doing some simple math, we can see that it takes roughly 20 burpees to burn around 10 calories. However, weight can affect the number of calories burned during exercise as well.
+After doing some simple math, we can see that it takes roughly 20 burpees to
+burn around 10 calories. However, weight can affect the number of calories
+burned during exercise as well.
 
 According to Harvard Medical School, when performing 30 minutes of vigorous calisthenics:
 
@@ -855,183 +870,17 @@ Weight	Number of burpees	Calories
 125-pound person	20	10
 155-pound person	20	12.5
 185-pound person	20	15
+
 How many burpees should you do?
-Burpees are considered an advanced calisthenics move, so it’s important to take your time and perform them with proper form to avoid injury.
+Burpees are considered an advanced calisthenics move, so it’s important to take
+your time and perform them with proper form to avoid injury.
 
-If you’re performing a single burpee every three seconds, you can expect to perform roughly 20 burpees per minute. If you perform your burpees more slowly, you might do 10 to 15 burpees per minute instead.
+If you’re performing a single burpee every three seconds, you can expect to
+perform roughly 20 burpees per minute. If you perform your burpees more slowly,
+you might do 10 to 15 burpees per minute instead.
 
-Also, different variations of burpees may change the amount of time it takes you to do a single burpee.
-
-
-HEALTHLINE CHALLENGES
-Create a movement routine that you can do at home
-Our Move Your Body Challenge has one exercise for 25 days to build a routine, no equipment needed.
-
-Enter your email
-Get Healthline's daily Nutrition newsletter
-Your privacy is important to us
-
-How to do a burpee
-The easiest way to think of a burpee is that it’s a full plank followed by a squat jump. Here is a great visual tutorial for how to do a burpee:
-
-Here are some step-by-step instructions:
-
-Stand facing forward. Your feet should be hip-width apart and your arms should be at your sides.
-Lower yourself down into a squat by pushing your hips back and bending your knees. Focus your weight into your heels, rather than onto the balls of your feet.
-Lean forward and place your palms flat on the floor in front of you. The position of your palms should be narrower than your feet.
-Jump your feet back, stretching your legs and landing on the balls of your feet. Think of this transition as jumping into a full plank. During this position, engage the abs for support and be sure not to raise or sag your back.
-Jump your feet forward again until they are positioned next to your hands.
-Reach up with your arms over your head and jump up, then reach back down to cycle through the entire move again.
-Although the directions above are for a standard burpee, other popular burpee variations include:
-
-adding a pushup while in the plank position
-adding a plank jack while in the plank position
-adding a tuck jump while in the standing position
-No matter which type of burpee variation you choose to do, learning proper form is the most important thing.
-
-powered by Rubicon Project
-Benefits of burpees
-Burpees are a full-body calisthenics workout that focus on building muscle strength. They can help to improve strength and endurance as part of a regular workout routine and may also have other benefits too.
-
-In a 2014 community-based studyTrusted Source, researchers found that bodyweight exercises, such as burpees, were able to significantly reduce blood pressure in healthy adult women.
-
-Not only are burpees a great strength-building exercise, they can also be performed as part of a high intensity interval training (HIIT) regimen. HIIT focuses on bursts of intense exercise alternated with periods of recovery.
-
-The benefits of HIIT have been extensively studied for a variety of conditions, including type 2 diabetes, obesity, and heart health. In one studyTrusted Source, researchers found that HIIT could potentially have a positive impact on mitochondrial function and fiber type in muscle cells.
-
-Alternatives to burpees
-There are many reasons why someone may not be able to safely or effectively perform a burpee, but not to worry — there are plenty of similar calisthenics exercises that you can do instead.
-
-Check out some of these burpee alternatives for an equally effective workout:
-
-Jumping jacks
-Jumping jacks are another full-body calisthenics exercise that can be performed as a HIIT workout. Unlike burpees, jumping jacks do not place as much bodyweight pressure on the shoulders.
-
-Jump squats
-Jump squats allow you to perform the last portion of a burpee without having to perform the plank. This exercise will place similar pressure on the knees as burpees do, but again, not as much pressure on the shoulders.
-
-Pushups
-Pushups are a great beginner’s full-body calisthenics move that place minimal strain on the joints. The shoulders and abs remain engaged and depending on the pushup variation, so do the legs and glutes.
-
-Plank jacks
-Plank jacks are a great alternative to burpees when you’re unable to transition between plank and standing. Like burpees, they use the plank position but do not return to standing, meaning less strain on the knees.
-
-Plank jacks also make a great HIIT workout, just like burpees.
-
-Burpee modifications
-If you’re still interested in performing a burpee but cannot perform it in its entirety, the alternative might be to modify it. To perform a modified burpee, try these adjustments:
-
-Perform each move one at a time.
-Step into and out of plank rather than jump.
-Stand to finish rather than jump to finish.
-The bottom line
-Burpees are a great calisthenics exercise that burn anywhere from 10 to 15 calories per minute. If you’ve never performed a burpee before, it’s important to learn proper form to avoid injury.
-
-If you’re looking to round out your exercise program with more calisthenics moves like burpees, an exercise professional can help. Visit the American College of Sports Medicine’s ProFinder to find an exercise professional near you.
-
-ADVERTISEMENT
-Need a more effective fitness routine?
-Find the perfect fitness equipment to support your at-home workout.
-
-Last medically reviewed on June 6, 2019
-
- 5 sourcescollapsed
-
-
-
-
-
-
-Medically reviewed by Daniel Bubnis, M.S., NASM-CPT, NASE Level II-CSS — Written by Eleesha Lockett, MS on June 6, 2019
-
-related stories
-3 Ways to Do a Squat Thrust
-How Many Calories Do I Burn in a Day?
-6 Unusual Ways to Burn Calories
-8 Calisthenics Exercises for Beginners
-Staying Physically Active May Lower Your Risk of Death by 30%
-
-Eating Breakfast Can Help You Burn More Carbs When You Work Out
-
-From 20s to 60s, Here’s How 9 Women Got the Abs of Their Dreams
-
-I Challenged Myself to 30 Days of Weighted Squats... Here’s What […]
-
-13 Fatigue-Fighting Hacks to Supercharge Your Mornings
-Was this article helpful?
-Yes
-No
-
-READ THIS NEXT
-3 Ways to Do a Squat Thrust
-Medically reviewed by Daniel Bubnis, MS, NASM-CPT, NASE Level II-CSS
-Squat thrusts or burpees are challenging exercises, but if you learn to master them, they can yield results. Learn three different ways to do squat…
-
-READ MORE
-How Many Calories Do I Burn in a Day?
-Medically reviewed by Kathy Warwick, RD, LD
-How many calories you burn daily depends on your sex, age, and activity level. We look at how many calories are needed to maintain weight or to lose…
-
-READ MORE
-6 Unusual Ways to Burn Calories
-Medically reviewed by Franziska Spritzler, RD, CDE
-There are more ways to burn calories than just exercise. Here are 6 unusual ways to burn calories, which have nothing to do with diet or exercise.
-
-READ MORE
-8 Calisthenics Exercises for Beginners
-Medically reviewed by Daniel Bubnis, MS, NASM-CPT, NASE Level II-CSS
-Calisthenics were developed thousands of years ago in ancient Greece. Learn how you can incorporate these timeless exercises into your workouts.
-
-READ MORE
-Staying Physically Active May Lower Your Risk of Death by 30%
-In a new study, people who engaged in sufficient aerobic activity were 29 percent less likely to die from any cause, compared to people who didn't…
-
-READ MORE
-10 Arm-Toning Dumbbell Exercises
-Medically reviewed by Jake Tipane, CPT
-Having stronger arms and shoulders has many benefits. It can increase your muscle strength and muscle tone, reduce your risk of injury, improve your…
-
-READ MORE
-6 Ways to Improve Your Vo2 Max
-Medically reviewed by Jake Tipane, CPT
-Vo2 Max is one way to determine your fitness level, and typically athletes have very high numbers. We'll discuss how to improve yours.
-
-READ MORE
-These Are the 12 Best Dumbbells to Use at Home, According to a Trainer
-Medically reviewed by Jake Tipane, CPT
-Choosing the best set of dumbbells for you will take a bit of research, but no matter what your budget or fitness level is, there's an option for you.
-
-READ MORE
-Is a Foam Roller Recommended to Ease a Tight IT Band?
-Medically reviewed by Gregory Minnis, DPT
-If you have a tight IT band, you might have heard that foam rolling is your best option. We'll discuss what is best to east this tight tissue.
-
-READ MORE
-Is It Normal to Take a Nap After a Workout?
-Medically reviewed by Daniel Bubnis, M.S., NASM-CPT, NASE Level II-CSS
-After doing intense exercise, some people feel the urge to take a nap. We'll discuss the pros and cons of sleeping after exercise.
-
-READ MORE
- 
-Get our wellness newsletter
-Fitness and nutrition tips, health news, and more.
-
-Enter your email
-Your privacy is important to us
-
-About Us
-Health Topics
-Health News
-Contact Us
-Advertise With Us
-Advertising Policy
-Newsletters
-Careers
-Find An Online Doctor
-Do Not Sell My Info
-Privacy Settings
-© 2005-2020 Healthline Media a Red Ventures Company. All rights reserved. Our website services, content, and products are for informational purposes only. Healthline Media does not provide medical advice, diagnosis, or treatment. See additional information.
-
+Also, different variations of burpees may change the amount of time it takes
+you to do a single burpee.
 
 
 * <2020-07-30 Thu>
@@ -1255,97 +1104,6 @@ http://kien.github.io/ctrlp.vim/#installation
 ** TODO : understand why 3 lines are still at the top
 
 * [2020-08-04 Tue]
-
-** DONE : check mail from Tom
-   CLOSED: [2020-08-04 Tue 09:45]
-   Hello Jumper,
-
-I think your summary is very nice. Maybe you need both options:
-1.	Implement unit test for the Maintenance Manager. It can test all the interfaces of the Maintenance Manager, including some error behavior.
-2.	Also implement 1 integration test case when Maintenance Manager is tested in combination with the Facilities. These facilities are a real essential part of the functional operation of Maintenance Manager. If there is any problem, you’d like to discover it as soon as possible.
-This type of integration test is more difficult to make and takes more time to execute. So for this you can limit to only 1 test that tests the correct behavior. You don’t focus so much on error handling.
-
-This proposal looks nice for auto-test: https://confluence-apps-us.asml.com:8443/display/HMISSW/Integration+test.
-
-If the test bench can already be used like Yue suggests, that’s also a nice option for short term. It can help to show all this functionality is working before we test this on proto! That’s really good, because it safes precious proto time.
-
-Regards, Tom
-
-
-Company Secret
-From: Yue Luo <Yue.Luo@hermes-microvision.com> 
-Sent: Monday, August 3, 2020 10:38 AM
-To: Jumper Liu <Jumper.Liu@hermes-microvision.com>; Tom Engels <tom.engels@asml.com>; Bas Kusters <bas.kusters@asml.com>; Robert Hung <Robert.Hung@hermes-microvision.com>
-Cc: Joseph Li <joseph.li@hermes-microvision.com>; Rafael Lin <rafael.lin@asml.com>
-Subject: RE: Maintenance Manager design
-
-Hi Jumper,
-For option 1 I think you do not need to change facilities code?
-In simulation mode, you add your own Fake ACPD in your own module and unit test/ manual will trigger fake event?
-
-For ICMaster simulation, I think you do not need to write that.
-Next step ICMaster protocol simulation will be done by Altron. After that you can add your part to unit test which can be run on single machine.
-You can run your test on test bench for now.
-
-Best,
-Yue Luo
-
-
-Company Secret
-From: Jumper Liu <Jumper.Liu@hermes-microvision.com> 
-Sent: Monday, August 3, 2020 9:55 AM
-To: Tom Engels <tom.engels@asml.com>; Bas Kusters <bas.kusters@asml.com>; Yue Luo <Yue.Luo@hermes-microvision.com>; Robert Hung <Robert.Hung@hermes-microvision.com>
-Cc: Joseph Li <joseph.li@hermes-microvision.com>; Rafael Lin <rafael.lin@asml.com>
-Subject: RE: Maintenance Manager design
-
-Hi Tom and Yue,
-Now we are going to design unit test and integration test for Stage Maintenance.
-https://jira-apps-us.asml.com/browse/MBISW-5847
-1.	Unit test, Just test for MaintenanceManager only, no need design draft and finished.
-2.	Integration test, design draft needed!
-Please review on the link https://confluence-apps-us.asml.com:8443/display/HMISSW/Integration+test.
-
-Please kindly help us:
-1.	Select Option1 or 2.
-2.	Mock or Simulate.
-
-Thanks.
-Sincerely,
-Jumper Liu
-
-
-
-
-Company Secret
-From: Tom Engels <tom.engels@asml.com> 
-Sent: Wednesday, June 10, 2020 11:56 PM
-To: Jumper Liu <Jumper.Liu@hermes-microvision.com>; Bas Kusters <bas.kusters@asml.com>; Yue Luo <Yue.Luo@hermes-microvision.com>; Robert Hung <Robert.Hung@hermes-microvision.com>
-Cc: Rafael Lin <rafael.lin@asml.com>; Leo Su <Leo.Su@hermes-microvision.com>
-Subject: RE: Maintenance Manager design
-
-Hi Jumper,
-
-It seems your team is making good progress on the Maintenance Manager BB and on the connection to the inspection sequence. 
-Based on first version of the code I saw, I’m confident this is going to be a nice example for other teams about how a BB should be made. Very nice job! 
-
-In the e-mail conversations I see there are still some design questions being solved. It seems you’re able to find to right persons to provide the correct input. 
-To be prepared for future changes to Maintenance Manager, or to share knowledge with other/new team members, I believe it’s important that all design questions, answers and decisions are properly documented. So please don’t forget to update the EDS with all the information you’ve collected during development of Maintenance Manager.
-
-Kind regards, Tom
-
-
-Company Secret
-From: Jumper Liu <Jumper.Liu@hermes-microvision.com> 
-Sent: Wednesday, June 10, 2020 8:39 AM
-To: Bas Kusters <bas.kusters@asml.com>; Yue Luo <Yue.Luo@hermes-microvision.com>; Tom Engels <tom.engels@asml.com>; Robert Hung <Robert.Hung@hermes-microvision.com>
-Cc: Rafael Lin <rafael.lin@asml.com>; Leo Su <Leo.Su@hermes-microvision.com>
-Subject: RE: Maintenance Manager design
-
-OK, Thanks Bas!
-
-Sincerely,
-Jumper Liu
-
 
 ** TODO : check how to use archive
 
