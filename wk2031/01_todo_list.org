@@ -40,30 +40,33 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
 
 * WeightPlan : [[https://www.fatsecret.com/Diary.aspx?pa=mdcs][myFatSecretOverview]], [[https://www.fatsecret.com/Default.aspx?pa=memh&id=68900470][myWeightHistory]], target : burn 7000 KC for exercise for each week, 700 per day
 
-** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
-*** TODO : BMR : 1550, TDEE : 2387, target intake calorie :: below 1500, muscle weight : 35.5 KG 
-*** TODO : TDEE : total daily energy expenditure
-*** TODO : come up with work-out plan for 15, 30, 60, 90, 120 mins : 
-*** TODO : 120 mins : run 60 mins, power : 60 mins
-*** TODO : power 
-**** burpee+plank : 12 mins
-**** burpee : 6mins
-**** jump rope : 30 mins?
-**** squart jump + jump rope : ??
-**** abs : bring the thing to company?
-**** Jump_Stay_in_Air, training
+** progress and expected plan
+
+     | time         | wk | weight | (pound) | days | expected weight | starting | progress | remark and todo                                |
+     |--------------+----+--------+---------+------+-----------------+----------+----------+------------------------------------------------|
+     | wk2031(7/27) |  1 |   75.0 |   165.3 |    7 |                 |          | X        |                                                |
+     | wk2032(8/03) |  2 |   74.5 | 164.198 |   14 |                 |          | x        |                                                |
+     | wk2033(8/10) |  3 |   74.0 | 163.096 |   21 |                 |          | x        |                                                |
+     | wk2034(8/17) |  4 |   73.5 | 161.994 |   28 | see 71.5        |     73.0 | on-going | run 1hr per day, push up 100, jump set 30 mins |
+     | wk2035(8/24) |  5 |   73.0 | 160.892 |   35 |                 |          |          |                                                |
+     | wk2036(8/31) |  6 |   72.5 |  159.79 |   42 |                 |          |          |                                                |
+     | wk2037(9/07) |  7 |   72.0 | 158.688 |   49 |                 |          |          |                                                |
+
+*** TODO : record the TDEE and BMR, and get the estimation of how to lose weight 
+**** TODO : BMR : 1550, TDEE : 2387, target intake calorie :: below 1500, muscle weight : 35.5 KG 
+**** TODO : TDEE : total daily energy expenditure
+**** TODO : come up with work-out plan for 15, 30, 60, 90, 120 mins : 
+**** TODO : 120 mins : run 60 mins, power : 60 mins
+**** TODO : power 
+***** burpee+plank : 12 mins
+***** burpee : 6mins
+***** jump rope : 30 mins?
+***** squart jump + jump rope : ??
+***** abs : bring the thing to company?
+***** Jump_Stay_in_Air, training
     
-    | time         | week No. | weight | weight(pound) | days |
-    |--------------+----------+--------+---------------+------|
-    | wk2031(7/27) |        1 |   75.0 |         165.3 |    7 |
-    | wk2032(8/03) |        2 |   74.5 |       164.198 |   14 |
-    | wk2033(8/10) |        3 |   74.0 |       163.096 |   21 |
-    | wk2034(8/17) |        4 |   73.5 |       161.994 |   28 |
-    | wk2035(8/24) |        5 |   73.0 |       160.892 |   35 |
-    | wk2036(8/31) |        6 |   72.5 |        159.79 |   42 |
-    | wk2037(9/07) |        7 |   72.0 |       158.688 |   49 |
-    |              |          |        |            0. |    0 |
- #+TBLFM: $4=$3*2.204::$5=$2*7
+
+  #+TBLFM: $4=$3*2.204::$5=$2*7
 ** wk2031 Calorie
 | wk2031 | total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
 |--------+----------+----------+------------+---------------------------+--------|
@@ -104,6 +107,21 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
 | Sun    |     2387 |        0 |       2387 |                         0 |        |
 |--------+----------+----------+------------+---------------------------+--------|
 | total  |    16709 |        0 |      16709 |                         0 |        |
+#+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
+
+
+** wk2034 Calorie 
+| wk2034 | intake total KC | exercise | Balance(b) | Calorie deficit(2387-(b)) | weight |
+|--------+-----------------+----------+------------+---------------------------+--------|
+| Mon    |            1510 |      920 |        590 |                     -1797 |   73.0 |
+| Tu     |            2387 |        0 |       2387 |                         0 |        |
+| Wed    |            2387 |          |       2387 |                         0 |        |
+| Thu    |            2387 |          |       2387 |                         0 |        |
+| Fri    |            2387 |        0 |       2387 |                         0 |        |
+| Sat    |            2387 |        0 |       2387 |                         0 |        |
+| Sun    |            2387 |        0 |       2387 |                         0 |        |
+|--------+-----------------+----------+------------+---------------------------+--------|
+| total  |           15832 |      920 |      14912 |                     -1797 |        |
 #+TBLFM: $4=$2-$3::$5=$4-2387::@9$2..@9$5=vsum(@2..@8)
 
 *** Calorie template
@@ -208,28 +226,22 @@ git log -p --grep="MBISW-5793" > d:\5793.diff
   
 #+BEGIN_Quote
 
-g: 重新整理
-+: 新增目錄
-s: 按照時間/檔名排序檔案
-^: 回到上層目錄
+g: 重新整理 +++
+s: 按照時間/檔名排序檔案 +++
 
 m: 標記多個檔案
 u: 取消標記
 U: 清除所有標記
-R: 重新命名/移動（概念與 Unix 下的 mv 相同）
-C: 拷貝檔案
 
 !: 執行外部命令
-&: 非同步地（asynchronously）執行外部命令
+&: 非同步地（asynchronously）執行外部命令 +++
 
 D: 刪除單一檔案
-d: 標記多個檔案為刪除
-x: 套用刪除
+d: 標記多個檔案為刪除 +++
+x: 套用刪除 +++
 
-X: 解壓縮
+X: 解壓縮 +++
 必備設定檔
-
-但只知道這些是不夠的。沒辦法，說實話沒設定過的 Dired 難用得連我家的貓都不想用。因此這裡整理了一些（我認為且推薦）必備的 Dired 相關設定，設定以後 Dired 立刻順手 n 倍：
 
 請記得先去安裝 Dired+ ，他提供了 Dired 非常多的額外功能。
 
@@ -419,25 +431,8 @@ X: 解壓縮
 (define-key dired-mode-map (kbd "M-a") 'dired-add-to-smplayer-playlist)
 經過這些調校以後，現在多了這些功能：
 
-1
-2
-3
-4
-5
-6
-7
-8
-9
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
+---
+
 (: 隱藏/顯示詳細資訊（Emacs24.4 安裝 Dired+ 後，會自動把檔名以外的部份隱藏起來，很方便）
 
 RET: 使用同一個 Dired buffer 開啟目錄。
