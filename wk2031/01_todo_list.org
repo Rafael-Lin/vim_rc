@@ -9,14 +9,14 @@
 
 ** on-going 
   
-  | JIRA   | NAME                                                     | BAMBOO | PR | storyPt | Wed | Tue  | Mon | REMARK                                                    |
-  |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                           | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-20][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] |         | 3h  | 3.0h | 3h  | discuss with Wei-Chun, new issue is created               |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality        | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-34/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] |         |     | 1h   |     | fix the code smell, IC0NextComm change done, test locally |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]   | StageCluster.TryGetPosition                              |        |    |         |     |      |     |                                                           |
-  |--------+----------------------------------------------------------+--------+----+---------+-----+------+-----+-----------------------------------------------------------|
-  | Joseph |                                                          |        |    |         |     |      |     |                                                           |
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                          |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]] |         |     |      |     |                                                           |
+  | JIRA   | NAME                                              | BAMBOO | PR        | storyPt | Wed | Tue  | Mon | REMARK |
+  |--------+---------------------------------------------------+--------+-----------+---------+-----+------+-----+--------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                    | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-20][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]]        |         | 3h  | 3.0h | 3h  |        |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-44/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2383-2][PR_SP1]] |         |     | 1h   |     | i      |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]   | StageCluster.TryGetPosition                       |        |           |         |     |      |     |        |
+  |--------+---------------------------------------------------+--------+-----------+---------+-----+------+-----+--------|
+  | Joseph |                                                   |        |           |         |     |      |     |        |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                   |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]]        |         |     |      |     |        |
   
   | wk35 |                                                                      | StoryPoint |   |   |   |   |   |           |
   |------+----------------------------------------------------------------------+------------+---+---+---+---+---+-----------|
@@ -32,6 +32,17 @@
   |------+----------------------------------------------------------------------+------------+---+---+---+---+---+-----------|
   | [[https://jira-apps-us.asml.com/browse/MBISW-5779][5779]] | FT example                                                           |            |   |   |   |   |   |           |
 
+* SW FCA portal 
+  
+  https://confluence-apps-us.asml.com:8443/display/HMISSW/Software+FCA+Portal
+  
+  https://confluence-apps-us.asml.com:8443/display/HMISSW/Agenda+and+Presentations
+  
+  [[https://confluence-apps-us.asml.com:8443/display/HSD/Interface+Design+Competence][interface design guideline]]
+  
+  [[https://confluence-apps-us.asml.com:8443/display/HSD/Building+Block+architecture][BuildingBlock Architecture]]
+  
+  [[https://github.com/dotnet/csharplang/tree/master/proposals][C# history]]
 
 * git book
 git log -p --grep="MBISW-5793" > d:\5793.diff
@@ -1087,6 +1098,10 @@ check ,ac usage in xml
 | tag enter  | c-]                                | go back       | c-T           | easyMotion     | <,,>w            | open vimrc set  | <leader>ev   | save vimrc set  | <leader>sv | ctrlpFunky        | <leader>fu |
 | <leader>sl | session list                       | <session save | <leader>ss    | session close  | <leader>cs       | json?           | <leader>jt   | \t              |            | change background | <leader>bg |
 | ,ff        | display all usage under the cursor | ,=            | equalize size | ,q             | easier format it | f11             | full screen? | ,ew ,es ,ev ,et | ?          |                   |            |
+|match it | if and endif | check the keyword : b:matchit-word | check the tutorial |
+	|b:match_words|.
+| multi-cursor | 1) virtual mode | 2) select one work | 3) c-n : choose next | 4) c-x : skip | 5) c-p : prev | 6) c,s,I,A modify | 7) roll-back : v+esc|
+| conflict-marker | (down)cb : get both | ct : get them | co : get ours| cn : get none| ConflictMarkerOurselves | ConflictMarkerTheirSelves | ConflictMarkerBoth
 
 ** TODO : check vimdiff and ctrlp
 http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
@@ -1279,3 +1294,27 @@ machine DUV, bas lievn
 * TODO : c-y : paste something in the minibuffer
 
 * TODO : check the leetcode
+
+* [2020-08-13 Thu]
+
+** TODO : check how to use nvim
+
+** TODO : check how to use resharper essential
+
+** TODO : check how many documents online for FCA
+
+** TODO : record the calories
+
+** TODO : update the work-out-plan in this week 
+1) basic : run 1 hr as least from Fri to Sun
+2) eat less in the lunch and the weekend
+3) jump rope and runnning can not be together
+4) running in the morning and jump rope in the evening
+5) buy volka and add half bottle of water to it
+** TODO : biking to work in this Friday
+** TODO : create proj file for vim and vimbundle folder, and spacemacs folder
+** TODO : use vimgrep in above folder and check it's speed
+** TODO : use ctrl-p and fzf for above
+** TODO : check neocomplete on how to incorporate ctags and other buffers
+** DONE : 帶車子後視鏡到公司
+   CLOSED: [2020-08-14 Fri 10:30]
