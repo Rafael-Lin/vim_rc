@@ -5,15 +5,15 @@
   | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | merged |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem       | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | merged |
   | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]] | Expose GsaWaferAlignHelper in SU | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | merged |
-  |      |                                  |        |    |        |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper   | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-20][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | merged |
 
 ** on-going 
   
   | JIRA   | NAME                                              | BAMBOO | PR        | storyPt | Wed | Tue  | Mon | REMARK |
   |--------+---------------------------------------------------+--------+-----------+---------+-----+------+-----+--------|
-  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]]   | re-arch for imsageSavingHelper                    | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-20][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]]        |         | 3h  | 3.0h | 3h  |        |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-44/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2383-2][PR_SP1]] |         |     | 1h   |     | i      |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]   | StageCluster.TryGetPosition                       |        |           |         |     |      |     |        |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-2109][2109]]   | get MachineID                                     |        |           |         |     |      |     |        |
   |--------+---------------------------------------------------+--------+-----------+---------+-----+------+-----+--------|
   | Joseph |                                                   |        |           |         |     |      |     |        |
   | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                   |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]]        |         |     |      |     |        |
@@ -1323,3 +1323,6 @@ machine DUV, bas lievn
 ** TODO : check neocomplete on how to incorporate ctags and other buffers
 ** DONE : 帶車子後視鏡到公司
    CLOSED: [2020-08-14 Fri 10:30]
+
+   fas
+** TODO fasd
