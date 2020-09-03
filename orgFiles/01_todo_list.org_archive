@@ -1,0 +1,608 @@
+#    -*- mode: org -*-
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : insert todo item hot key => S-M_RET
+  CLOSED: [2020-07-27 Mon 13:24]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-27 Mon>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : chat with Nemo on 7 habits
+  CLOSED: [2020-08-02 Sun 22:18]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-27 Mon>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : open PR for imageSavingHelper 
+  CLOSED: [2020-08-02 Sun 22:18]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-27 Mon>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+ :LOGBOOK:
+ CLOCK: [2020-07-27 Mon 14:05]--[2020-07-27 Mon 16:10] =>  2:05
+ CLOCK: [2020-07-27 Mon 13:49]--[2020-07-27 Mon 14:05] =>  0:16
+ :END:
+** TODO : understand the requirement
+  1) combinate the 4 prototype function into one, leave the one with the longest parameter list
+  2) remove the select and use enum to replace the select variable
+  3) check the dieX and dieY
+     1) In PassImageFileNamingData, there's no select, so add one enum input and how it interact with DieX, DieY?
+     2) 
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : add the fat on the fat secret
+  CLOSED: [2020-07-28 Tue 22:59]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-27 Mon>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : circular view-mode-change : s-tab
+  CLOSED: [2020-07-27 Mon 16:44]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-27 Mon>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+    
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : add time-spending on Monday
+  CLOSED: [2020-07-28 Tue 10:51]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-07-28 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : check >s in the org-document by using ag 
+  CLOSED: [2020-07-28 Tue 22:47]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-07-28 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : record the calorie ac in the morning+lunch
+  CLOSED: [2020-07-28 Tue 13:20]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-07-28 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+  
+
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : add <s function into vim script, write one write function on the text
+  CLOSED: [2020-07-28 Tue 22:48]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-07-28 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+** TODO : check yasnippet
+  
+While it isn't vimscript, your search and replace task across a bunch of files sounds like a job for argdo:
+
+:argdo %s/bbb/&\rccc/ge | update  
+
+function! AddLine()
+    let l:foundline = search("bbb") " Can return 0 on no match
+    call append(l:foundline, "ccc")
+    wq!
+endfunction
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : re-edit the .spacemacs, find out the .template, diff with the my version
+  CLOSED: [2020-07-28 Tue 22:54]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-07-28 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : check the voice-speaking of google doc
+  CLOSED: [2020-07-28 Tue 22:55]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : check the receipt of May and June
+  CLOSED: [2020-07-28 Tue 23:38]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : find the script to open folder in emacs
+  CLOSED: [2020-07-30 Thu 10:07]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-29 Wed>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : refine the todo_list
+  CLOSED: [2020-07-30 Thu 10:08]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-29 Wed>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : how do you measure that you love a thing? like a house?
+  CLOSED: [2020-08-02 Sun 12:55]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-29 Wed>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE check how much calorie be burnt per mins for burpee?
+  CLOSED: [2020-07-29 Wed 14:22]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-29 Wed>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+** TODO 
+Intel 到底怎麼了? Part 2
+
+Intel為什麼會找上台積電代工? 這不是一個突然的決定, 一切都是有跡可循的, 冰凍三尺非一日之寒.
+
+要先說清楚, 找台積電代工有兩種情況, 一種是當初買進來的單位(像英飛凌無線部門) 本來就有一些採用較舊的台積電28nm製程的RF電路, 這種純粹屬於計畫需要, 沒有必要為了轉單而轉單.
+
+而另外一種情況才是Intel本身造成的問題. 要知道產能的規劃是長期的, 環環相扣, 一個環節出問題就會對未來造成影響 - 建廠, 備料, 培訓人員, 調整機台, 等TD (technology development) 把製程配方調出來了, 開始小量試產, 一邊調整良率, 另一方面design team提早一兩年開始設計, 最後在雙方約定好的時間, 設計團隊把藍圖交給晶圓廠, 開始一層一層的光罩慢慢做, 幾週後生產, 封裝, 測試, 然後交貨.
+
+理想的狀況下, Intel 10nm製程開發順暢, 14nm廠一邊量產, 10nm廠一邊慢慢熱身準備就緒, 等到良率達標, 可以開始接大單了, design team在10nm上也差不多設計好了, 然後10nm大門一開, 誰先上? GT先上, 因為GT (Graphic) 圖形處理的架構比較一致, 設計週期比較短, 可以比較快擠出設計藍圖. 然後CPU老大, Server老二陸續進去, 然後10nm產量持續增加, 14nm慢慢騰出產能. 接下來呢?
+
+要知道 Intel 10萬大軍扣掉TMG/CPU/Server, 還有很多鬆散的外圍組織也需要晶片. 這些單位很多都是前CEO BK揮霍老本買進來的敗家收藏, 像是原本還算有點名氣但逐漸被人遺忘的FPGA公司Altera (改名PSG), 為了重返手機市場榮耀買進來的英飛凌無線部門(改名iCDG), 趕流行被當冤大頭買貴了的人工智慧Nervana(改名AIPG), 自動駕駛Mobileye. 扣掉這些大型裝飾, 還有一些基礎IP, IO, 記憶體, 還有小號CPU Atom. 最後就是一些量不大, 一台公車(MPW Shuttle)就可以打發的單位, 像是純做研究/發paper/出新聞稿的Intel Labs, 幫TMG做測試晶片的AD (Advanced Design). 總之, 山頭林立, 無奇不有.
+
+更有甚者, 還有一些不知什麼原因默默地在Intel裡載浮載沉討生活的浪人group, 我認識的一位業內老前輩統稱這些group是後娘養的, 沒人疼的孩子. 這些浪人group其實曾經也是有頭有臉隸屬於正規組織的, 但是這些正規組織被解散了 (像英特爾一時興起的晶圓代工, Intel Custom Foundry), 設計部門的頭目為了手下武士的生計, 只好在Intel裡面幫人打工, 譬如Server部門要做什麼記憶體控制IC, 人手不夠, 就暫時讓浪人group來接這個活. 如果面臨太多競爭, 像是遇到印度班加洛用人海戰術又愛誇口一切沒問題把活搶走了, 或是遇到馬來西亞濱城幹起活來不要命的華人工程師, 那只能摸摸鼻子, 去接一些別人撿剩的朝不保夕的活, 像是幫大陸的中興ZTE做chip, 每天看著川普的臉色等著project被cancel. 看過動物星球頻道的就知道飢餓的時候是沒有選擇的餘地的. Intel內部就是這樣一個弱肉強食的世界.
+
+總之, 這些各式各樣的單位, 就按照對公司的獲利貢獻的重要程度, 來決定要不要排進去10nm或繼續用14nm的多餘產能.
+
+結果世事難料, 10nm難產, Fab空轉, 最重要的CPU/Server/GT怎麼辦? 只好繼續佔用14nm的產能. 最慘的情況來了, TMG裡面負責製程研發的單位是TD(technology development). TD本來就處在人人過勞的極限狀態, 以前14nm弄好了, 主力就移師10nm, 留下一小批人力維護14nm, 然後再分出一小隊精銳先鋒去7nm. 現在14nm要繼續搞, 還要搞14nm+, 14nm++, 14nm+++(所謂的擠牙膏), 那分給10nm人數就少了, 7nm就更少了. 硬生生地就讓自己越陷越深. 所以說一步錯, 步步錯.
+
+現在14nm產能都給了公司的命脈CPU/Server, 那其他剩下的單位怎麼辦? 日子還是要過, IC還是要出貨, 為了求生路, 大家就紛紛發難, 勢力相對大一點的iCDG就跳出來說, 我們在英飛凌時代就是用台積電, 合作愉快, 讓我們繼續用吧. AIPG說我們的AI chip不能等, 有多少的data等著我們train, Nvidia都甩過我們好幾條街了, 所以我們一定要用最好的製程, 沒有Intel 10nm就給我TSMC 7nm. 竟然連一些幫Server系統做周邊chip的小咖說話都大聲起來, 不給我們出去, Server也出不了貨, 大家要死一起死!
+
+到了這種地步, Intel高層有任何選擇嗎? 開放到TSMC下單是不得已而為之的最後解決方法. Intel身為一家上市公司, 對股東有盈利的義務, 但盈利不代表一定要靠自己生產晶片, 就像Jordan打籃球再神也不能只靠自己得分, 有時候關鍵時刻也要分球給Steve Kerr (結果多年後金州勇士隊就在他的教導下崛起了).
+
+至於Intel開始到TSMC下單之後對本身公司體質產生了嚴重的副作用, 還有CPU的project怎麼也開始用起TSMC了, 下回分解.
+
+---
+
+大家都在問英特爾到底怎麼了? 其實不論7nm delay或是外包台積電都不是新聞, 都是早就
+在進行中的事, 只是第一次這樣公開宣布, 把外面的人嚇了一跳, 裡面的人則是見怪不怪.
+
+還在intel的時候, 是在product team, 但因為工作的關係常有機會跟製程的team打交道,
+有事沒事就會互相聊聊八卦. Intel的TMG (Technology Manufacturing Group) 是一個很封
+閉的軍事化組織, 自成一國, 紀律嚴明, 但裡面的人累得像狗一樣, 流動率也很高. TMG大
+到不能倒, 歷屆CEO都不敢動它的主意, 所以TMG的頭頭就像地方軍閥一樣. 一直到2018年被
+Murthy趕走之前, Sohail就是TMG的老大, 他手下的大將們就會輪流擔任每一代製程的負責
+人, 例如22nm的主管就是Kaizad.
+
+TMG一直以來都保持製程領先, 2012年22nm領先群雄, 從沒把tsmc/samsung放在眼裡.
+Kaizad立下大功, 平安下莊. 在這個時間點, CPU還基本上維持Tick-Tock規律(一次改架構,
+一次改製程). 還記得那幾年台積電常來Oregon招人, 三不五時收到HR的linkedin訊息, 有
+時還包下飯店的宴客廳請人吃免費晚餐, 順便問問要不要回台灣發展.
+
+2014上半年是一個很重要的轉折點, 14nm的CPU該出來了卻沒出來, 導致22nm的CPU變成了
+Tick-Tock-Tock. 負責14nm的TMG的負責人是Sanjay, 2015就被趕走了, 可見當一代製程的
+主管也是個高風險高報酬的職業, 成了就榮升VP/Fellow, 敗了就捲鋪蓋走人. 現在回頭看,
+這其實是很好的制度.
+
+2014下半年, 14nm Broadwell終於出了, 但也從那時開始, delay變成了常態. Tick-Tock變
+成Tick-Tock-Tock-Tock-Tock. 到現在也沒人有在提Tick-Tock了, 只知道TikTok.
+
+這是為什麼呢? 話說22nm平安下莊的Kaizad又扛起了10nm的大旗. 但這次沒上次那麼順利了.
+具體原因只能用我收集到的資訊來說個大概. Intel一向對於密度(transistor density) 有
+一種近乎癡迷的執著. 1mm^2面積裡能塞幾個transistor, 這個數字越高越好, 簡報上的
+MTr/mm^2就是要show一條漂亮的直線, 分析師不管提什麼問題, 說tsmc做這個Samsung做這
+個, Intel一慣動作就是拿density出來打臉. 在早期這也合理的. 但是隨著製程越縮越小,
+很多以前不用考慮的問題都跑出來了. 線寬越來越小, 間距越來越短, 就算你能做到M1-M4
+超細超近, 但你能真的拿來route嗎? 速度受影響之後還是要拉高到高層金屬, 那你的宣稱
+的density的好處又能真正拿到多少?
+
+總之, 10nm一開始的規格訂得太aggressive. TMG的人拼死拼活日夜加班也達不到良率. 那
+你說當初訂規格為什麼不跟design team商量, 別作繭自縛一昧追求density, 先出來再說,
+反正大家最後的目標就是出一顆好的CPU, 這就回到了前面說的TMG的老大心態. TMG做出來
+的製程, CPU設計部門就是只有吞下去的一條路, design rule太複雜? 甘我什麼事, 請自己
+解決. CPU部門只好各種各樣的疊床架屋的flow來解決各種各樣奇怪的問題, 開發時程也被
+拖累, 也慢慢變成了一個不是人待的地方, 只剩下拿H1B簽證的員工死撐著, 這是後話了.
+CPU team這樣久了Tock(架構)也沒力氣搞了, 甚至本來Oregon跟以色列有一個自己的CPU架
+構小tick-tock, 後來也全部由以色列來做了. 所以大樓之將傾, 都是從一根柱子的崩塌開
+始的.
+
+另外一說, 關於10nm的density規格, TMG也不是沒有聽product team的意見, 但是只有圖形
+處理Graphic team (GT)有時間搞一些PPA的研究, 然後反饋給TMG. Graphic本來就比較不重
+視速度, 而是重視density, 所以GT和TMG一拍即合, 一搭一唱, 各取所需.
+
+就在無限的14nm Tick-Tock-Tock-Tock-... 回音中, 10nm良率龜速的往上爬. Kaizad倒是
+位子坐得穩, 畢竟除了他之外, 其他人來壓不住陣腳只會更糟, CPU team人跑掉太多, 所以
+design也是落後. 同一時間7nm輪到台灣之光Chia-Hong上陣扛大旗. 看了10nm的例子, 7nm
+決定要對自己好一點, 放寬一點規格, 但是又忍不住要挑戰gate-all-around (GAA) FET.
+這是一個和當初FinFET一樣的劃時代的新突破. 台積電試過了但還沒實際用在目前主流製程,
+先走了EUV路線, Samsung看過了, 也先放一旁. Intel有著製程王者的堅持和驕傲, 非要挑
+戰這條路, 搞到最後放棄了. 7nm現在只好化繁為簡, 只能爭取越快出來越好, 先祝福台灣
+之光可以平安下莊.
+
+寫了這麼多, 還沒寫到找TSMC代工的部分, 那又可以寫一大篇了.
+
+
+---
+
+回到美國就是回到了現實世界，德國的童話世界只能當成往事來回味。回到現實世界的第一件事就是要調整心態，從政府照顧無微不至的社會主義，轉成一切靠自己的資本主義。在美國這個資本主義社會，從上到下人人向錢看，這大概是從德國回美國最大的文化衝擊。德國人很少討論錢的話題，美國人很少討論錢以外的話題，以前在德國時公司裡同事像家人一樣的感覺，在美國像天方夜譚。在這裡，工作僅僅是一份糊口用的固定現金流，和公司的關係就是打工領錢的雇傭關係，公司可以用各種理由開除你，甚至有時和你的工作績效一點關係也沒有，反過來你也可以隨時開除公司跳槽走人。
+
+大環境變化以天來計算，公司營運起起伏伏，很可能上一季還營收超過預期，這一季就要大家共體時艱開始砍人，真正理由是什麼也不重要，可能是財報出來前要給華爾街一點動機調高股價，也可能只是正常的換血，裁掉貴的換成便宜好用的。在大公司當個打工仔就像站在一塊浮冰上，浮冰慢慢融化面積越來越小，逼得站在上面的人要嘛往中心擠，要嘛努力游到附近大塊一點的浮冰，就算好不容易站到了靠中心一點的位置，也有可能因為年紀太大直接被踢下海。
+
+我們能做的，只能先求站穩腳步生存下來，再來才是盡量最佳化未來每一步的選擇，減少錯誤決策，讓最後的結果往理想值慢慢靠近，就像machine learning algorithm，先設定好目標，找到和目標關聯性最大的因素，然後幫每個因素找到最佳的比重。
+
+以50歲做一個里程碑，理想中的50歲是什麼模樣，結婚了沒，有沒有房，有沒有房貸，有幾個小孩，小孩還在國高中階段的話，大學學費存了多少。別覺得這還是很遙遠的未來，有了一個目標值，才能現在開始最佳化，趁著站在浮冰上的時候，慢慢開始打造自己的小船。
+
+最理想的情況當然是50歲達成財務自由，不用再為了錢而工作，不管是當包租公包租婆，還是靠投資的被動收入，先別說不可能，最近blind (一個美國科技業的八卦app) 上一個熱門討論串就是某FB的網民問，45歲有了300萬美金可不可以退休了。
+
+次理想的情況是擁有一個自己穩定的小事業，有固定的現金流，還是需要勞心勞力，但沒有被裁員的風險，自負盈虧，這樣也小勝充滿不確定性的殘酷職場。
+
+上述兩項有點困難的話，最有可能的就是還是要領一份薪水，那就要看看四周50歲以上的同事是怎麼生存下來的，選擇一條適合自己的路。
+
+個人覺得不管是哪一種目標，既然工作的薪水有限，那就把工作的CP值拉到最高，多出來的時間才有時間投入副業，多角化分散風險。CP值最簡單的量化方法就是時薪 (薪水除以實際工作時數)。要增加時薪，就要在維持一樣的工作產出前提下，減少實際的工作時數，本身技術和經驗的累積是基本條件，但是技術層出不窮翻新速度越來越快，要時時追上最新的技術越來越來吃力。
+
+彌補的方法就是人脈。影集Breaking Bad裡面的王牌律師Saul的名言就是 I know a guy, who knows a guy... 　在科技業，人脈的好壞可以大大影響你工作的績效，隨便舉個我們這一行的例子，因為天天要用Synopsys的設計工具，三不五時就會遇到卡關的問題，或是結果不合預期。你可以上網查，但十之八九查不出所以然，也可以問AE, 大部分時候也問不出所以然，比較負責的AE會願意讓你把資料庫打包送回Synopsys總公司給RD們 debug，但RD忙得半死(所以才需要CAE/AE來把關），真的要輪到你的case時可能一兩季都過去了。這時候如果你有非常資深的Synopsys Consultant的人脈，一通電話過去可能兩分鐘就解決了，順便得到一組隱藏變數，一來一往，多出來的時間就是自己的，個人的祕密武器庫也增加一項寶物。
+
+人脈的更大的好處是增加訊息來源，公司裡面各個單位的表現好壞都是動態的，一方面要注意自己腳下這一塊有沒有下沉的風險，另一方面要隨時掌握那些單位有成長空間有缺人，然後誰可以保你進去。在任何時候都要準備好Plan A，Plan B，Plan C。
+
+最近身邊同事離職的，跳槽的，人心惶惶的太多，所以有感而發隨手寫寫~
+
+
+
+SUBSCRIBE
+Search Healthline
+
+How Many Calories Do Burpees Burn?
+Calories burned
+How many should you do?
+How to do a burpee
+Benefits
+Similar exercises
+Burpee modifications
+Takeaway
+Even if you don’t consider yourself an avid workout enthusiast, you’ve likely
+heard of burpees. Burpees are a calisthenics exercise, a type of exercise that
+uses your body weight.
+
+With calisthenics exercises, you can improve not only strength and endurance,
+but also coordination and flexibility.
+
+When working out, you may wonder how effective an exercise is based on how many
+calories it burns. The number of calories burned during exercise varies with
+weight, intensity, and other factors.
+
+According to Baton Rouge General, you can burn roughly 160 calories doing 17
+minutes of burpees.
+
+In this article, we’ll take a closer look at how many calories burpees burn,
+how to do them, and other benefits of doing burpees.
+
+Calories burned
+As mentioned above, you burn around 160 calories for every 17 minutes that you
+do burpees. Let’s break this number down to something more practical:
+
+By the numbers
+Roughly 9.4 calories are burned for every minute of burpees performed.
+It takes most people around three seconds to do a single burpee.
+Three seconds per burpee equals 20 burpees per minute, depending on speed and frequency.
+After doing some simple math, we can see that it takes roughly 20 burpees to
+burn around 10 calories. However, weight can affect the number of calories
+burned during exercise as well.
+
+According to Harvard Medical School, when performing 30 minutes of vigorous calisthenics:
+
+Weight and calories
+A 155-pound person will burn about 1.25 times more calories than a 125-pound person.
+A 185-pound person will burn about 1.5 times more calories than a 125-pound person.
+Given this information, the average person can burn anywhere from 10 to 15 calories for every 20 burpees.
+
+Below is a chart that may help you determine how many calories you will burn while performing burpees, depending on your weight.
+
+Weight	Number of burpees	Calories
+125-pound person	20	10
+155-pound person	20	12.5
+185-pound person	20	15
+
+How many burpees should you do?
+Burpees are considered an advanced calisthenics move, so it’s important to take
+your time and perform them with proper form to avoid injury.
+
+If you’re performing a single burpee every three seconds, you can expect to
+perform roughly 20 burpees per minute. If you perform your burpees more slowly,
+you might do 10 to 15 burpees per minute instead.
+
+Also, different variations of burpees may change the amount of time it takes
+you to do a single burpee.
+
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : add discussion : 1.5 hr on ticket
+  CLOSED: [2020-07-30 Thu 17:38]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-30 Thu>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : Add the burnt calorie and eaten one into app
+  CLOSED: [2020-07-30 Thu 10:24]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-30 Thu>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : check the living room size, estimate the sofa width
+  CLOSED: [2020-07-30 Thu 10:50]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-07-30 Thu>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE daily expenditure recording for next week (especially on alcohol)
+  CLOSED: [2020-08-03 Mon 22:30]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-08-02 Sun>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : return one of the video back to library
+  CLOSED: [2020-08-03 Mon 22:30]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-08-02 Sun>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE print out the car_insurance_doc and send it back
+  CLOSED: [2020-08-03 Mon 16:31]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-08-03 Mon>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : add line number in emacs
+  CLOSED: [2020-08-08 Sat 00:08]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: <2020-08-03 Mon>
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : check the working items in this weekend
+  CLOSED: [2020-08-08 Sat 00:07]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-08-04 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : write down the mail for Cyrus
+  CLOSED: [2020-08-04 Tue 21:08] SCHEDULED: <2020-08-04 Tue>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-08-04 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : pay the rent for the house
+  CLOSED: [2020-08-08 Sat 00:07] SCHEDULED: <2020-08-06 Thu>
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-08-05 Wed]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+   
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE : 帶車子後視鏡到公司
+  CLOSED: [2020-08-14 Fri 10:30]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-08-13 Thu]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE hand in the credit card money
+  CLOSED: [2020-08-18 Tue 10:27]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-08-18 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+Archived entries from file c:/Users/raflin/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+
+
+* DONE PR conflict fix
+  CLOSED: [2020-08-18 Tue 10:32]
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2020-08-18 Tue 13:16
+  :ARCHIVE_FILE: ~/Desktop/02_github/vim_rc/wk2031/01_todo_list.org
+  :ARCHIVE_OLPATH: [2020-08-18 Tue]
+  :ARCHIVE_CATEGORY: 01_todo_list
+  :ARCHIVE_TODO: DONE
+  :END:
+
+
+** done 
+   
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4364][4364]] | expose imageSavingHelper         | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2208-9][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2722/overview][PR]] | merged |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5797][5797]] | fix unit converter problem       | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2273-3][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2795/overview][PR]] | merged |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4368][4368]] | Expose GsaWaferAlignHelper in SU | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2285-1][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2807/overview][PR]] | merged |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5793][5793]] | re-arch for imsageSavingHelper   | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2275-20][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2797/overview][PR]] | merged |
+
