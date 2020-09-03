@@ -1,0 +1,580 @@
+* JiraTable
+  [[http://tw.hermes-microvision.com/index;jsessionid=1BC1DF95464BE927212062B2BAC08B7C?p_p_id=62_INSTANCE_w0HkJP4TyFOw&p_p_lifecycle=0&p_p_state=maximized&p_p_mode=view&p_p_col_id=_118_INSTANCE_l8purViDBWpB__column-1&p_p_col_count=1&_62_INSTANCE_w0HkJP4TyFOw_struts_action=%2Fjournal_articles%2Fview&_62_INSTANCE_w0HkJP4TyFOw_returnToFullPageURL=http%3A%2F%2Ftw.hermes-microvision.com%2Findex%3Bjsessionid%3D1BC1DF95464BE927212062B2BAC08B7C%3Fp_p_id%3D62_INSTANCE_w0HkJP4TyFOw%26p_p_lifecycle%3D0%26p_p_state%3Dnormal%26p_p_mode%3Dview%26p_p_col_id%3D_118_INSTANCE_l8purViDBWpB__column-1%26p_p_col_count%3D1&_62_INSTANCE_w0HkJP4TyFOw_groupId=10180&_62_INSTANCE_w0HkJP4TyFOw_articleId=12224&_62_INSTANCE_w0HkJP4TyFOw_version=42.3][LunchMenu]]
+** on-going 
+  
+  | JIRA   | NAME                                              | BAMBOO | PR        | storyPt | Wed | Tue  | Mon | REMARK |
+  |--------+---------------------------------------------------+--------+-----------+---------+-----+------+-----+--------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5427][5427]]   | remove SetDependencies for _cal and _imageQuality | [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2090-BS-44/log][bamboo]] | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2609/overview][PR]] [[https://bamboo-sw-hmi.asml.com/browse/HMBI-PR2383-2][PR_SP1]] |         |     | 1h   |     | i      |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5045][5045]]   | StageCluster.TryGetPosition                       |        |           |         |     |      |     |        |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-2109][2109]]   | get MachineID                                     |        |           |         |     |      |     |        |
+  |--------+---------------------------------------------------+--------+-----------+---------+-----+------+-----+--------|
+  | Joseph |                                                   |        |           |         |     |      |     |        |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5847][5847]]   |                                                   |        | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2825/overview][PR]]        |         |     |      |     |        |
+  
+  | wk35 |                                                                      | StoryPoint |   |   |   |   |   |           |
+  |------+----------------------------------------------------------------------+------------+---+---+---+---+---+-----------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5875][5875]] | Re-arch for ImageSavingHelper and ImageFormatHelper - Implementation | [[https://bitbucket-sw-hmi.asml.com:8443/projects/HMIR/repos/sw_mbi_cbv9/pull-requests/2942/overview][PR]]         |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5048][5048]] | Could not initialize Host GUI due to config file missing             |            |   | 2 |   |   |   | postbpone |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-2691][2691]] | StigmatorMonitorOperations                                           |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3510][3510]] | IOpticalPixelSizeAngleCalibration                                    |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5765][5765]] | Remove SetDependencies of VideoChannelGeneric                        |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-3402][3402]] | Migrate SU from SystemStatus to MachingConstant                      |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-4366][4366]] | Expose IZControl                                                     |            |   |   |   |   |   |           |
+  | [[https://jira-apps-us.asml.com/browse/MBISW-1640][1640]] | Conversion function LinkedException and HRESULT                      |            |   |   |   |   |   |           
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5411][5411]] | Clean the dependencies diagram in SU                                 |            |   |   |   |   |   |           |
+  |------+----------------------------------------------------------------------+------------+---+---+---+---+---+-----------|
+  | [[https://jira-apps-us.asml.com/browse/MBISW-5779][5779]] | FT example                                                           |            |   |   |   |   |   |           |
+
+* SW FCA portal 
+  
+| [[https://confluence-apps-us.asml.com:8443/display/HMISSW/Software+FCA+Portal][SW_FCA_Portal]]     | [[https://confluence-apps-us.asml.com:8443/display/HMISSW/Agenda+and+Presentations][FCA_Meeting_Minutes]] | [[https://confluence-apps-us.asml.com:8443/display/HSD/Interface+Design+Competence][interface design guideline]] | [[https://confluence-apps-us.asml.com:8443/display/HSD/Building+Block+architecture][BuildingBlock Architecture]]  | [[https://github.com/dotnet/csharplang/tree/master/proposals][C# history]]       |
+| [[https://confluence-apps-us.asml.com:8443/display/HMISSW/How+to+use+SoftwareTracer][SoftwareTracer]]    | [[https://confluence-apps-us.asml.com:8443/display/HMISSW/How+to+Resolve+Interface+from+MBI+Facilities][AutoFacInMBI]]        | [[https://confluence-apps-us.asml.com:8443/display/HSD/Adding+a+new+Building+Block][BuildingBlockTemplate]]      | [[https://confluence-apps-us.asml.com:8443/display/HMISSW/How+to+Create+an+ACPD+Test+in+MBI+system][how to create one ACPD test]] | [[https://confluence-apps-us.asml.com:8443/display/HSD/ACPD+Naming+Conventions][NamingConversion]] |
+| [[https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=ACPD+Introduction][ACPD introduction]] |                     |                            |                             |                  |
+|                   |                     |                            |                             |                  |
+
+C:\ProgramData\chocolatey\lib\buildingblockwizard\tools
+* git book
+git log -p --grep="MBISW-5793" > d:\5793.diff
+
+* [[https://www.fatsecret.com/calories-nutrition/search?q=red%20wine][Red Wine Type]]
+
+* Expense wk2032
+
+| item      | <2020-08-02 Sun> | <2020-08-03 Mon> | <2020-08-04 Tue> | <2020-08-05 Wed> | <2020-08-06 Thu> | <2020-08-07 Fri> |
+|-----------+------------------+------------------+------------------+------------------+------------------+------------------|
+| drink     |              240 |                  |                  |                  |                  |                  |
+| snack     |               89 |                  |                  |                  |                  |                  |
+| gasolne   |             1058 |                  |                  |                  |                  |                  |
+| insurance |            13788 |                  |                  |                  |                  |                  |
+|-----------+------------------+------------------+------------------+------------------+------------------+------------------|
+| total     |            15175 |                  |                  |                  |                  |                  |
+#+TBLFM: @6$2=vsum(@2..@5)
+
+* TODO : check the hot key for add quote
+
+* TODO : understand the major mode, minor mode, layer
+
+* DONE : add working items on wk2030?
+ CLOSED: [2020-07-28 Tue 11:02]
+ https://confluence-apps-us.asml.com:8443/display/HMISSW/Weekly+2030
+* TODO : check car insurcance with website
+* TODO : understand the basic .spacemacs
+* TODO : org drill => obsolete maybe? => waiting ==> add this special package into additional package => not work in org 9.2, 9.3
+*** TODO : check the memory management for org-mode
+ https://orgmode.org/worg/org-contrib/org-drill.html
+ 
+** TODO : gpod : add abbreviation
+
+  
+auto function : global bc, all functions before inspection
+* TODO : misc on the meeting
+  HS : hot spot
+location => image
+
+Non-HS : ROI : care area
+based on ROI, scan width, inpsection image
+HS : image center
+
+1) HS ==> 2) CS, LS, 
+group type
+recipe => 
+ICDU : 
+1: ICDU,
+2: cloud inspection, inspection result
+cloud file saving, 
+
+Klarf from KLA,
+
+3: ADRC : feed cloud file, load the result, based on the position, redo inspection
+different from ADRK=>(review)
+
+ADRC => recombination, ARD : review, 
+
+ADRC : run-time, need to load cloud file, 
+
+testID :
+0 => wafer alignment, 
+
+2 => 
+
+1: ls, 
+
+===
+
+load high/low offset, load sem/OM offset, by pattern matchting, 
+
+
+
+* <2020-07-29 Wed>
+
+** TODO : car insurance
+
+** TODO : come up with the good plan for exercise
+
+** TODO : merge the good code for vimrc and upload to github
+
+** DONE : fix the code smell
+   CLOSED: [2020-08-02 Sun 12:55]
+** TODO : find the archive function in org-mode
+
+** TODO : how to merge mp3 with ffmpeg
+https://superuser.com/questions/314239/how-to-join-merge-many-mp3-files
+** TODO check how to use the car insurance
+** TODO check how to add abbr in linux for git 
+** TODO check the vimrc in linux
+** TODO download the things from github?
+* <2020-07-30 Thu>
+
+** TODO : add the training planning in table
+
+** DONE : check chinese in the table  => all chinese may work
+   CLOSED: [2020-07-30 Thu 10:28]
+
+** TODO : check multiple row in one cell of table
+
+** TODO : excel file into org-table, org-table into excel file
+   Save the file as a tab delimited file (using Excel or the localc command mentioned in @YoungFrog's answer). Then run org-table-import at the point where you want the table inserted.
+
+** TODO : organize todo2018 with this
+
+*** TODO : copy the todo2018 data into this
+
+
+* TODO send out the money to mom : 8000
+
+* TODO sofa factory organization 
+
+** leather knowledge
+   http://www.e-leather.com.tw/News?class=1
+
+** 美克
+    work : https://www.twmk.com.tw/pics-show-1-1.html
+    寬280cm、深100cm，尺寸調整印象中在一定範圍內是不加價的
+    家裡剛好也有設一個臥榻的位置
+    坐墊厚度有5、7.5、10公分之分
+    椅，有斜角
+    小凳子
+
+北歐 | 瑪嘉烈 | 麥拉倫 | 安德魯 | TWMK90 | TWMK Minotti | TWMK Living | 珍愛
+--
+
+note : 
+(1)他們家是我喜歡的深度110cm那種(不是一般90~103)，以及因為110cm深度，大腿支撐完整。甚至可以盤腿在沙發上。
+(2)坐點在45cm處，是最理想的高度，搭配椅面深，腿部很放鬆。
+(3)扶手寬度15~20cm都有，屬於肥大的扶手，我坐點45cm，扶手不算太高，剛好可以當頭枕躺著。
+(4)椅背和椅面角度剛剛好，對於男女都可以坐得很服貼，腰部不會簍空。
+(5)角架高度有符合我需求15cm高，Dyson掃地機器人可自由進出。
+(6)不會太軟，也不會太硬到感覺把你整個人往外挺，包覆感好。
+
+** TODO Check out the tennis-video from earth
+** TODO : planning on the work-out on footwork and serve
+
+* <2020-08-03 Mon>
+
+** TODO understand the car insurance in detail
+■21
+強制責任保險
+每一人傷害醫療
+每一人死殘
+■09
+車體損失險丙式
+■30B1 超額責任險-乙式(不含酒償)
+■31
+第三人傷害
+■32
+■50A 第三人財損
+駕駛人傷害險-實支實付
+■51A 乘客體傷責任
+■77C 道路救援保險
+
+
+** TODO : check mutiple rename usage in dired
+http://pragmaticemacs.com/emacs/dired-rename-multiple-files/
+
+** TODO : check this session list of vimrc 
+
+** TODO : 吸頂燈
+   https://tw.buy.yahoo.com/gdsale/TOSIHBA-61EC-%E9%9B%85%E8%87%B4-LED%E9%81%99%E6%8E%A7-%E5%90%B8%E9%A0%82%E7%87%88-8569213.html
+   LEDTWTH61EC
+
+滑門 : 
+   1. 鐵拉門
+   雙軌的四片拉門，黑鋁框+5mm強化清玻璃+上懸吊加下軌+少連動加緩衝的價格是快五萬，寬度322cm、高度255cm，其中加緩衝的價格就大概加了快1萬...不過少了與牆碰撞的傷害，才不會等到哪天牆受傷或是玻璃可能有意外破掉的危險（強化玻璃應該不會這麼容易破？）
+而下軌的配合施工沒有另外加錢，我用的Krono Saxon地板原本連工帶料的錢就可以幫忙處理。
+https://www.mobile01.com/topicdetail.php?f=360&t=6143873
+
+** TODO : copy something from outside to spacemacs, insert link
+
+** TODO : watch 
+   4R36-07G0R/SRPD53K1
+   https://m.momoshop.com.tw/goods.momo?i_code=7172793
+
+** TODO : check how to export the comments out from commands from vim
+
+** TODO : collect the commands from spf13
+   check what is nerdtree tab?
+check ,ac usage in xml
+
+* TODO : check how to use archive
+
+* TODO : check jira tickets for Jo and Ho 
+
+* TODO : check eww for chinese website 
+
+* TODO : check how to move to next bullet point
+
+* TODO : check how to use table.el <2020-08-04 Tue>
+
+* TODO : check org-learn 
+
+* TODO : check website for learning voca 
+
+* TODO : check how to draw plot for org 
+
+* DONE : ask Jerry on the need to remove the _calibration function, change code
+  CLOSED: [2020-08-08 Sat 00:07] SCHEDULED: <2020-08-04 Tue>
+
+* DONE : update the form in the confluence for wk2031
+  CLOSED: [2020-08-04 Tue 21:08] SCHEDULED: <2020-08-10 Mon>
+   https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=Weekly+2031
+   https://confluence-apps-us.asml.com:8443/pages/viewpage.action?spaceKey=HMISSW&title=Weekly+2030
+* [2020-08-05 Wed]
+** TODO : check what codelen is 
+** TODO : check resharper special method
+    http://www.e-leather.com.tw/News?class=1
+* [2020-08-08 Sat]
+
+** TODO : wake up at 7:00
+
+** TODO : 7:00 to 8:00 work out, jump rope and music, shower
+
+** TODO : 8:00 to 9:00 English reading : blinkist
+
+** TODO : 9:00 to 10:30 : wall-painting : check the total price
+
+** TODO : 10:30 to 12:00 : alone => work on the expense on the drink, money, todo list
+
+** TODO : 13:00 : drive
+** TODO : 14:00 : go to sofa factory
+** TODO : 16:00 : finish
+** TODO : 17:00 : arrive at Tainan
+** TODO : 18:00 : finish dinner
+
+
+* <2020-08-14 Fri>
+
+** TODO : pay the rent for the house
+   SCHEDULED: <2020-08-06 Thu>
+
+* meeting with bram
+** Q1 : introduce yourself
+*** two years in Linkou, the functional cluster mainly source and motion control
+I joined ASML in 2018, and was responsible for yieldStar SW. I was in Linkou and
+join PTS sensor team in the beginning. Then the work content is changed because
+my role mainly to support Linkou factory, so I mainly work with VHV D&E SW team
+on source and motion control functional cluster. I went to VHV for three times
+to support YS380 NPI product. The colleagues there is very friendly and whenever
+I have any questions, they are willing to help to out.
+
+At that time, although David is my GL, but I joined the activities with other SW
+D&E mostly for daily scrum.
+ 
+*** the difference between HMI and ASML SW is that the code is more organized
+    for ASML. I think that's because there are more SW FTEs for yieldstar. In
+    HMI, the schedule is very tight, and there are too many requests from
+    fields. That's part of the reason why the structure of the SW is not so good.
+    
+1. a little bit messy
+2. didn't used auto-fac and some design pattern
+3. challenge : integrate the concept of ASML SW into HMI would take some time,
+4. challenge : integrate the code of SBI and MBI is a long way to go. 
+5. hard to ensure quality due to the machine time is hard to get
+6. unit test is what we can do in current phase
+7. I'm a little bit junior, although I can solve jira tickets, but don't have the overview of the whole SW structure
+8. 
+
+responsibility of FCA
+1. regular meeting with other FCAs for new product
+2. code review on each pull request to find out potential risk and ensure quality
+3. make sure each changes are fully documented
+4. help team members to overcome technical difficulties.
+5. 
+
+what cultures do you like in ASML:
+1. speak up
+2. be transparent
+3. v-model
+4. love to invest on people's development, for example, all employee can join the course of English or 7 habits of highly effectively people if necessary
+5. Way of working
+
+
+*** how to ensure quality
+in ASML, the good part of it is the concept of V-model. That means before any SW
+changes, the EDS must contain the new design for new product, and after the SW
+implementation is done, the functional testing is necessary to ensure the
+quality of the modified functions and TAR have to be written down and recorded
+In the end, SW FTE have to talk to GL/TL about what change he made, and make
+sure the all relevant documents are updated.
+
+** QN : any quetstions?
+*** I know Tom is the architect for Infra team previously, so now if I take the role, what's the responsibility?
+*** not familiar with the Role and responsibility of this FCA
+
+    
+PCM : project C  M 
+
+last july, 
+ASML : 2013 
+DUV : 
+figure work 
+grow team 
+shrink 
+1 team 
+average FBA 
+PO : 
+how much? 
+infra : 8 people. 
+platform : 
+GUI : 
+infra team : diagnostic improvement related link 
+ASML : diagnostic => event log , tricky
+SDT : 
+BMT : 
+SPC : 
+interact :
+infra team, kathy. alignment. architect, 
+sonar cube -> 
+gatekeeper => 
+fit our achi
+explain 
+communicate 
+wafer stage : bas? DUV?
+machine DUV, bas lievn
+
+*** new language : 
+!Environment.NewLine
+
+* TODO Add todo in table?
+
+* TODO GDS abbreviation? => only x,y, z : color, from HPC
+
+* TODO simulation manager? => openGL
+
+* TODO SEM file?
+
+* TODO HMI format?
+
+* TODO HLT? or GDS?
+
+* TODO die size? 12 inch => diameter or perimeber?
+
+* TODO logical pattern?
+
+* TODO set : textWidth in both vim and emacs
+
+* TODO : c-y : paste something in the minibuffer
+
+* TODO : check the leetcode
+
+* [2020-08-13 Thu]
+
+** TODO : check how to use nvim
+
+** TODO : check how to use resharper essential
+
+** TODO : check how many documents online for FCA
+
+** TODO : record the calories
+
+** TODO : update the work-out-plan in this week 
+1) basic : run 1 hr as least from Fri to Sun
+2) eat less in the lunch and the weekend
+3) jump rope and runnning can not be together
+4) running in the morning and jump rope in the evening
+5) buy volka and add half bottle of water to it
+** TODO : biking to work in this Friday
+** TODO : create proj file for vim and vimbundle folder, and spacemacs folder
+** TODO : use vimgrep in above folder and check it's speed
+** TODO : use ctrl-p and fzf for above
+** TODO : check neocomplete on how to incorporate ctags and other buffers
+** TODO fasd
+
+* [2020-08-18 Tue]
+
+** TODO fill the table of achievement in wk2033 and wk2032
+
+** TODO check the FZF
+
+** TODO check the PR from Josus and Howard
+
+** TODO download the documents from confluence for FCA
+
+** TODO move the *Done* item to archive
+
+** TODO study gitconfig
+
+** TODO study ctrlp + tags
+
+** TODO review resharper notes
+
+** TODO check vsvim setting
+
+** TODO read 3 articles and record the voca list 
+
+** TODO memory training
+
+** TODO check fd usage : use fd or find1 to see the changed file within some time duration
+
+* [2020-08-20 Thu]
+
+** TODO [#A] sp1 migrating
+
+** TODO [#A] update the weekly report
+
+** TODO [#A] make ppt for unit test explaining
+
+** TODO ask Bram on FCA training
+
+** TODO [#A] check DB writing for machine constants editing
+
+** TODO [#A] write a mail to Wei-chun on machine constants migrating 
+
+** TODO [#A] license validation class migrating
+
+** TODO write down the 
+
+** TODO [#A] PPT cheat sheet downlaod
+
+** TODO [#B] furniture statistic 
+
+** TODO study the machine control project and evaluate the effort 
+
+** TODO list the current issues => maybe jira is enough
+
+** TODO resharper usage ppt | how to incorporate videos
+
+** TODO check the annual salary of peter w.
+
+** DONE add priority to above todo items ==> c-c ,
+   CLOSED: [2020-08-20 Thu 09:52]
+
+** TODO create one script to move .vimrc set to git folder 
+
+** TODO [#B] check the script to parse the blinkist articles
+
+** TODO check fd or find1's usage of find the recently modificated files
+
+** TODO [#B] create help_set project vim 
+
+** TODO move the project vim into vim_rc and upload to github
+
+** TODO [#A] check with Dave on the access right for MBIF
+
+
+* [2020-08-24 Mon]
+
+** TODO record the fatsecret
+
+** TODO check the merging of sp1, review and check the bamboo building
+
+** TODO apply back the mail from Dave for the code of MBIF
+
+** TODO verification :: db writing for machine constants editing
+
+** TODO verification :: how global_facility work and how the WCF works
+
+** DONE update the weekly status
+   CLOSED: [2020-08-24 Mon 09:56]
+
+** TODO check the HMI - onboarding video, 
+1) PGP
+2) 
+
+** TODO : check how to record the screen and share it in m$ stream
+
+** TODO : composition manager, find the dll or we just need to get the reference? or composition manager use wcf?
+
+** TODO : check the acpd queue demo
+
+** TODO : hmi pgs format will be phased out?
+
+** TODO : check the strucutre of acpd gui manager => understand the whitelist and composition manager
+
+** TODO : test experiences from Joseph?
+
+** TODO : study unit-test from YieldStar
+who is pa 哥?
+
+** TODO : check the testability of interface? check the guideline
+
+** TODO : check with orange on how to use work flow
+
+** TODO : how to test finite state machine
+https://www.planetgeek.ch/2011/05/17/how-to-unit-test-finite-state-machines/
+https://www.cs.ccu.edu.tw/~naiwei/cs5812/st7.pdf
+
+** TODO : demo : asml SW WoW and unit test sharing
+
+** TODO : asml job family
+https://my.asml.com/sectors/es/hro/cb/Pages/Core-Jobs-Framework.aspx
+https://my.asml.com/sectors/es/hro/cb/Documents/4.%20Architect.pdf?
+
+*** TODO 
+
+Understand market trends and their impact on customer needs, continuously develop the basic architecture of new products,
+conduct feasibility studies in order to deliver budgets, specifications ((parts of) SPS and SDS) and verification of systems that the
+products are serving the customers’ needs, can be manufactured and serviced and are timely and against minimal costs available
+in combination with the continuous quest for improvement.
+Used for ASML positions See position title list on intranet for a complete overvie
+
+* [2020-08-27 Thu]
+
+* TODO : check with Kevin on the purpose of whitelist
+
+* TODO : find the mark function in nerdtree
+
+* TODO : mapping the hot key of nerdtree from dired
+
+* TODO : check the data for dired 
+
+* TODO : check the PR from perHoward 
+
+* TODO : plan running in the evening
+
+* TODO : wcf service statistic tooling
+
+* TODO : planning for 4 hrs in the night
+
+* TODO : check the desc of career path and put it into ASML_People 
+
+* TODO : check th PPM/DAP desc 
+
+* TODO : group help files and put it into one project 
+
+* TODO : session manager, mkview?
+
+* TODO : planning for serve for tennis
+
+* TODO : talk to sofa seller
+
+* TODO : ppt for auto-fac
+
+* TODO : ppt for building block and compositionManager 
+
+* TODO : vim help file : 
+
+screenshot
+NERDTree：
+** TODO : create your understanding on ACPD tasks, self ppt
+
+** TODO : check the expense of the furniture 
+when the sofa would be deliver to Tainan
+when to buy the furniture from the store
+when to live in 
+what to buy 
+
+** DONE create vim_note.org
+   CLOSED: [2020-09-01 Tue 16:40]
+
+** TODO : weekly status update in wk2035
+

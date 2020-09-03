@@ -1,0 +1,5 @@
+digraph pic2 { 
+  a -> b
+  a -> b
+  b -> a [style=filled color=blue]
+} 

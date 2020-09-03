@@ -1,0 +1,388 @@
+* spacemacs
+  https://zilongshanren.com/post/2015-12-06-spacemacs-rocks/
+  http://book.emacs-china.org/
+  compare with
+  C:\Users\raflin\.emacs.d\core\templates\.spacemacs.template
+* org mode 
+change state : c-c c-t
+* emacs dired : 
+| https://www.gnu.org/software/emacs/manual/html_node/emacs/Dired.html | https://blog.slegetank.com/blog/20170106-dired.html | https://ithelp.ithome.com.tw/articles/10138547 | http://blog.lujun9972.win/blog/2016/12/10/emacs%E6%96%87%E4%BB%B6%E7%AE%A1%E7%90%86%E7%A5%9E%E5%99%A8--dired%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E8%AF%B4%E6%98%8E/index.html | http://dinasis.com/oliver/Learning_GNU_Emacs/gnu3-CHP-5-SECT-2.html | 
+  https://kuanyui.github.io/2014/06/21/dired-tutorial-and-essential-configs/
+
+
+** TODO : insert -[ ] box in the todo item
+** TODO : c-cn, c-cp, move up/down the same cpation
+
+** TODO : c-cb, c-cf, move down/up the same title
+
+** TODO : c-cu, move to mother
+
+** TODO : m-left, reduce the level, s-m-left: reduce, including the group
+
+** TODO : bullet into checkbox, - ==> [ ] by using ret+s+m
+
+** TODO : order, unorder bullet
+1. hello
+   1. this is
+      - this is
+      - [ ] 
+      - 
+      - 
+   2. that
+      1. that t
+      2. that
+   3. 
+2.
+
+
+** TODO table create : c-c |
+   
+|   |   |   |   |   |
+|---+---+---+---+---|
+| 1 | 2 | 3 | 4 | 4 |
+| 1 | 2 | 3 | 4 | 4 |
+|   |   |   |   |   |
+|   |   |   |   |   |
+
+
+*** TODO create line by entering tab with |-
+   
+ | 1 | 2 | 3 | 4 |
+ |- 
+
+ ==> 
+
+ | 1 | 2 | 3 | 4 |
+ |---+---+---+---|
+ |   |   |   |   |
+ |---+---+---+---|
+ |   |   |   |   |
+ |   |   |   |   |
+ |   |   |   |   |
+ |   |   |   |   |
+
+*** TODO 1,2,3,4 + c-c | => table
+
+*** TODO move in table, m-l/r, move current column, m-s-l, remove current row
+
+*** TODO m-s-r, add one column, c-c -, add one line
+   
+ | 9 | 2 | 3 | 4 |
+ |---+---+---+---|
+ | 3 | 2 | 1 | 0 |
+ | x | y | z | a |
+ |   |   |   |   |
+ |   |   |   |   |
+ |   |   |   |   |
+
+*** TODO c-hm : shown all minor mode
+
+*** TODO <s + tabl : insert code snippet???
+
+  
+
+** TODO : org mode changes in v9.3 https://orgmode.org/Changes.html
+
+  <s+tab, <q+tab
+  #+begin_src 
+
+  #+end_src 
+  
+  #+begin_quote
+
+  #+end_quote
+  example on code block
+  #+begin_src emacs-lisp
+(require 'ob-clojure)
+#+end_src
+
+* TODO : table calculation
+https://orgmode.org/org.html#Advanced-features
+https://orgmode.org/worg/org-tutorials/org-spreadsheet-lisp-formulas.html
+https://orgmode.org/worg/org-tutorials/org-spreadsheet-intro.html
+https://orgmode.org/manual/Field-and-range-formulas.html
+* TODO : include the competition programming into somewhere, bring it to company
+* TODO : dired mode org
+** TODO : s : re-arrange by modified date or size
+** TODO : X : unzip, x : zip - to be checked?
+** TODO 
+* DONE : check the google translator in Emacs
+  CLOSED: [2020-07-28 Tue 22:55]
+
+
+** TODO : org-table, exclude one column
+
+ |----------+-------------------|
+ | Verse No | Verse             |
+ |----------+-------------------|
+ |        1 | Line1 Line1 Line1 |
+ |        2 | Line2 Line2 Line2 |
+ |----------+-------------------|
+
+
+ +------------+------------+------------+
+ |fjdsklfjsdklfjds            |            |            |
+ +------------+------------+------------+
+ |            |  jkfjsdkl        |            |
+ +------------+-----------+------------+
+ |            |            |            |
+ +------------+------------+------------+
+ |            |            |            |
+ +------------+------------+------------+
+ |            |            |            |
+ +------------+------------+------------+
+
+
+
+** DONE : insert time start and time end
+  CLOSED: [2020-07-27 Mon 13:47]
+  - c-cxi, c-cxo
+
+[[http://blog.lujun9972.win/emacs-document/blog/2016/09/24/%E6%89%8B%E6%8A%8A%E6%89%8B%E6%95%99%E4%BD%A0%E4%BB%8Evim%E8%BF%81%E7%A7%BB%E5%88%B0emacs+evil/index.html][vim to emacs_evil_mode]]
+
+** TODO : organize the dired+ setting
+
+* dired
+#+BEGIN_Quote
+
+g: 重新整理 +++
+s: 按照時間/檔名排序檔案 +++
+
+m: 標記多個檔案
+u: 取消標記
+U: 清除所有標記
+
+!: 執行外部命令
+&: 非同步地（asynchronously）執行外部命令 +++
+
+D: 刪除單一檔案
+d: 標記多個檔案為刪除 +++
+x: 套用刪除 +++
+
+X: 解壓縮 +++
+必備設定檔
+
+但只知道這些是不夠的。沒辦法，說實話沒設定過的 Dired 難用得連我家的貓都不想用。因此這裡整理了一些（我認為且推薦）必備的 Dired 相關設定，設定以後 Dired 立刻順手 n 倍：
+
+請記得先去安裝 Dired+ ，他提供了 Dired 非常多的額外功能。
+
+(require 'dired)
+(require 'dired-x)                   ;這行請記得加，不然無法使用隱藏檔案等功能。
+(require 'dired+)                    ;請記得安裝 dired+，沒安裝的是笨蛋
+
+;; 目錄排在檔案之前。
+(defun dired-directory-sort ()
+  "Dired sort hook to list directories first."
+  (save-excursion
+    (let (buffer-read-only)
+      (forward-line 2) ;; beyond dir. header
+      (sort-regexp-fields t "^.*$" "[ ]*." (point) (point-max))))
+  (and (featurep 'xemacs)
+       (fboundp 'dired-insert-set-properties)
+       (dired-insert-set-properties (point-min) (point-max)))
+  (set-buffer-modified-p nil))
+
+(add-hook 'dired-after-readin-hook 'dired-directory-sort)
+
+;; 按 q 回到上層目錄，並自動把 cursor 移動到前一個目錄處
+(defun my-dired-backward ()
+  "Go back to the parent directory (..), and the cursor will be moved to where
+          the previous directory."
+  (interactive)
+  (let* ((DIR (buffer-name)))
+    (if (equal DIR "*Find*")
+        (quit-window t)
+      (progn (find-alternate-file "..")
+             (re-search-forward DIR nil :no-error)
+             (revert-buffer)))))
+(define-key dired-mode-map (kbd "q") 'my-dired-backward)  
+
+
+;; 按 Enter 時 Dired 時不會一直開新的 Dired buffer（按 Enter 時只用同一個 Dired 開目錄）
+(defun dired-my-find-alternate-file ()
+  (interactive)
+  (if (file-regular-p (dired-get-filename))
+      (dired-find-file)
+    (dired-find-alternate-file)))
+(define-key dired-mode-map (kbd "RET") 'dired-my-find-alternate-file) ; 按 Enter 開檔案
+(put 'dired-find-alternate-file 'disabled nil) ; 避免 Dired 問你一些囉唆的問題
+
+;;自動隱藏以.開頭的檔案（使用 C-x M-o 顯示/隱藏）
+(setq dired-omit-files "^\\...+$")
+
+;; Dired Omit 加強:
+;; 簡單來說，這個能夠紀錄下目前的「隱藏狀態」，所以當你按
+;; C-x M-o 隱藏以.為開頭的檔案後，即使到了不同目錄下，以.開頭的檔案
+;; 依舊是處於隱藏狀態，直到你重新按 C-x M-o 為止。
+(defvar v-dired-omit t
+  "If dired-omit-mode enabled by default. Don't setq me.")
+(defun dired-omit-and-remember ()
+  "This function is a small enhancement for `dired-omit-mode', which will
+        \"remember\" omit state across Dired buffers."
+  (interactive)
+  (setq v-dired-omit (not v-dired-omit))
+  (dired-omit-auto-apply)
+  (revert-buffer))
+
+(defun dired-omit-auto-apply ()
+  (setq dired-omit-mode v-dired-omit))
+
+(define-key dired-mode-map (kbd "C-x M-o") 'dired-omit-and-remember)
+(add-hook 'dired-mode-hook 'dired-omit-auto-apply)
+
+;;使用 KB, MB 等方式顯示檔案大小（這個應該是 Unix 限定...Windows 我不
+;;知該怎麼辦）。
+(setq dired-listing-switches "-alh")
+
+;; 和 KDE 的 Dolphin 一樣的檔案名過濾器，按 C-i 使用。 (by letoh)
+(defun dired-show-only (regexp)
+  (interactive "sFiles to show (regexp): ")
+  (dired-mark-files-regexp regexp)
+  (dired-toggle-marks)
+  (dired-do-kill-lines))
+(define-key dired-mode-map (kbd "C-i") 'dired-show-only)
+
+;; 遞迴拷貝/複製檔案時的確認訊息設定
+(setq dired-recursive-copies  'always) ; 拷貝檔案；「always」 表示永不詢問。
+(setq dired-recursive-deletes 'top) ; 刪除檔案：「top」表示同一批檔案只詢問一次。
+
+;; M-Enter 呼叫外部程式（此處是透過 `kde-open`）來開啟檔案，如果你不是
+;; 用 KDE，可以改成 xdg-open 之類的。Windows 我不知該怎麼辦啦啦啦。
+(defun dired-open-file-with-external-program ()
+  "Open file with external program in dired"
+  (interactive)
+  (let* ((file (dired-get-filename nil t)))
+    (message "Opening %s..." file)
+    (call-process "kde-open" nil 0 nil file)
+    (message "Opening %s done" file)))
+(define-key dired-mode-map (kbd "M-RET") 'dired-open-file-with-external-program)
+
+;; 在 Dired 下 C-x C-j 使用`kde-open`等外部程式開啟「當前目錄」
+(defun open-current-directory-with-external-program ()
+  "Open current directory with external program."
+  (interactive)
+  (call-process "kde-open" nil 0 nil (file-truename default-directory)))
+(define-key dired-mode-map (kbd "C-x C-j") 'open-current-directory-with-external-program)
+
+;; 使用 f 搜尋目前目錄（這個部份可能也是 Unix 限定）
+(define-key dired-mode-map "f" 'dired-find-name-in-current-directory)
+(defun dired-find-name-in-current-directory ()
+  (interactive)
+  (find-name-dired default-directory
+                   (format "*%s*" (read-from-minibuffer "Pattern: ")))
+  (set-buffer-multibyte t))
+(setq find-name-arg "-iname")
+
+;; 修正*Find*裡的中文亂碼問題
+(setq find-ls-option '("-print0 | xargs -0 ls -ald" . ""))
+
+;; 手動開系統的外接硬碟掛載目錄很麻煩，乾脆弄個快速鍵，C-c m 直接開
+;; /var/rum/media（如果你的系統掛載路徑不在這，請自行修改）
+(defun dired-open-mounted-media-dir ()
+  (interactive)
+  (find-file "/var/run/media/"))
+(define-key dired-mode-map (kbd "C-c m") 'dired-open-mounted-media-dir)
+
+;; 按 s 排序檔案，會先問你要根據什麼屬性排序，而且紀錄下排序狀態，不會
+;; 跨 buffer 就不見了。
+(defun dired-sort-size ()
+  "Dired sort by size."
+  (interactive) (dired-sort-other (concat dired-listing-switches "S")))
+(defun dired-sort-extension ()
+  "Dired sort by extension."
+  (interactive) (dired-sort-other (concat dired-listing-switches "X")))
+(defun dired-sort-ctime ()
+  "Dired sort by create time."
+  (interactive) (dired-sort-other (concat dired-listing-switches "ct")))
+(defun dired-sort-utime ()
+  "Dired sort by access time."
+  (interactive) (dired-sort-other (concat dired-listing-switches "ut")))
+(defun dired-sort-time ()
+  "Dired sort by time."
+  (interactive) (dired-sort-other (concat dired-listing-switches "t")))
+(defun dired-sort-name ()
+  "Dired sort by name."
+  (interactive) (dired-sort-other (concat dired-listing-switches "")))
+
+(defvar v-dired-sort 'name)
+(defun dired-sort-and-remember ()
+  ""
+  (interactive)
+  (setq v-dired-sort
+        (intern
+         (completing-read "Sort by: " '(name size extension ctime utime time) nil t
+                          (cond ((eq v-dired-sort 'name) "time")
+                                ((eq v-dired-sort 'time) "name")
+                                ((eq v-dired-sort 'size) "name")
+                                (t nil)))))
+  (dired-sort-auto-apply))
+
+(defun dired-sort-auto-apply ()
+  (cond ((eq v-dired-sort 'name) (dired-sort-name))
+        ((eq v-dired-sort 'size) (dired-sort-size))
+        ((eq v-dired-sort 'extenstion) (dired-sort-extenstion))
+        ((eq v-dired-sort 'ctime) (dired-sort-ctime))
+        ((eq v-dired-sort 'utime) (dired-sort-utime))
+        ((eq v-dired-sort 'time) (dired-sort-time))))
+
+(add-hook 'dired-mode-hook 'dired-sort-auto-apply)
+(define-key dired-mode-map "s" 'dired-sort-and-remember)
+
+;; 看動畫很方便 ˊ・ω・ˋ 按 M-a 把檔案加入 SMPlayer 的播放清單中。
+(defun dired-add-to-smplayer-playlist ()
+  "Add a multimedia file or all multimedia files under a directory into SMPlayer's playlist via Dired."
+  (interactive)
+  (require 'cl)
+  (let* ((PATTERN "\\(\\.mp4\\|\\.flv\\|\\.rmvb\\|\\.mkv\\|\\.avi\\|\\.rm\\|\\.mp3\\|\\.wav\\|\\.wma\\|\\.m4a\\|\\.mpeg\\|\\.aac\\|\\.ogg\\|\\.flac\\|\\.ape\\|\\.mp2\\|\\.wmv\\|.m3u\\|.webm\\)$")
+         (FILE (dired-get-filename nil t)))
+    (if (file-directory-p FILE) ;if it's a dir.
+        (let* ((FILE_LIST (directory-files FILE t PATTERN))
+               (n 0)
+               s_FILE_LIST)
+          (dolist (x FILE_LIST)
+            (if (not (or (equal x ".") (equal x "..")))
+                (setq s_FILE_LIST (concat s_FILE_LIST "'" x "' ")))
+            (setq n (1+ n)))
+          (message "Opening %s files..." n)
+          (call-process-shell-command "smplayer -add-to-playlist" nil nil nil (format "%s &" s_FILE_LIST)))
+      (if (string-match PATTERN FILE)   ;if it's a file
+          (call-process "smplayer" nil 0 nil "-add-to-playlist" FILE)
+        (message "This is not a supported audio or video file."))))
+  (dired-next-line 1))
+(define-key dired-mode-map (kbd "M-a") 'dired-add-to-smplayer-playlist)
+經過這些調校以後，現在多了這些功能：
+
+---
+
+(: 隱藏/顯示詳細資訊（Emacs24.4 安裝 Dired+ 後，會自動把檔名以外的部份隱藏起來，很方便）
+
+RET: 使用同一個 Dired buffer 開啟目錄。
+q: 回到上層目錄。
+
+C-x M-o: 隱藏/顯示檔案（會紀錄當前隱藏狀態）。
+s: 選擇檔案排序方式（且會紀錄當前排序狀態）。
+ 
+C-i: 過濾目前目錄下的檔案名稱。
+ 
+M-RET: 使用 kde-open 開啟檔案。
+C-x C-j:（在 Dired 中）使用外部檔案管理員開啟目前目錄。
+C-x C-j:（在檔案中）使用 Dired 開啟目前目錄，並 jump 到目前檔案位置。
+ 
+f: 遞迴搜尋目前目錄下的檔案。
+ 
+C-c m: 打開系統外接裝置的掛載路徑。
+
+M-a: 把檔案加入 SMPlayer 的播放清單中。
+現在應該順手很多了吧？ ˊ・ω・ˋ
+Dired 的功能還有很多很多，像是 mark 起來的檔案批次處理之類的，不過其實我最常用的也就以上這些功能，只要能夠活用，相信 Dired 應該會成為你非常重要的工具。有興趣的可以在 Dired 中按C-h m再慢慢研究還有什麼功能。如有覺得不錯的也請不吝分享:-)。
+#+END_SRC
+
+
+** TODO : understand the common-lisp
+  https://acl.readthedocs.io/en/latest/zhTW/ch2.html
+
+** TODO : understand org-mode :
+  :LOGBOOK:
+  CLOCK: [2020-07-27 Mon 16:49]--[2020-07-27 Mon 17:20] =>  0:31
+  :END:
+  https://www.cnblogs.com/Open_Source/archive/2011/07/17/2108747.html#sec-2-1

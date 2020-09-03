@@ -1,0 +1,528 @@
+
+
+** TODO : understand how spf13 install
+** TODO : understand why 3 lines are still at the top
+** TODO : check vimdiff and ctrlp
+http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/
+https://medium.com/prodopsio/solving-git-merge-conflicts-with-vim-c8a8617e3633
+
+https://vimawesome.com/plugin/ctrlp-vim-everything-has-changed
+http://kien.github.io/ctrlp.vim/#installation
+* spf13 quick hotkey
+
+| undotree   | <leader>u                          | change sround | cs"'          | yield surround | ysW              | remove surround | ds"          | neosnippet add  | c-k        | open tagbar       | <leader>tt |
+| tag enter  | c-]                                | go back       | c-T           | easyMotion     | <,,>w            | open vimrc set  | <leader>ev   | save vimrc set  | <leader>sv | ctrlpFunky        | <leader>fu |
+| <leader>sl | session list                       | <session save | <leader>ss    | session close  | <leader>cs       | json?           | <leader>jt   | \t              |            | change background | <leader>bg |
+| ,ff        | display all usage under the cursor | ,=            | equalize size | ,q             | easier format it | f11             | full screen? | ,ew ,es ,ev ,et | ?          |                   |            |
+|match it | if and endif | check the keyword : b:matchit-word | check the tutorial |
+	|b:match_words|.
+| multi-cursor | 1) virtual mode | 2) select one work | 3) c-n : choose next | 4) c-x : skip | 5) c-p : prev | 6) c,s,I,A modify | 7) roll-back : v+esc|
+| conflict-marker | (down)cb : get both | ct : get them | co : get ours| cn : get none| ConflictMarkerOurselves | ConflictMarkerTheirSelves | ConflictMarkerBoth
+
+* notes
+切換工作臺和目錄
+
+ctrl + w + h 游標 focus 左側樹形目錄
+ctrl + w + l 游標 focus 右側檔案顯示視窗
+ctrl + w + w 游標自動在左右側視窗切換
+ctrl + w + r 移動當前視窗的佈局位置
+
+o 在已有視窗中開啟檔案、目錄或書籤，並跳到該視窗
+go 在已有視窗 中開啟檔案、目錄或書籤，但不跳到該視窗
+t 在新 Tab 中開啟選中檔案/書籤，並跳到新 Tab
+T 在新 Tab 中開啟選中檔案/書籤，但不跳到新 Tab
+i split 一個新視窗開啟選中檔案，並跳到該視窗
+gi split 一個新視窗開啟選中檔案，但不跳到該視窗
+s vsplit 一個新視窗開啟選中檔案，並跳到該視窗
+gs vsplit 一個新 視窗開啟選中檔案，但不跳到該視窗
+! 執行當前檔案
+O 遞迴開啟選中 結點下的所有目錄
+x 合攏選中結點的父目錄
+X 遞迴 合攏選中結點下的所有目錄
+e Edit the current dif
+雙擊 相當於 NERDTree-o
+中鍵 對檔案相當於 NERDTree-i，對目錄相當於 NERDTree-e
+D 刪除當前書籤
+P 跳到根結點
+p 跳到父結點
+K 跳到當前目錄下同級的第一個結點
+J 跳到當前目錄下同級的最後一個結點
+k 跳到當前目錄下同級的前一個結點
+j 跳到當前目錄下同級的後一個結點
+C 將選中目錄或選中檔案的父目錄設為根結點
+u 將當前根結點的父目錄設為根目錄，並變成合攏原根結點
+U 將當前根結點的父目錄設為根目錄，但保持展開原根結點
+r 遞迴重新整理選中目錄
+R 遞迴重新整理根結點
+m 顯示檔案系統選單
+cd 將 CWD 設為選中目錄
+I 切換是否顯示隱藏檔案
+f 切換是否使用檔案過濾器
+F 切換是否顯示檔案
+B 切換是否顯示書籤
+q 關閉 NerdTree 視窗
+? 切換是否顯示 Quick Help
+
+切換標籤頁
+
+:tabnew [++opt選項] ［＋cmd］ 檔案 建立對指定檔案新的tab
+:tabc 關閉當前的 tab
+:tabo 關閉所有其他的 tab
+:tabs 檢視所有開啟的 tab
+:tabp 前一個 tab
+:tabn 後一個 tab
+標準模式下：
+gT 前一個 tab
+gt 後一個 tab
+MacVim 還可以藉助快捷鍵來完成 tab 的關閉、切換
+cmd+w 關閉當前的 tab
+cmd+{ 前一個 tab
+cmd+} 後一個 tab
+
+NerdTree 在 .vimrc 中的常用配置
+
+" 在 vim 啟動的時候預設開啟 NERDTree（autocmd 可以縮寫為 au）
+autocmd VimEnter * NERDTree
+" 按下 F2 調出/隱藏 NERDTree
+map :silent! NERDTreeToggle
+" 將 NERDTree 的視窗設定在 vim 視窗的右側（預設為左側）
+let NERDTreeWinPos="right"
+" 當開啟 NERDTree 視窗時，自動顯示 Bookmarks
+let NERDTreeShowBookmarks=1
+
+
+五、查詢替換
+/pattern     向後搜尋字串pattern
+
+?pattern     向前搜尋字串pattern
+
+"\c" 忽略大小寫
+
+ "\C" 大小寫敏感
+n             下一個匹配(如果是/搜尋，則是向下的下一個，?搜尋則是向上的下一個)
+N             上一個匹配(同上)
+:%s/old/new/g     搜尋整個檔案，將所有的old替換為new
+:%s/old/new/gc     搜尋整個檔案，將所有的old替換為new，每次都要你確認是否替換
+
+六、退出編輯器
+:w             將緩衝區寫入檔案，即儲存修改
+:wq         儲存修改並退出
+:x             儲存修改並退出
+:q             退出，如果對緩衝區進行過修改，則會提示
+:q!         強制退出，放棄修改
+
+鍵盤移動 (Move)
+
+一切都從鍵盤的移動
+k -> 上 up
+j -> 下 down
+h -> 左 left
+l -> 右 right
+z -> 重畫螢幕，當前游標變成螢幕的第一行 (redraw current line at top of window)
+CTRL-f -> 跳到下一頁 (page down)
+CTRL-b -> 跳到上一頁 (page up)
+跳躍指令 (jumps)
+
+跳躍指令類似於遊覽器中的<前進><後退>按鈕
+CTRL-] -> 跟著link/tag轉入 (follow link/tag)
+CTRL-o -> 回到上一次的jump (go back)
+CTRL-i -> 跳回下一個 (go forward)
+:ju -> 顯示所有的可以跳躍的地方 (print jump list)
+重做/回覆
+
+u -> undo
+CTRL-r -> redo
+vim的undo是樹結構的，你可以回到這個結構中的任何地方
+:undo 2 -> undo 到結構的2層 (undo to tree 2)
+:undolist -> 顯示所有的undo列表 (show undo list)
+:earlier 10s -> undo到10秒前的編輯 (undo to 10 seconds ago)
+:earlier 10h -> undo到10小時前的編輯 (back to 10 hours ago)
+:earlier 1m -> undo到1分鐘前 (back to 1 minutes ago)
+下面是undo的tree結構的解釋
+………..one
+…………. |
+……..change 1
+…………. |
+………one too
+………. /……..\
+…..change 2 ……. change 3
+………… | ………………… |
+…….one two ………. me too
+……….. |
+….. change 4
+………..|
+…… not two
+視覺模式 (visual)
+
+v -> 進入視覺模式
+在視覺模式內可以作block的編輯
+CTRL-v -> visual block
+列印 (print)
+
+:hardcopy -> 列印vim中的內容 (print text)
+混合視覺模式 (visual) 可以選擇列印的區域
+沒試過是否可以直接給值列印（應該可以）例如 :1,15hardcopy 列印前15行
+將檔案寫成網頁格式 (html)
+
+:source $VIMRUNTIME/syntax/2html.vim -> change current open file to html
+格式 (format)
+
+dos/windows跟unix/linux對於檔案的結束是不一樣的。vim可以直接設定/更改格式
+用紙令:set fileformats=unix,dos 可以改變檔案的格式 (change format)
+
+:set ff=unix -> 設定檔案成unix格式 (set file in unix format)
+:set ff=dos -> 設定檔案成dos格式 (set file in dos format)
+:set ff? -> 檢查當前檔案格式 (check the format of current file)
+如果改變格式，直接:w存檔就會存成新的格式了。
+加密 (encryption)
+
+vim可以給檔案加密碼
+vim -x 檔名 (filename) -> 輸入2次密碼，儲存後文件每次都會要密碼才能進入 (encrypt the file with password)
+vim 處理加密檔案的時候，並不會作密碼驗證，也就是說，當你開啟檔案的時候，vim不管你輸入的密碼是否正確，直接用密碼對本文進行解密。如果密碼錯誤，你看 到的就會是亂碼，而不會提醒你密碼錯誤（這樣增加了安全性，沒有地方可以得知密碼是否正確）當然了，如果用一個夠快的機器作窮舉破解，vim還是可以揭開 的
+vim 語法顯示 (syntax)
+
+:syntax enable -> 開啟語法的顏色顯示 (turn on syntax color)
+:syntax clear -> 關閉語法顏色 (remove syntax color)
+:syntax off -> 完全關閉全部語法功能 (turn off syntax)
+:syntax manual -> 手動設定語法 (set the syntax manual, when need syntax use :set syntax=ON)
+輸入特殊字元 (special character)
+
+CTRL-v 編碼就可以了
+例如 CTRL-v 273 -> ÿ 得到 ÿ
+二進 制檔案 (binary file)
+
+vim可以顯示，編輯2進位檔案
+
+vim -b datafile 
+:set display=uhex -> 這樣會以uhex顯示。用來顯示一些無法顯示的字元（控制字元之類）(display in uhex play non-display char)
+
+:%!xxd -> 更改當前檔案顯示為2進位 (change display to binary)
+:%!xxd -r -> 更改二進位為text格式 (convert back to text)
+自動完成 (auto-completion)
+
+vim本身有自動完成功能（這裡不是說ctag，而是vim內建的）
+CTRL-p -> 向後搜尋自動完成 (search backward)
+CTRL-n -> 向前搜尋自動完成 (search forward)
+CTRL-x+CTRL-o -> 程式碼自動補全 (code completion)
+自動備份 (backup)
+
+vim可以幫你自動備份檔案（儲存的時候，之前的檔案備份出來）
+:set backup -> 開啟備份，內建設定備份檔案的名字是 原始檔名加一個 ‘~’ (enable backup default filename+~)
+:set backupext=.bak -> 設定備份檔名為原始檔名.bak (change backup as filename.bak)
+
+自動備份有個問題就是，如果你多次儲存一個檔案，那麼這個你的備份檔案會被不斷覆蓋，你只能有最後一次存檔案之前的那個備份。沒關係，vim還提 供了patchmode，這個會把你第一次的原始檔案備份下來，不會改動
+:set patchmode=.orig -> 儲存原始檔案為 檔名.orig (keep orignal file as filename.orig)
+開啟，儲存與退出 （save & exit)
+
+:w -> 儲存檔案 (write file)
+:w! -> 強制儲存 (force write)
+:q -> 退出檔案 (exit file without save)
+:q! -> 強制退出 (force quite without save)
+:e filename -> 開啟一個檔名為filename的檔案 (open file to edit)
+:e! filename -> 強制開啟一個檔案，所有未儲存的東西會丟失 (force open, drop dirty buffer)
+:saveas filename -> 另存為 filename (save file as filename)
+編輯指令 (edit)
+
+a -> 在光表後插入 (append after cursor)
+A -> 在一行的結尾插入 (append at end of the line)
+i -> 在游標前插入 (insert before cursor)
+I -> 在第一個非空白字元前插入 (insert before first non-blank)
+o -> 游標下面插入一個新行 (open line below)
+O -> 游標上面插入一個新行 (open line above)
+x -> 刪除游標下（或者之後）的東西 (delete under and after cursor)
+例如x就是刪除當前游標下，3x就是刪除游標下+游標後2位字元
+X -> 刪除游標前的字元 (delete before cursor)
+d -> 刪除 (delete)
+可以用dd刪除一行，或者3dw刪除3個詞等等
+J -> 將下一行提到這行來 (join line)
+r -> 替換個字元 (replace characters)
+R -> 替換多個字元 (replace mode – continue replace)
+gr -> 不影響格局佈置的替換 (replace without affecting layout)
+c -> 跟d鍵一樣，但是刪除後進入輸入模式 (same as “d” but after delete, in insert mode)
+S -> 刪除一行(好像dd一樣）但是刪除後進入輸入模式 (same as “dd” but after delete, in insert mode)
+s -> 刪除字元，跟(d)一樣，但是刪除後進入輸入模式 (same as “d” but after delete, in insert mode)
+s4s 會刪除4個字元，進入輸入模式 (delete 4 char and put in insert mode)
+~ -> 更改大小寫，大變小，小變大 (change case upper-> lower or lower->upper)
+gu -> 變成小寫 (change to lower case)
+例如 guG 會把游標當前到檔案結尾全部變成小寫 (change lower case all the way to the end)
+gU -> 變成大寫 (change to upper case)
+例如 gUG 會把游標當前到檔案結尾全部變成大寫 (change upper case all the way to the end)
+複製與貼上 (copy & paste)
+
+y -> 複製 (yank line)
+yy -> 複製當前行 (yank current line)
+“{a-zA-Z}y -> 把資訊複製到某個寄存中 (yank the link into register {a-zA-Z})
+例如我用 “ayy 那麼在寄存a，就複製了一行，然後我再用“byw複製一個詞在寄存b
+貼上的時候，我可以就可以選擇貼a裡面的東西還是b裡面的，這個就好像是多個複製版一樣
+“*y -> 這個是把資訊複製進系統的複製版（可以在其他程式中貼出來）(yank to OS buffer)
+p -> 當前游標下貼上 (paste below)
+P -> 當前游標上貼上 (paste above)
+“{a-zA-Z}p -> 將某個寄存的內容貼出來 (paste from register)
+例如“ap那麼就在當前游標下貼出我之前在寄存a中 的內容。“bP就在當前游標上貼出我之前寄存b的內容
+“*p -> 從系統的剪貼簿中讀取資訊貼入vim (paste from OS buffer to vim)
+reg -> 顯示所有寄存中的內容 (list all registers)
+書籤 (Mark)
+
+書籤是vim中非常強大的一個功能，書籤分為檔案書籤跟全域性書籤。檔案書籤是你標記檔案中的不同位置，然後可以在檔案內快速跳轉到你想要的位置。 而全域性書籤是標記不同檔案中的位置。也就是說你可以在不同的檔案中快速跳轉
+
+m{a-zA-Z} -> 儲存書籤，小寫的是檔案書籤，可以用(a-z）中的任何字母標記。大寫的是全域性 書籤，用大寫的(A-Z)中任意字母標記。(mark position as bookmark. when lower, only stay in file. when upper, stay in global)
+‘{a-zA-Z} -> 跳轉到某個書籤。如果是全域性書籤，則會開啟被書籤標記的檔案跳轉至標記的行 (go to mark. in file {a-z} or global {A-Z}. in global, it will open the file)
+’0 -> 跳轉入現在編輯的檔案中上次退出的位置 (go to last exit in file)
+” -> 跳轉如最後一次跳轉的位置 (go to last jump -> go back to last jump)
+‘” -> 跳轉至最後一次編輯的位置 (go to last edit)
+g’{mark} -> 跳轉到書籤 (jump to {mark})
+:delm{marks} -> 刪除一個書籤 (delete a mark) 例如:delma那麼就刪除了書籤a
+:delm! -> 刪除全部書籤 (delete all marks)
+:marks -> 顯示系統全部書籤 (show all bookmarks)
+標誌 (tag)
+
+:ta -> 跳轉入標誌 (jump to tag)
+:ts -> 顯示匹配標誌，並且跳轉入某個標誌 (list matching tags and select one to jump)
+:tags -> 顯示所有標誌 (print tag list)
+執行外部命令 (using an external program)
+
+:! -> 直接執行shell中的一個外部命令 (call any external program)
+:!make -> 就直接在當前目錄下執行make指令了 (run make on current path)
+:r !ls -> 讀取外部執行的命令的輸入，寫入當然vim中。這裡讀取ls的輸出 (read the output of ls and append the result to file)
+:3r !date -u -> 將外部命令date -u的結果輸入在vim的第三行中 (read the date -u, and append result to 3rd line of file)
+
+:w !wc -> 將vim的內容交給外部指令來處理。這裡讓wc來處理vim的內容 (send vim’s file to external command. this will send the current file to wc command)
+vim對於常用指令有一些內建，例如wc (算字數）(vim has some buildin functions, such like wc)
+g CTRL-G -> 計算當前編譯的檔案的字數等資訊 (word count on current buffer)
+!!date -> 插入當前時間 (insert current date)
+多個檔案的編輯 (edit multifiles)
+
+vim可以編輯多個檔案，例如
+vim a.txt b.txt c.txt 就打開了3個檔案
+
+:next -> 編輯下一個檔案 (next file in buffer)
+:next! -> 強制編輯下個檔案，這裡指如果更改了第一個檔案 (force to next file in buffer if current buffer changed)
+:wnext -> 儲存檔案，編輯下一個 (save the file and goto next)
+:args -> 查詢目前正在編輯的檔名 (find out which buffer is editing now)
+:previous -> 編輯上個檔案 (previous buffer)
+:previous! -> 強制編輯上個檔案，同 :next! (force to previous buffer, same as :next!)
+:last -> 編輯最後一個檔案 (last buffer)
+:first -> 編輯最前面的檔案 (first buffer)
+:set autowrite -> 設定自動儲存，當你編輯下一個檔案的時候，目前正在編輯的檔案如果改動，將會自動儲存 (automatic write the buffer when you switch to next buffer)
+:set noautowrite -> 關閉自動儲存 (turn autowrite off)
+:hide e abc.txt -> 隱藏當前檔案，開啟一個新檔案 abc.txt進行編輯 (hide the current buffer and edit abc.txt)
+:buffers -> 顯示所有vim中的檔案 (display all buffers)
+:buffer2 -> 編輯檔案中的第二個 (edit buffer 2)
+
+vim中很多東西可以用簡稱來寫，就不用打字那麼麻煩了，例如 :edit=:e, :next=:n 這樣.
+分屏 (split)
+
+vim提供了分屏功能（跟screen裡面的split一樣）
+:split -> 將螢幕分成2個 (split screen)
+:split abc.txt -> 將螢幕分成兩個，第二個新的螢幕中顯示abc.txt的內容 (split the windows, on new window, display abc.txt)
+:vsplit -> 豎著分屏 (split vertically)
+:{d}split -> 設定分屏的行數，例如我要一個螢幕只有20行，就可以下:20split (split the windows with {d} line. 20split: open new windows with 3 lines)
+:new -> 分屏並且在新屏中建立一個空白檔案 (split windows with a new blank file)
+CTRL-w+j/k/h/l -> 利用CTRL加w加上j/k/h/l在不同的屏內切換 (switch, move between split screens)
+CTRL-w+ -/+ -> 增減分屏的大小 (change split size)
+CTRL-w+t -> 移動到最頂端的那個屏 (move to the top windows)
+CTRL-w+b -> 移動到最下面的屏 (move to bottom window)
+:close -> 關閉一個分出來的屏 (close splited screen)
+: only -> 只顯示游標當前屏 ，其他將會關閉(only display current active screen, close all others )
+:qall -> 退出所有屏 (quite all windows)
+:wall -> 儲存所有屏 （write to all windows）
+:wqall -> 儲存並退出所有屏 (write and quite all windows)
+:qall! -> 退出所有屏，不儲存任何變動 (quite all windows without save)
+開啟檔案的時候，利用 -o選項，就可以直接開啟多個檔案在分屏中 (with -o option from command line, it will open files and display in split mode)
+vim -o a.txt b.txt
+
+今天有人說不會看diff，其實vim也可以用來看diff，這個也是屬於分屏的部分，這裡也寫一下。
+
+vimdiff a.txt b.txt 如果直接給 -d選項是一樣的 vim -d a.txt b.txt
+:diffsplit abc.txt 如果你現在已經開啟了一個檔案，想vim幫你區分你的檔案跟abc.txt有什麼區別，可以在vim中用diffsplit的方式開啟第二個檔案，這個時 候vim會用split的方式開啟第二個檔案，並且通過顏色，fold來顯示兩個檔案的區別
+這樣vim就會用顏色幫你區分開2個檔案的區別。如果檔案比較大（原始碼）重複的部分會幫你摺疊起來（摺疊後面會說）
+現在來說patch
+:diffpatch filename 通過:diffpatch 你的patch的檔名，就可以以當前檔案加上你的patch來顯示。vim會split一個新的屏，顯示patch後的資訊並且用顏色標明區別。
+如果不喜歡上下對比，喜歡左右（比較符合視覺）可以在前面加vert，例如：
+:vert diffsplit abc.txt
+:vert diffpatch abc.txt
+看完diff，用: only回到原本編輯的檔案，覺 得diff的討厭顏色還是在哪裡，只要用:diffoff關閉就好了。
+還有個常用的diff中的就是 :diffu 這個是 :diffupdate 的簡寫，更新用
+TAB
+
+除了split之外， vim還可以用 tab
+
+:tab split filename -> 這個就用tab的方式來顯示多個檔案 (use tab to display buffers)
+gt -> 到下一個tab (go to next tab)
+gT -> 到上一個tab (go to previous tab)
+vim大多數東西都是可一給數字來執行的，tab也是一樣
+0gt ->跳到第一個tab (switch to 1st tab)
+5gt -> 跳到第五個tab (switch to 5th tab)
+關閉所有的tab可以使用qall的指令。另外讓vim在啟動的時候就自動用tabnew的方式來開啟多個檔案，可以用alias
+linux: 新增 alias vim=’vim -p’ 到 ~/.bashrc
+windows: 自己寫個vim.bat的檔案，然後放在path中，檔案內容：
+@echo off
+vim -p %*
+當需要更改多個tab中的檔案的時候，可以用 :tabdo 這個指令 這個就相當於 loop 到你的所有的 tab 中然後執行指令。
+例如有5個檔案都在tab裡面，需要更改一個變數名稱：abc 到 def， 就可以用 :tabdo %s/abc/def/g 這樣所有的5個tab裡面的abc就都變成def了
+ 
+摺疊 (folding)
+
+vim的摺疊功能。。。我記得應該是6版出來的時候才推出的吧。這個對於寫程式的人來說，非常有用。
+zfap -> 按照段落摺疊 (fold by paragraph)
+zo -> 開啟一個摺疊 (open fold)
+zc -> 關閉一個摺疊 (close fold)
+zf -> 建立摺疊 (create fold) 這個可以用v視覺模式，可以直接給行數等等
+zr -> 開啟一定數量的摺疊，例如3rz (reduce the folding by number like 3zr)
+zm -> 摺疊一定數量（之前你定義好的摺疊） (fold by number)
+zR -> 開啟所有的摺疊 (open all fold)
+zM -> 關閉所有的摺疊 (close all fold)
+zn -> 關閉摺疊功能 (disable fold)
+zN -> 開啟摺疊功能 (enable fold)
+zO -> 將游標下所有摺疊開啟 (open all folds at the cursor line)
+zC -> 將游標下所有摺疊關閉 (close all fold at cursor line)
+zd -> 將游標下的摺疊刪除，這裡不是刪除內容，只是刪除摺疊標記 (delete fold at cursor line)
+zD -> 將游標下所有摺疊刪除 (delete all folds at the cursor line)
+按照tab來摺疊，python最好用的 (ford by indent, very useful for python)
+:set foldmethod=indent -> 設定後用zm 跟 zr 就可以的開關關閉了 (use zm zr)
+儲存 (save view)
+
+對於vim來說，如果你設定了摺疊，但是退出檔案，不管是否保持檔案，摺疊部分會自動消失的。這樣來說非常不方便。所以vim給你方法去保存摺 疊，標籤，書籤等等記錄。最厲害的是，vim對於每個檔案可以儲存最多10個view，也就是說你可以對同一個檔案有10種不同的標記方法，根據你的需 要，這些東西都會儲存下來。
+:mkview -> 儲存記錄 (save setting)
+:loadview -> 讀取記錄 (load setting)
+:mkview 2 -> 儲存記錄在寄存2 （save view to register 2)
+:loadview 3 -> 從寄存3中讀取記錄 (load view from register 3)
+常用指令 (commands)
+
+:set ic ->設定為搜尋時不區分大小 寫 (search case insensitive)
+:set noic ->搜尋時區分大小寫。 vim內定是這個(case sensitive )
+& -> 重複上次的”:s” (repeat previous “:s”)
+. -> 重複上次的指令 (repeat last command)
+K -> 在man中搜索當前游標下的詞 (search man page under cursor)
+{0-9}K -> 查詢當前游標下man中的章節，例如5K就是同等於man 5 (search section of man. 5K search for man 5)
+:history -> 檢視命令歷史記錄 (see command line history)
+q: -> 開啟vim指令視窗 (open vim command windows)
+:e -> 開啟一個檔案，vim可以開啟http/ftp/scp的檔案 (open file. also works with http/ftp/scp)
+:e http://www.google.com/index.html -> 這裡就在vim中開啟google的index.html (open google’s index.html)
+:cd -> 更換vim中的目錄 (change current directory in vim)
+:pwd -> 顯示vim當前目錄 (display pwd in vim)
+gf -> 開啟檔案。例如你在vim中有一行寫了#include 那麼在abc.h上面按gf，vim就會把abc.h這個檔案開啟 (look for file. if you have a file with #include , then the cursor is on abc.h press gf, it will open the file abc.h in vim )
+記錄指令 (record)
+
+q{a-z} -> 在某個寄存中記錄指令 (record typed char into register)
+q{A-Z} -> 將指令插入之前的暫存器 (append typed char into register{a-z})
+q -> 結束記錄 (stop recording)
+@{a-z} -> 執行寄存中的指令 (execute recording)
+@@ -> 重複上次的指令 (repeat previours :@{a-z})
+還是給個例子來說明比較容易明白
+我現在在一個檔案中下qa指令,然後輸入itest然後ESC然後q
+這裡qa就是說把我的指令記錄進a寄存，itest實際是分2步，i 是插入 (insert) 寫入的文字是 text 然後用ESC退回指令模式q結束記錄。這樣我就把itest記錄再一個寄存了。
+下面我執行@a那麼就會自動插入test這個詞。@@就重複前一個動作，所以還是等於@a
+搜尋 (search)
+
+vim超級強大的一個功能就是搜尋跟替換了。要是熟悉正表達(regular expressions)這個搜尋跟後面的替換將會是無敵利器（支援RE的編輯器不多吧）
+
+從簡單的說起
+# -> 游標下反向搜尋關鍵詞 (search the word under cursor backward)
+* -> 游標下正向搜尋關鍵詞 (search the word under cursor forward)
+/ -> 向下搜尋 (search forward)
+? -> 向上搜尋 (search back)
+這裡可以用 /abc 或 ?abc的方式向上，向下搜尋abc
+% -> 查詢下一個結束，例如在”(“下查詢下一個”)”，可以找”()”, “[]” 還有shell中常用的 if, else這些 (find next brace, bracket, comment or #if/#else/#endif)
+
+下面直接用幾個例子說話
+/a* -> 這個會搜到 a aa aaa
+/\(ab\)* -> 這個會搜到 ab abab ababab
+/ab\+ -> 這個會搜到 ab abb abbb
+/folers\= -> 這個會搜到 folder folders
+/ab\{3,5} -> 這個會搜到 abbb abbbb abbbbb
+/ab\{-1,3} -> 這個會在abbb中搜到ab (will match ab in abbb)
+/a.\{-}b -> 這個會在axbxb中搜到axb (match ‘axb’ in ‘axbxb’)
+/a.*b -> 會搜尋到任何a開頭後面有b的 (match a*b any)
+/foo\|bar -> 搜尋foo或者bar，就是同時搜尋2個詞 (match ‘foo’ or ‘bar’)
+/one\|two\|three -> 搜尋3個詞 (match ‘one’, ‘two’ or ‘three’)
+/\(foo\|bar\)\+ -> 搜尋foo, foobar, foofoo, barfoobar等等 (match ‘foo’, ‘foobar’, ‘foofoo’, ‘barfoobar’ … )
+/end\(if\|while\|for\) -> 搜尋endif, endwhile endfor (match ‘endif’, ‘endwhile’, ‘endfor’)
+/forever\&… -> 這個會在forever中搜索到”for”但是不會在fortuin中搜索到”for” 因為我們這裡給了&…的限制 (match ‘for’ in ‘forever’ will not match ‘fortuin’)
+
+特殊字元前面加^就可以 (for special character, user “^” at the start of range)
+/”[^"]*”
+這裡解釋一下
+” 雙引號先引起來 (double quote)
+[^"] 任何不是雙引號的東西(any character that is not a double quote)
+* 所有的其他 (as many as possible)
+” 結束最前面的引號 (double quote close)
+上面那個會搜到“foo” “3!x”這樣的包括引號 (match “foo” -> and “3!x” include double quote)
+
+更多例子，例如搜尋車牌規則，假設車牌是 “1MGU103” 也就是說，第一個是數字，3個大寫字幕，3個數字的格式。那麼我們可以直接搜尋所有符合這個規則的字元
+(A sample license plate number is “1MGU103″. It has one digit, three upper case
+letters and three digits. Directly putting this into a search pattern)
+這個應該很好懂，我們搜尋
+\數字\大寫字母\大寫字母\大寫字母\數字\數字\數字
+
+/\d\u\u\u\d\d\d
+
+另外一個方法，是直接定義幾位數字（不然要是30位，難道打30個\u去？）
+(specify there are three digits and letters with a count)
+
+/\d\u\{3}\d\{3}
+
+也可以用範圍來搜尋 (Using [] ranges)
+/[0-9][A-Z]\{3}[0-9]\{3}
+
+用到範圍搜尋，列出一些範圍(range)
+這個沒什麼好說了，看一下就都明白了，要全部記住。。。用的多了就記住了，用的少了就忘記了。每次看幫助，呵呵
+
+/[a-z]
+/[0123456789abcdef] = /[0-9a-f]
+\e
+\t
+\r
+\b
+簡寫 (item matches equivalent)
+
+\d digit [0-9]
+\D non-digit [^0-9]
+\x hex digit [0-9a-fA-F]
+\X non-hex digit [^0-9a-fA-F]
+\s white space [ ] ( and )
+\S non-white characters [^ ] (not and )
+\l lowercase alpha [a-z]
+\L non-lowercase alpha [^a-z]
+\u uppercase alpha [A-Z]
+\U non-uppercase alpha [^A-Z]
+
+:help /[] –> 特殊的定義的，可以在vim中用用help來看 (everything about special)
+:help /\s –> 普通的也可以直接看一下 (everything about normal)
+替換 (string substitute) – RX
+
+替換其實跟搜尋是一樣的。只不過替換是2個值，一個是你搜索的東西，一個是搜尋到之後要替換的 string substitute (use rx)
+
+%s/abc/def/ -> 替換abc到def (substitute abc to def)
+%s/abc/def/c -> 替換abc到def，會每次都問你確定(substitute on all text with confirmation (y,n,a,q,l))
+1,5s/abc/def/g -> 只替換第一行到第15行之間的abc到def (substitute abc to def only between line 1 to 5)
+54s/abc/def/ -> 只替換第54行的abc到def (only substitute abc to def on line 54)
+
+結合上面的搜尋正表示式，這個替換功能。。。就十分只強大。linux中很多地方都是用正表達來做事請的，所以學會了受益無窮。
+全域性 (global)
+
+這個不知道怎麼翻譯，反正vim是叫做global，可以對搜尋到的東西執行一些vim的命令。我也是2-3個星期前因為讀log中一些特殊的東 西，才學會用的。 (find the match pater and execute a command)
+
+global具體自行方法是 g/pattern/command
+:g/abc/p -> 查詢並顯示出只有abc的行 (only print line with “abc” )
+:g/abc/d -> 刪除所有有abc的行 (delete all line with “abc”)
+:v/abc/d -> 這個會把凡是不是行裡沒有abc的都刪掉 (delete all line without “abc”)
+資訊過濾 (filter)
+
+vim又一強大功能
+
+! -> 用!就是告訴vim，執行過濾流程 (tell vim to performing a filter operation)
+!5G -> 從游標下向下5行執行過濾程式 (tell vim to start filter under cursor and go down 5 lines)
+
+正式指令開始，這裡用sort來做例子：
+!5Gsort -> 從游標下開始執行sort，一共執行5行，就是說我只要sort5行而已 (this will sort the text from cursor line down to 5 lines)
+!Gsort -k3 -> 可以直接代sort的引數，我要sort文字中的第三段 (sort to the end of file by column 3)
+!! -> 值過濾當前的這行 (filter the current line)
+
+如果覺得!這樣的方法5G這樣的方法用起來彆扭（我是這麼覺得），可以用標準的命令模式來做
+!其實就是個:.,而已 （to type the command）
+:.,start,end!sort 這裡定義:.,起始行，結束行!執行指令
+:.,$!sort -> 從當前這行一直執行至檔案結束 (sort from current line to end)
+:.0,$!sort -> 從檔案的開始第一個行一直執行到檔案結束 (sort from start of file to end)
+:.10,15!sort -> 只在檔案的第10行到第15行之間執行 (sort between line 10 to 15)
+
